@@ -72,6 +72,23 @@
       font-size: 0.85rem;
       color: #888;
     }
+    .langs { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
+    .langs button {
+      font: inherit;
+      font-size: 0.85rem;
+      line-height: 1.2;
+      padding: 0.35rem 0.8rem;
+      border: 1px solid #1976d2;
+      border-radius: 999px;
+      background: #fff;
+      color: #1565c0;
+      cursor: pointer;
+    }
+    .langs button:hover { background: #e3f2fd; }
+    .langs button[aria-current="true"] { background: #1976d2; color: #fff; }
+    .langs button:focus-visible { outline: 2px solid #1565c0; outline-offset: 2px; }
+    .lang { display: none; }
+    .lang.active { display: block; }
     @media (max-width: 600px) {
       .container { padding: 1.5rem 1rem; }
       h1 { font-size: 1.4rem; }
@@ -80,145 +97,781 @@
 </head>
 <body>
   <div class="container">
-    <div class="badge">Privacy Policy</div>
-    <h1>Prendimi</h1>
-    <p class="subtitle">Ultimo aggiornamento: 3 novembre 2026</p>
+    <nav class="langs" aria-label="Language">
+      <button type="button" data-set="it">Italiano</button>
+      <button type="button" data-set="en">English</button>
+      <button type="button" data-set="es">Español</button>
+      <button type="button" data-set="fr">Français</button>
+      <button type="button" data-set="de">Deutsch</button>
+      <button type="button" data-set="pt">Português</button>
+    </nav>
 
-    <div class="highlight">
-      <strong>In sintesi:</strong> Prendimi non trasmette alcun dato a server esterni.
-      I dati sui farmaci che inserisci restano memorizzati solo localmente sul tuo dispositivo
-      e non sono accessibili allo sviluppatore.
-      L'unica terza parte coinvolta è Google AdMob, che mostra annunci pubblicitari.
+    <div class="lang active" data-lang="it">
+      <div class="badge">Privacy Policy</div>
+      <h1>Prendimi</h1>
+      <p class="subtitle">Ultimo aggiornamento: 3 novembre 2026</p>
+
+      <div class="highlight">
+        <strong>In sintesi:</strong> Prendimi non trasmette alcun dato a server esterni.
+        I dati sui farmaci che inserisci restano memorizzati solo localmente sul tuo dispositivo
+        e non sono accessibili allo sviluppatore.
+        L'unica terza parte coinvolta è Google AdMob, che mostra annunci pubblicitari.
+      </div>
+
+      <h2>1. Titolare del trattamento</h2>
+      <p>
+        Il titolare del trattamento dei dati personali raccolti tramite la pubblicità è:<br>
+        <strong>Marco Di Gioia</strong><br>
+        Email: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+      <p>
+        Per i dati inseriti nell'app (farmaci, dosi, orari), Marco Di Gioia non ha accesso
+        a tali informazioni: restano esclusivamente sul tuo dispositivo.
+      </p>
+
+      <h2>2. Dati memorizzati localmente — Dati relativi alla salute</h2>
+
+      <div class="warning">
+        <strong>Nota importante:</strong> I dati sui farmaci possono essere considerati
+        <strong>dati relativi alla salute</strong> ai sensi dell'art. 9 del GDPR,
+        una categoria particolarmente protetta. Questi dati non lasciano mai il tuo dispositivo
+        e lo sviluppatore non vi ha alcun accesso.
+      </div>
+
+      <p>
+        L'app memorizza sul tuo dispositivo, e solo su di esso, i dati che inserisci:
+      </p>
+      <ul>
+        <li>Nomi dei farmaci</li>
+        <li>Dosaggi e unità di misura</li>
+        <li>Orari e frequenza delle assunzioni</li>
+        <li>Promemoria e notifiche configurate</li>
+        <li>Note opzionali</li>
+        <li>Dosi segnate come prese e storico delle assunzioni</li>
+        <li>Scorta residua e date di inizio e fine terapia</li>
+      </ul>
+      <p>
+        Questi dati non vengono mai trasmessi a server esterni, non vengono condivisi con terze parti
+        e non sono accessibili allo sviluppatore. La cancellazione dell'app rimuove tutti i dati.
+      </p>
+      <p>
+        <strong>L'app non sostituisce il parere medico.</strong> Le informazioni inserite
+        hanno esclusivamente uno scopo organizzativo personale.
+      </p>
+
+      <h2>3. Dati raccolti da terze parti (Google AdMob)</h2>
+      <p>
+        L'app integra <strong>Google AdMob</strong> per la visualizzazione di annunci pubblicitari.
+        Google potrebbe raccogliere i seguenti dati tramite il proprio SDK:
+      </p>
+      <ul>
+        <li>Identificatori pubblicitari del dispositivo (Android Advertising ID)</li>
+        <li>Dati di utilizzo e interazione con gli annunci</li>
+        <li>Indirizzo IP (per determinare la regione geografica)</li>
+        <li>Informazioni sul dispositivo (modello, versione del sistema operativo)</li>
+      </ul>
+      <p>
+        Il trattamento di questi dati è regolato dalla
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy di Google</a>.
+        Puoi rifiutare gli annunci personalizzati nelle impostazioni del tuo dispositivo Android:
+        <em>Impostazioni → Google → Annunci → Disattiva personalizzazione annunci</em>.
+      </p>
+
+      <h2>4. Base giuridica del trattamento (GDPR)</h2>
+      <p>
+        Per la pubblicità tramite AdMob, la base giuridica è il <strong>consenso esplicito</strong>
+        (art. 6, par. 1, lett. a e art. 9, par. 2, lett. a del GDPR), espresso attraverso
+        il banner di consenso mostrato al primo avvio dell'app.
+      </p>
+      <p>
+        I dati sanitari locali sono trattati esclusivamente dall'utente sul proprio dispositivo:
+        lo sviluppatore non ne è titolare del trattamento, non avendovi accesso.
+      </p>
+
+      <h2>5. Conservazione dei dati</h2>
+      <p>
+        I dati locali dell'app sono conservati sul dispositivo fino alla disinstallazione dell'app
+        o alla cancellazione manuale da parte dell'utente.
+        I dati trattati da Google AdMob sono soggetti alla policy di conservazione di Google.
+      </p>
+
+      <h2>6. Diritti dell'utente (GDPR)</h2>
+      <p>Se risiedi nell'Unione Europea, hai il diritto di:</p>
+      <ul>
+        <li><strong>Accesso</strong>: richiedere informazioni sui dati trattati</li>
+        <li><strong>Rettifica</strong>: correggere dati inesatti</li>
+        <li><strong>Cancellazione</strong>: richiedere la cancellazione dei dati ("diritto all'oblio")</li>
+        <li><strong>Portabilità</strong>: ricevere i dati in formato leggibile</li>
+        <li><strong>Opposizione</strong>: opporti al trattamento per finalità pubblicitarie</li>
+        <li><strong>Revoca del consenso</strong>: revocare il consenso in qualsiasi momento</li>
+      </ul>
+      <p>
+        Per esercitare questi diritti, contatta: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>.<br>
+        Per i dati trattati da Google, puoi contattare Google tramite il
+        <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">tuo account Google</a>.
+      </p>
+      <p>
+        Hai inoltre il diritto di proporre reclamo al
+        <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la Protezione dei Dati Personali</a>
+        (Autorità di controllo italiana).
+      </p>
+
+      <h2>7. Sicurezza</h2>
+      <p>
+        I dati locali sono protetti dai meccanismi di sicurezza standard del sistema operativo Android
+        (crittografia del dispositivo, sandbox applicativa).
+        Non esistono trasmissioni di rete da parte dell'app stessa.
+      </p>
+
+      <h2>8. Bambini e minori</h2>
+      <p>
+        L'app non è specificamente rivolta a bambini. Non raccogliamo consapevolmente dati
+        da minori di 13 anni. Se sei un genitore e ritieni che tuo figlio abbia fornito
+        dati personali, contattaci per richiederne la rimozione.
+      </p>
+
+      <h2>9. Modifiche alla presente policy</h2>
+      <p>
+        Questa policy può essere aggiornata periodicamente. Le modifiche significative
+        saranno comunicate tramite aggiornamento della data in cima a questa pagina.
+        L'uso continuato dell'app costituisce accettazione della policy aggiornata.
+      </p>
+
+      <h2>10. Contatti</h2>
+      <p>
+        Per qualsiasi domanda relativa alla privacy:<br>
+        <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+
+      <div class="footer">
+        © 2025 Marco Di Gioia — Prendimi è parte di Progetto Gazza.
+      </div>
+  
     </div>
 
-    <h2>1. Titolare del trattamento</h2>
-    <p>
-      Il titolare del trattamento dei dati personali raccolti tramite la pubblicità è:<br>
-      <strong>Marco Di Gioia</strong><br>
-      Email: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
-    </p>
-    <p>
-      Per i dati inseriti nell'app (farmaci, dosi, orari), Marco Di Gioia non ha accesso
-      a tali informazioni: restano esclusivamente sul tuo dispositivo.
-    </p>
+    <div class="lang" data-lang="en">
+      <div class="badge">Privacy Policy</div>
+      <h1>Prendimi</h1>
+      <p class="subtitle">Last updated: November 3, 2026</p>
 
-    <h2>2. Dati memorizzati localmente — Dati relativi alla salute</h2>
+      <div class="highlight">
+        <strong>In short:</strong> Prendimi does not transmit any data to external servers. The medication data you enter stays stored only locally on your device and is not accessible to the developer. The only third party involved is Google AdMob, which displays advertisements.
+      </div>
 
-    <div class="warning">
-      <strong>Nota importante:</strong> I dati sui farmaci possono essere considerati
-      <strong>dati relativi alla salute</strong> ai sensi dell'art. 9 del GDPR,
-      una categoria particolarmente protetta. Questi dati non lasciano mai il tuo dispositivo
-      e lo sviluppatore non vi ha alcun accesso.
+      <h2>1. Data controller</h2>
+      <p>
+        The controller of the personal data collected through advertising is:<br>
+        <strong>Marco Di Gioia</strong><br>
+        Email: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+      <p>
+        As for the data entered in the app (medications, doses, times), Marco Di Gioia has no access to this information: it remains exclusively on your device.
+      </p>
+
+      <h2>2. Locally stored data — Health data</h2>
+
+      <div class="warning">
+        <strong>Important note:</strong> Medication data may be considered <strong>health data</strong> under Art. 9 of the GDPR, a specially protected category. This data never leaves your device and the developer has no access to it.
+      </div>
+
+      <p>
+        The app stores on your device, and only on it, the data you enter:
+      </p>
+      <ul>
+        <li>Medication names</li>
+        <li>Dosages and units of measurement</li>
+        <li>Intake times and frequency</li>
+        <li>Configured reminders and notifications</li>
+        <li>Optional notes</li>
+        <li>Doses marked as taken and intake history</li>
+        <li>Remaining supply and treatment start and end dates</li>
+      </ul>
+      <p>
+        This data is never transmitted to external servers, is not shared with third parties and is not accessible to the developer. Deleting the app removes all data.
+      </p>
+      <p>
+        <strong>The app does not replace medical advice.</strong> The information you enter is for personal organizational purposes only.
+      </p>
+
+      <h2>3. Data collected by third parties (Google AdMob)</h2>
+      <p>
+        The app integrates <strong>Google AdMob</strong> to display advertisements. Google may collect the following data through its SDK:
+      </p>
+      <ul>
+        <li>Device advertising identifiers (Android Advertising ID)</li>
+        <li>Usage data and interaction with ads</li>
+        <li>IP address (to determine the geographic region)</li>
+        <li>Device information (model, operating system version)</li>
+      </ul>
+      <p>
+        The processing of this data is governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>. You can opt out of personalized ads in your Android device settings: <em>Settings → Google → Ads → Opt out of Ads Personalization</em>.
+      </p>
+
+      <h2>4. Legal basis for processing (GDPR)</h2>
+      <p>
+        For advertising through AdMob, the legal basis is <strong>explicit consent</strong> (Art. 6(1)(a) and Art. 9(2)(a) of the GDPR), given through the consent banner shown when the app is first launched.
+      </p>
+      <p>
+        Local health data is processed exclusively by the user on their own device: the developer is not the controller of this processing, as the developer has no access to it.
+      </p>
+
+      <h2>5. Data retention</h2>
+      <p>
+        The app's local data is kept on the device until the app is uninstalled or the user deletes it manually. Data processed by Google AdMob is subject to Google's retention policy.
+      </p>
+
+      <h2>6. User rights (GDPR)</h2>
+      <p>If you reside in the European Union, you have the right to:</p>
+      <ul>
+        <li><strong>Access</strong>: request information about the data processed</li>
+        <li><strong>Rectification</strong>: correct inaccurate data</li>
+        <li><strong>Erasure</strong>: request deletion of the data (“right to be forgotten”)</li>
+        <li><strong>Portability</strong>: receive the data in a readable format</li>
+        <li><strong>Objection</strong>: object to processing for advertising purposes</li>
+        <li><strong>Withdrawal of consent</strong>: withdraw consent at any time</li>
+      </ul>
+      <p>
+        To exercise these rights, contact: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>.<br>
+        For data processed by Google, you can contact Google through your <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">Google Account</a>.
+      </p>
+      <p>
+        You also have the right to lodge a complaint with the <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la Protezione dei Dati Personali</a> (the Italian supervisory authority).
+      </p>
+
+      <h2>7. Security</h2>
+      <p>
+        Local data is protected by the standard security mechanisms of the Android operating system (device encryption, application sandbox). The app itself performs no network transmissions.
+      </p>
+
+      <h2>8. Children and minors</h2>
+      <p>
+        The app is not specifically directed at children. We do not knowingly collect data from children under 13. If you are a parent and believe your child has provided personal data, please contact us to request its removal.
+      </p>
+
+      <h2>9. Changes to this policy</h2>
+      <p>
+        This policy may be updated from time to time. Significant changes will be communicated by updating the date at the top of this page. Continued use of the app constitutes acceptance of the updated policy.
+      </p>
+
+      <h2>10. Contact</h2>
+      <p>
+        For any privacy-related questions:<br>
+        <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+
+      <div class="footer">
+        © 2025 Marco Di Gioia — Prendimi is part of Progetto Gazza.
+      </div>
     </div>
 
-    <p>
-      L'app memorizza sul tuo dispositivo, e solo su di esso, i dati che inserisci:
-    </p>
-    <ul>
-      <li>Nomi dei farmaci</li>
-      <li>Dosaggi e unità di misura</li>
-      <li>Orari e frequenza delle assunzioni</li>
-      <li>Promemoria e notifiche configurate</li>
-      <li>Note opzionali</li>
-      <li>Dosi segnate come prese e storico delle assunzioni</li>
-      <li>Scorta residua e date di inizio e fine terapia</li>
-    </ul>
-    <p>
-      Questi dati non vengono mai trasmessi a server esterni, non vengono condivisi con terze parti
-      e non sono accessibili allo sviluppatore. La cancellazione dell'app rimuove tutti i dati.
-    </p>
-    <p>
-      <strong>L'app non sostituisce il parere medico.</strong> Le informazioni inserite
-      hanno esclusivamente uno scopo organizzativo personale.
-    </p>
+    <div class="lang" data-lang="es">
+      <div class="badge">Privacy Policy</div>
+      <h1>Prendimi</h1>
+      <p class="subtitle">Última actualización: 3 de noviembre de 2026</p>
 
-    <h2>3. Dati raccolti da terze parti (Google AdMob)</h2>
-    <p>
-      L'app integra <strong>Google AdMob</strong> per la visualizzazione di annunci pubblicitari.
-      Google potrebbe raccogliere i seguenti dati tramite il proprio SDK:
-    </p>
-    <ul>
-      <li>Identificatori pubblicitari del dispositivo (Android Advertising ID)</li>
-      <li>Dati di utilizzo e interazione con gli annunci</li>
-      <li>Indirizzo IP (per determinare la regione geografica)</li>
-      <li>Informazioni sul dispositivo (modello, versione del sistema operativo)</li>
-    </ul>
-    <p>
-      Il trattamento di questi dati è regolato dalla
-      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy di Google</a>.
-      Puoi rifiutare gli annunci personalizzati nelle impostazioni del tuo dispositivo Android:
-      <em>Impostazioni → Google → Annunci → Disattiva personalizzazione annunci</em>.
-    </p>
+      <div class="highlight">
+        <strong>En resumen:</strong> Prendimi no transmite ningún dato a servidores externos. Los datos sobre medicamentos que introduces permanecen almacenados únicamente de forma local en tu dispositivo y no son accesibles para el desarrollador. El único tercero implicado es Google AdMob, que muestra anuncios publicitarios.
+      </div>
 
-    <h2>4. Base giuridica del trattamento (GDPR)</h2>
-    <p>
-      Per la pubblicità tramite AdMob, la base giuridica è il <strong>consenso esplicito</strong>
-      (art. 6, par. 1, lett. a e art. 9, par. 2, lett. a del GDPR), espresso attraverso
-      il banner di consenso mostrato al primo avvio dell'app.
-    </p>
-    <p>
-      I dati sanitari locali sono trattati esclusivamente dall'utente sul proprio dispositivo:
-      lo sviluppatore non ne è titolare del trattamento, non avendovi accesso.
-    </p>
+      <h2>1. Responsable del tratamiento</h2>
+      <p>
+        El responsable del tratamiento de los datos personales recogidos a través de la publicidad es:<br>
+        <strong>Marco Di Gioia</strong><br>
+        Email: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+      <p>
+        Respecto a los datos introducidos en la app (medicamentos, dosis, horarios), Marco Di Gioia no tiene acceso a dicha información: permanece exclusivamente en tu dispositivo.
+      </p>
 
-    <h2>5. Conservazione dei dati</h2>
-    <p>
-      I dati locali dell'app sono conservati sul dispositivo fino alla disinstallazione dell'app
-      o alla cancellazione manuale da parte dell'utente.
-      I dati trattati da Google AdMob sono soggetti alla policy di conservazione di Google.
-    </p>
+      <h2>2. Datos almacenados localmente — Datos relativos a la salud</h2>
 
-    <h2>6. Diritti dell'utente (GDPR)</h2>
-    <p>Se risiedi nell'Unione Europea, hai il diritto di:</p>
-    <ul>
-      <li><strong>Accesso</strong>: richiedere informazioni sui dati trattati</li>
-      <li><strong>Rettifica</strong>: correggere dati inesatti</li>
-      <li><strong>Cancellazione</strong>: richiedere la cancellazione dei dati ("diritto all'oblio")</li>
-      <li><strong>Portabilità</strong>: ricevere i dati in formato leggibile</li>
-      <li><strong>Opposizione</strong>: opporti al trattamento per finalità pubblicitarie</li>
-      <li><strong>Revoca del consenso</strong>: revocare il consenso in qualsiasi momento</li>
-    </ul>
-    <p>
-      Per esercitare questi diritti, contatta: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>.<br>
-      Per i dati trattati da Google, puoi contattare Google tramite il
-      <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">tuo account Google</a>.
-    </p>
-    <p>
-      Hai inoltre il diritto di proporre reclamo al
-      <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la Protezione dei Dati Personali</a>
-      (Autorità di controllo italiana).
-    </p>
+      <div class="warning">
+        <strong>Nota importante:</strong> Los datos sobre medicamentos pueden considerarse <strong>datos relativos a la salud</strong> en virtud del art. 9 del RGPD, una categoría especialmente protegida. Estos datos nunca salen de tu dispositivo y el desarrollador no tiene ningún acceso a ellos.
+      </div>
 
-    <h2>7. Sicurezza</h2>
-    <p>
-      I dati locali sono protetti dai meccanismi di sicurezza standard del sistema operativo Android
-      (crittografia del dispositivo, sandbox applicativa).
-      Non esistono trasmissioni di rete da parte dell'app stessa.
-    </p>
+      <p>
+        La app almacena en tu dispositivo, y solo en él, los datos que introduces:
+      </p>
+      <ul>
+        <li>Nombres de los medicamentos</li>
+        <li>Dosis y unidades de medida</li>
+        <li>Horarios y frecuencia de las tomas</li>
+        <li>Recordatorios y notificaciones configurados</li>
+        <li>Notas opcionales</li>
+        <li>Dosis marcadas como tomadas e historial de tomas</li>
+        <li>Existencias restantes y fechas de inicio y fin del tratamiento</li>
+      </ul>
+      <p>
+        Estos datos nunca se transmiten a servidores externos, no se comparten con terceros y no son accesibles para el desarrollador. Al eliminar la app se borran todos los datos.
+      </p>
+      <p>
+        <strong>La app no sustituye el consejo médico.</strong> La información introducida tiene exclusivamente una finalidad organizativa personal.
+      </p>
 
-    <h2>8. Bambini e minori</h2>
-    <p>
-      L'app non è specificamente rivolta a bambini. Non raccogliamo consapevolmente dati
-      da minori di 13 anni. Se sei un genitore e ritieni che tuo figlio abbia fornito
-      dati personali, contattaci per richiederne la rimozione.
-    </p>
+      <h2>3. Datos recogidos por terceros (Google AdMob)</h2>
+      <p>
+        La app integra <strong>Google AdMob</strong> para mostrar anuncios publicitarios. Google podría recoger los siguientes datos a través de su SDK:
+      </p>
+      <ul>
+        <li>Identificadores publicitarios del dispositivo (Android Advertising ID)</li>
+        <li>Datos de uso e interacción con los anuncios</li>
+        <li>Dirección IP (para determinar la región geográfica)</li>
+        <li>Información del dispositivo (modelo, versión del sistema operativo)</li>
+      </ul>
+      <p>
+        El tratamiento de estos datos se rige por la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidad de Google</a>. Puedes rechazar los anuncios personalizados en los ajustes de tu dispositivo Android: <em>Ajustes → Google → Anuncios → Desactivar la personalización de anuncios</em>.
+      </p>
 
-    <h2>9. Modifiche alla presente policy</h2>
-    <p>
-      Questa policy può essere aggiornata periodicamente. Le modifiche significative
-      saranno comunicate tramite aggiornamento della data in cima a questa pagina.
-      L'uso continuato dell'app costituisce accettazione della policy aggiornata.
-    </p>
+      <h2>4. Base jurídica del tratamiento (RGPD)</h2>
+      <p>
+        Para la publicidad a través de AdMob, la base jurídica es el <strong>consentimiento explícito</strong> (art. 6, apartado 1, letra a) y art. 9, apartado 2, letra a) del RGPD), otorgado mediante el banner de consentimiento que se muestra al iniciar la app por primera vez.
+      </p>
+      <p>
+        Los datos de salud locales son tratados exclusivamente por el usuario en su propio dispositivo: el desarrollador no es responsable de dicho tratamiento, al no tener acceso a los datos.
+      </p>
 
-    <h2>10. Contatti</h2>
-    <p>
-      Per qualsiasi domanda relativa alla privacy:<br>
-      <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
-    </p>
+      <h2>5. Conservación de los datos</h2>
+      <p>
+        Los datos locales de la app se conservan en el dispositivo hasta la desinstalación de la app o hasta su eliminación manual por parte del usuario. Los datos tratados por Google AdMob están sujetos a la política de conservación de Google.
+      </p>
 
-    <div class="footer">
-      © 2025 Marco Di Gioia — Prendimi è parte di Progetto Gazza.
+      <h2>6. Derechos del usuario (RGPD)</h2>
+      <p>Si resides en la Unión Europea, tienes derecho a:</p>
+      <ul>
+        <li><strong>Acceso</strong>: solicitar información sobre los datos tratados</li>
+        <li><strong>Rectificación</strong>: corregir datos inexactos</li>
+        <li><strong>Supresión</strong>: solicitar la eliminación de los datos («derecho al olvido»)</li>
+        <li><strong>Portabilidad</strong>: recibir los datos en un formato legible</li>
+        <li><strong>Oposición</strong>: oponerte al tratamiento con fines publicitarios</li>
+        <li><strong>Retirada del consentimiento</strong>: retirar el consentimiento en cualquier momento</li>
+      </ul>
+      <p>
+        Para ejercer estos derechos, contacta con: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>.<br>
+        Para los datos tratados por Google, puedes contactar con Google a través de <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">tu cuenta de Google</a>.
+      </p>
+      <p>
+        Tienes además derecho a presentar una reclamación ante el <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la Protezione dei Dati Personali</a> (la autoridad de control italiana).
+      </p>
+
+      <h2>7. Seguridad</h2>
+      <p>
+        Los datos locales están protegidos por los mecanismos de seguridad estándar del sistema operativo Android (cifrado del dispositivo, aislamiento de aplicaciones). La propia app no realiza ninguna transmisión de red.
+      </p>
+
+      <h2>8. Niños y menores</h2>
+      <p>
+        La app no está dirigida específicamente a niños. No recogemos conscientemente datos de menores de 13 años. Si eres padre o madre y crees que tu hijo ha proporcionado datos personales, contáctanos para solicitar su eliminación.
+      </p>
+
+      <h2>9. Cambios en la presente política</h2>
+      <p>
+        Esta política puede actualizarse periódicamente. Los cambios significativos se comunicarán mediante la actualización de la fecha en la parte superior de esta página. El uso continuado de la app constituye la aceptación de la política actualizada.
+      </p>
+
+      <h2>10. Contacto</h2>
+      <p>
+        Para cualquier pregunta relacionada con la privacidad:<br>
+        <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+
+      <div class="footer">
+        © 2025 Marco Di Gioia — Prendimi forma parte de Progetto Gazza.
+      </div>
+    </div>
+
+    <div class="lang" data-lang="fr">
+      <div class="badge">Privacy Policy</div>
+      <h1>Prendimi</h1>
+      <p class="subtitle">Dernière mise à jour : 3 novembre 2026</p>
+
+      <div class="highlight">
+        <strong>En bref :</strong> Prendimi ne transmet aucune donnée à des serveurs externes. Les données sur les médicaments que vous saisissez restent stockées uniquement en local sur votre appareil et ne sont pas accessibles au développeur. Le seul tiers impliqué est Google AdMob, qui affiche des annonces publicitaires.
+      </div>
+
+      <h2>1. Responsable du traitement</h2>
+      <p>
+        Le responsable du traitement des données personnelles collectées via la publicité est :<br>
+        <strong>Marco Di Gioia</strong><br>
+        Email: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+      <p>
+        Pour les données saisies dans l’application (médicaments, doses, horaires), Marco Di Gioia n’y a pas accès : elles restent exclusivement sur votre appareil.
+      </p>
+
+      <h2>2. Données stockées localement — Données de santé</h2>
+
+      <div class="warning">
+        <strong>Remarque importante :</strong> Les données sur les médicaments peuvent être considérées comme des <strong>données concernant la santé</strong> au sens de l’art. 9 du RGPD, une catégorie particulièrement protégée. Ces données ne quittent jamais votre appareil et le développeur n’y a aucun accès.
+      </div>
+
+      <p>
+        L’application stocke sur votre appareil, et uniquement sur celui-ci, les données que vous saisissez :
+      </p>
+      <ul>
+        <li>Noms des médicaments</li>
+        <li>Dosages et unités de mesure</li>
+        <li>Horaires et fréquence des prises</li>
+        <li>Rappels et notifications configurés</li>
+        <li>Notes facultatives</li>
+        <li>Doses marquées comme prises et historique des prises</li>
+        <li>Stock restant et dates de début et de fin de traitement</li>
+      </ul>
+      <p>
+        Ces données ne sont jamais transmises à des serveurs externes, ne sont pas partagées avec des tiers et ne sont pas accessibles au développeur. La suppression de l’application efface toutes les données.
+      </p>
+      <p>
+        <strong>L’application ne remplace pas l’avis médical.</strong> Les informations saisies ont uniquement une finalité d’organisation personnelle.
+      </p>
+
+      <h2>3. Données collectées par des tiers (Google AdMob)</h2>
+      <p>
+        L’application intègre <strong>Google AdMob</strong> pour l’affichage d’annonces publicitaires. Google pourrait collecter les données suivantes via son SDK :
+      </p>
+      <ul>
+        <li>Identifiants publicitaires de l’appareil (Android Advertising ID)</li>
+        <li>Données d’utilisation et d’interaction avec les annonces</li>
+        <li>Adresse IP (pour déterminer la région géographique)</li>
+        <li>Informations sur l’appareil (modèle, version du système d’exploitation)</li>
+      </ul>
+      <p>
+        Le traitement de ces données est régi par la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Politique de confidentialité de Google</a>. Vous pouvez refuser les annonces personnalisées dans les paramètres de votre appareil Android : <em>Paramètres → Google → Annonces → Désactiver la personnalisation des annonces</em>.
+      </p>
+
+      <h2>4. Base juridique du traitement (RGPD)</h2>
+      <p>
+        Pour la publicité via AdMob, la base juridique est le <strong>consentement explicite</strong> (art. 6, par. 1, point a) et art. 9, par. 2, point a) du RGPD), exprimé via la bannière de consentement affichée au premier lancement de l’application.
+      </p>
+      <p>
+        Les données de santé locales sont traitées exclusivement par l’utilisateur sur son propre appareil : le développeur n’est pas responsable de ce traitement, n’y ayant pas accès.
+      </p>
+
+      <h2>5. Conservation des données</h2>
+      <p>
+        Les données locales de l’application sont conservées sur l’appareil jusqu’à la désinstallation de l’application ou jusqu’à leur suppression manuelle par l’utilisateur. Les données traitées par Google AdMob sont soumises à la politique de conservation de Google.
+      </p>
+
+      <h2>6. Droits de l’utilisateur (RGPD)</h2>
+      <p>Si vous résidez dans l’Union européenne, vous avez le droit de :</p>
+      <ul>
+        <li><strong>Accès</strong> : demander des informations sur les données traitées</li>
+        <li><strong>Rectification</strong> : corriger des données inexactes</li>
+        <li><strong>Effacement</strong> : demander la suppression des données (« droit à l’oubli »)</li>
+        <li><strong>Portabilité</strong> : recevoir les données dans un format lisible</li>
+        <li><strong>Opposition</strong> : vous opposer au traitement à des fins publicitaires</li>
+        <li><strong>Retrait du consentement</strong> : retirer votre consentement à tout moment</li>
+      </ul>
+      <p>
+        Pour exercer ces droits, contactez : <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>.<br>
+        Pour les données traitées par Google, vous pouvez contacter Google via <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">votre compte Google</a>.
+      </p>
+      <p>
+        Vous avez également le droit d’introduire une réclamation auprès du <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la Protezione dei Dati Personali</a> (l’autorité de contrôle italienne).
+      </p>
+
+      <h2>7. Sécurité</h2>
+      <p>
+        Les données locales sont protégées par les mécanismes de sécurité standard du système d’exploitation Android (chiffrement de l’appareil, isolation des applications). L’application elle-même n’effectue aucune transmission réseau.
+      </p>
+
+      <h2>8. Enfants et mineurs</h2>
+      <p>
+        L’application ne s’adresse pas spécifiquement aux enfants. Nous ne collectons pas sciemment de données auprès de mineurs de moins de 13 ans. Si vous êtes parent et pensez que votre enfant a fourni des données personnelles, contactez-nous pour en demander la suppression.
+      </p>
+
+      <h2>9. Modifications de la présente politique</h2>
+      <p>
+        Cette politique peut être mise à jour périodiquement. Les modifications importantes seront communiquées par la mise à jour de la date en haut de cette page. L’utilisation continue de l’application vaut acceptation de la politique mise à jour.
+      </p>
+
+      <h2>10. Contact</h2>
+      <p>
+        Pour toute question relative à la confidentialité :<br>
+        <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+
+      <div class="footer">
+        © 2025 Marco Di Gioia — Prendimi fait partie de Progetto Gazza.
+      </div>
+    </div>
+
+    <div class="lang" data-lang="de">
+      <div class="badge">Privacy Policy</div>
+      <h1>Prendimi</h1>
+      <p class="subtitle">Zuletzt aktualisiert: 3. November 2026</p>
+
+      <div class="highlight">
+        <strong>Kurz gesagt:</strong> Prendimi übermittelt keine Daten an externe Server. Die von dir eingegebenen Medikamentendaten werden ausschließlich lokal auf deinem Gerät gespeichert und sind für den Entwickler nicht zugänglich. Der einzige beteiligte Dritte ist Google AdMob, das Werbeanzeigen anzeigt.
+      </div>
+
+      <h2>1. Verantwortlicher</h2>
+      <p>
+        Verantwortlicher für die Verarbeitung der über die Werbung erhobenen personenbezogenen Daten ist:<br>
+        <strong>Marco Di Gioia</strong><br>
+        Email: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+      <p>
+        Auf die in der App eingegebenen Daten (Medikamente, Dosen, Uhrzeiten) hat Marco Di Gioia keinen Zugriff: Sie verbleiben ausschließlich auf deinem Gerät.
+      </p>
+
+      <h2>2. Lokal gespeicherte Daten — Gesundheitsdaten</h2>
+
+      <div class="warning">
+        <strong>Wichtiger Hinweis:</strong> Medikamentendaten können als <strong>Gesundheitsdaten</strong> im Sinne von Art. 9 DSGVO gelten, einer besonders geschützten Kategorie. Diese Daten verlassen niemals dein Gerät, und der Entwickler hat keinerlei Zugriff darauf.
+      </div>
+
+      <p>
+        Die App speichert auf deinem Gerät, und nur dort, die von dir eingegebenen Daten:
+      </p>
+      <ul>
+        <li>Namen der Medikamente</li>
+        <li>Dosierungen und Maßeinheiten</li>
+        <li>Uhrzeiten und Häufigkeit der Einnahmen</li>
+        <li>Konfigurierte Erinnerungen und Benachrichtigungen</li>
+        <li>Optionale Notizen</li>
+        <li>Als eingenommen markierte Dosen und Einnahmeverlauf</li>
+        <li>Restvorrat sowie Beginn- und Enddatum der Therapie</li>
+      </ul>
+      <p>
+        Diese Daten werden niemals an externe Server übermittelt, nicht an Dritte weitergegeben und sind für den Entwickler nicht zugänglich. Durch das Löschen der App werden alle Daten entfernt.
+      </p>
+      <p>
+        <strong>Die App ersetzt keine ärztliche Beratung.</strong> Die eingegebenen Informationen dienen ausschließlich der persönlichen Organisation.
+      </p>
+
+      <h2>3. Von Dritten erhobene Daten (Google AdMob)</h2>
+      <p>
+        Die App integriert <strong>Google AdMob</strong> zur Anzeige von Werbung. Google kann über sein SDK die folgenden Daten erheben:
+      </p>
+      <ul>
+        <li>Werbekennungen des Geräts (Android Advertising ID)</li>
+        <li>Nutzungsdaten und Interaktion mit Anzeigen</li>
+        <li>IP-Adresse (zur Bestimmung der geografischen Region)</li>
+        <li>Geräteinformationen (Modell, Version des Betriebssystems)</li>
+      </ul>
+      <p>
+        Die Verarbeitung dieser Daten unterliegt der <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Google</a>. Personalisierte Werbung kannst du in den Einstellungen deines Android-Geräts ablehnen: <em>Einstellungen → Google → Anzeigen → Anzeigenpersonalisierung deaktivieren</em>.
+      </p>
+
+      <h2>4. Rechtsgrundlage der Verarbeitung (DSGVO)</h2>
+      <p>
+        Für die Werbung über AdMob ist die Rechtsgrundlage die <strong>ausdrückliche Einwilligung</strong> (Art. 6 Abs. 1 Buchst. a und Art. 9 Abs. 2 Buchst. a DSGVO), die über das beim ersten Start der App angezeigte Einwilligungsbanner erteilt wird.
+      </p>
+      <p>
+        Die lokalen Gesundheitsdaten werden ausschließlich vom Nutzer auf seinem eigenen Gerät verarbeitet: Der Entwickler ist für diese Verarbeitung nicht verantwortlich, da er keinen Zugriff darauf hat.
+      </p>
+
+      <h2>5. Speicherdauer</h2>
+      <p>
+        Die lokalen Daten der App werden auf dem Gerät gespeichert, bis die App deinstalliert oder die Daten vom Nutzer manuell gelöscht werden. Die von Google AdMob verarbeiteten Daten unterliegen der Speicherrichtlinie von Google.
+      </p>
+
+      <h2>6. Rechte der Nutzer (DSGVO)</h2>
+      <p>Wenn du in der Europäischen Union wohnst, hast du das Recht auf:</p>
+      <ul>
+        <li><strong>Auskunft</strong>: Informationen über die verarbeiteten Daten anfordern</li>
+        <li><strong>Berichtigung</strong>: unrichtige Daten korrigieren</li>
+        <li><strong>Löschung</strong>: die Löschung der Daten verlangen („Recht auf Vergessenwerden“)</li>
+        <li><strong>Datenübertragbarkeit</strong>: die Daten in einem lesbaren Format erhalten</li>
+        <li><strong>Widerspruch</strong>: der Verarbeitung zu Werbezwecken widersprechen</li>
+        <li><strong>Widerruf der Einwilligung</strong>: die Einwilligung jederzeit widerrufen</li>
+      </ul>
+      <p>
+        Zur Ausübung dieser Rechte wende dich an: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>.<br>
+        Für von Google verarbeitete Daten kannst du Google über <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">dein Google-Konto</a> kontaktieren.
+      </p>
+      <p>
+        Du hast außerdem das Recht, bei der <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la Protezione dei Dati Personali</a> (der italienischen Aufsichtsbehörde) Beschwerde einzulegen.
+      </p>
+
+      <h2>7. Sicherheit</h2>
+      <p>
+        Die lokalen Daten sind durch die standardmäßigen Sicherheitsmechanismen des Betriebssystems Android geschützt (Geräteverschlüsselung, App-Sandbox). Die App selbst führt keine Netzwerkübertragungen durch.
+      </p>
+
+      <h2>8. Kinder und Minderjährige</h2>
+      <p>
+        Die App richtet sich nicht speziell an Kinder. Wir erheben nicht wissentlich Daten von Kindern unter 13 Jahren. Wenn du Elternteil bist und glaubst, dass dein Kind personenbezogene Daten angegeben hat, kontaktiere uns, um deren Entfernung zu beantragen.
+      </p>
+
+      <h2>9. Änderungen dieser Richtlinie</h2>
+      <p>
+        Diese Richtlinie kann regelmäßig aktualisiert werden. Wesentliche Änderungen werden durch die Aktualisierung des Datums am Anfang dieser Seite bekannt gegeben. Die fortgesetzte Nutzung der App gilt als Zustimmung zur aktualisierten Richtlinie.
+      </p>
+
+      <h2>10. Kontakt</h2>
+      <p>
+        Bei Fragen zum Datenschutz:<br>
+        <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+
+      <div class="footer">
+        © 2025 Marco Di Gioia — Prendimi ist Teil von Progetto Gazza.
+      </div>
+    </div>
+
+    <div class="lang" data-lang="pt">
+      <div class="badge">Privacy Policy</div>
+      <h1>Prendimi</h1>
+      <p class="subtitle">Última atualização: 3 de novembro de 2026</p>
+
+      <div class="highlight">
+        <strong>Em resumo:</strong> O Prendimi não transmite nenhum dado a servidores externos. Os dados sobre medicamentos que introduz ficam armazenados apenas localmente no seu dispositivo e não são acessíveis ao programador. O único terceiro envolvido é o Google AdMob, que apresenta anúncios publicitários.
+      </div>
+
+      <h2>1. Responsável pelo tratamento</h2>
+      <p>
+        O responsável pelo tratamento dos dados pessoais recolhidos através da publicidade é:<br>
+        <strong>Marco Di Gioia</strong><br>
+        Email: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+      <p>
+        Quanto aos dados introduzidos na app (medicamentos, doses, horários), Marco Di Gioia não tem acesso a essas informações: permanecem exclusivamente no seu dispositivo.
+      </p>
+
+      <h2>2. Dados armazenados localmente — Dados relativos à saúde</h2>
+
+      <div class="warning">
+        <strong>Nota importante:</strong> Os dados sobre medicamentos podem ser considerados <strong>dados relativos à saúde</strong> nos termos do art. 9.º do RGPD, uma categoria particularmente protegida. Estes dados nunca saem do seu dispositivo e o programador não tem qualquer acesso a eles.
+      </div>
+
+      <p>
+        A app armazena no seu dispositivo, e apenas nele, os dados que introduz:
+      </p>
+      <ul>
+        <li>Nomes dos medicamentos</li>
+        <li>Dosagens e unidades de medida</li>
+        <li>Horários e frequência das tomas</li>
+        <li>Lembretes e notificações configurados</li>
+        <li>Notas opcionais</li>
+        <li>Doses marcadas como tomadas e histórico das tomas</li>
+        <li>Stock restante e datas de início e fim do tratamento</li>
+      </ul>
+      <p>
+        Estes dados nunca são transmitidos a servidores externos, não são partilhados com terceiros e não são acessíveis ao programador. A eliminação da app remove todos os dados.
+      </p>
+      <p>
+        <strong>A app não substitui o aconselhamento médico.</strong> As informações introduzidas têm exclusivamente uma finalidade de organização pessoal.
+      </p>
+
+      <h2>3. Dados recolhidos por terceiros (Google AdMob)</h2>
+      <p>
+        A app integra o <strong>Google AdMob</strong> para a apresentação de anúncios publicitários. O Google poderá recolher os seguintes dados através do seu SDK:
+      </p>
+      <ul>
+        <li>Identificadores de publicidade do dispositivo (Android Advertising ID)</li>
+        <li>Dados de utilização e de interação com os anúncios</li>
+        <li>Endereço IP (para determinar a região geográfica)</li>
+        <li>Informações do dispositivo (modelo, versão do sistema operativo)</li>
+      </ul>
+      <p>
+        O tratamento destes dados é regido pela <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidade da Google</a>. Pode recusar os anúncios personalizados nas definições do seu dispositivo Android: <em>Definições → Google → Anúncios → Desativar a personalização de anúncios</em>.
+      </p>
+
+      <h2>4. Base jurídica do tratamento (RGPD)</h2>
+      <p>
+        Para a publicidade através do AdMob, a base jurídica é o <strong>consentimento explícito</strong> (art. 6.º, n.º 1, alínea a) e art. 9.º, n.º 2, alínea a) do RGPD), manifestado através do banner de consentimento apresentado no primeiro arranque da app.
+      </p>
+      <p>
+        Os dados de saúde locais são tratados exclusivamente pelo utilizador no seu próprio dispositivo: o programador não é responsável por esse tratamento, uma vez que não tem acesso aos dados.
+      </p>
+
+      <h2>5. Conservação dos dados</h2>
+      <p>
+        Os dados locais da app são conservados no dispositivo até à desinstalação da app ou à eliminação manual por parte do utilizador. Os dados tratados pelo Google AdMob estão sujeitos à política de conservação da Google.
+      </p>
+
+      <h2>6. Direitos do utilizador (RGPD)</h2>
+      <p>Se reside na União Europeia, tem o direito de:</p>
+      <ul>
+        <li><strong>Acesso</strong>: solicitar informações sobre os dados tratados</li>
+        <li><strong>Retificação</strong>: corrigir dados inexatos</li>
+        <li><strong>Apagamento</strong>: solicitar a eliminação dos dados («direito a ser esquecido»)</li>
+        <li><strong>Portabilidade</strong>: receber os dados num formato legível</li>
+        <li><strong>Oposição</strong>: opor-se ao tratamento para fins publicitários</li>
+        <li><strong>Retirada do consentimento</strong>: retirar o consentimento a qualquer momento</li>
+      </ul>
+      <p>
+        Para exercer estes direitos, contacte: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>.<br>
+        Relativamente aos dados tratados pela Google, pode contactar a Google através da <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">sua conta Google</a>.
+      </p>
+      <p>
+        Tem ainda o direito de apresentar reclamação junto do <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la Protezione dei Dati Personali</a> (a autoridade de controlo italiana).
+      </p>
+
+      <h2>7. Segurança</h2>
+      <p>
+        Os dados locais são protegidos pelos mecanismos de segurança padrão do sistema operativo Android (encriptação do dispositivo, sandbox de aplicações). A própria app não realiza quaisquer transmissões de rede.
+      </p>
+
+      <h2>8. Crianças e menores</h2>
+      <p>
+        A app não se destina especificamente a crianças. Não recolhemos conscientemente dados de menores de 13 anos. Se é pai ou mãe e acredita que o seu filho forneceu dados pessoais, contacte-nos para solicitar a sua remoção.
+      </p>
+
+      <h2>9. Alterações a esta política</h2>
+      <p>
+        Esta política pode ser atualizada periodicamente. As alterações significativas serão comunicadas através da atualização da data no topo desta página. A utilização continuada da app constitui aceitação da política atualizada.
+      </p>
+
+      <h2>10. Contactos</h2>
+      <p>
+        Para qualquer questão relacionada com a privacidade:<br>
+        <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+
+      <div class="footer">
+        © 2025 Marco Di Gioia — O Prendimi faz parte do Progetto Gazza.
+      </div>
     </div>
   </div>
+  <script>
+  (function () {
+    var LANGS = ['it', 'en', 'es', 'fr', 'de', 'pt'];
+    function valid(l) { return LANGS.indexOf(l) !== -1; }
+    function pick() {
+      try {
+        var q = new URLSearchParams(window.location.search).get('lang');
+        if (q && valid(q.toLowerCase())) return q.toLowerCase();
+      } catch (e) {}
+      try {
+        var s = localStorage.getItem('lang');
+        if (s && valid(s)) return s;
+      } catch (e) {}
+      var nl = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
+      for (var i = 0; i < nl.length; i++) {
+        var p = String(nl[i] || '').toLowerCase().split('-')[0];
+        if (valid(p)) return p;
+      }
+      return 'en';
+    }
+    function apply(lang) {
+      var blocks = document.querySelectorAll('.lang');
+      for (var i = 0; i < blocks.length; i++) {
+        blocks[i].classList.toggle('active', blocks[i].getAttribute('data-lang') === lang);
+      }
+      var btns = document.querySelectorAll('.langs button');
+      for (var j = 0; j < btns.length; j++) {
+        if (btns[j].getAttribute('data-set') === lang) btns[j].setAttribute('aria-current', 'true');
+        else btns[j].removeAttribute('aria-current');
+      }
+      document.documentElement.lang = lang;
+      document.title = 'Privacy Policy \u2014 Prendimi';
+    }
+    var btns = document.querySelectorAll('.langs button');
+    for (var k = 0; k < btns.length; k++) {
+      btns[k].addEventListener('click', function () {
+        var lang = this.getAttribute('data-set');
+        apply(lang);
+        try { localStorage.setItem('lang', lang); } catch (e) {}
+        try {
+          var u = new URL(window.location.href);
+          u.searchParams.set('lang', lang);
+          history.replaceState(null, '', u.toString());
+        } catch (e) {}
+      });
+    }
+    apply(pick());
+  })();
+  </script>
 </body>
 </html>

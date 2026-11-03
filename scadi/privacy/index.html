@@ -68,133 +68,731 @@
       .container { padding: 1.5rem 1rem; }
       h1 { font-size: 1.4rem; }
     }
+    .langs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.5rem;
+    }
+    .langs a {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: #2e7d32;
+      background: #fff;
+      border: 1px solid #4caf50;
+      border-radius: 999px;
+      padding: 0.2rem 0.8rem;
+    }
+    .langs a:hover { background: #f1f8f1; }
+    .langs a[aria-current="true"] { background: #4caf50; color: #fff; }
+    .lang { display: none; }
+    .lang.active { display: block; }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="badge">Privacy Policy</div>
-    <h1>Scadì</h1>
-    <p class="subtitle">Ultimo aggiornamento: 3 novembre 2026</p>
+    <nav class="langs" aria-label="Language">
+      <a href="?lang=it" data-set="it" hreflang="it" aria-current="true">Italiano</a>
+      <a href="?lang=en" data-set="en" hreflang="en">English</a>
+      <a href="?lang=es" data-set="es" hreflang="es">Español</a>
+      <a href="?lang=fr" data-set="fr" hreflang="fr">Français</a>
+      <a href="?lang=de" data-set="de" hreflang="de">Deutsch</a>
+      <a href="?lang=pt" data-set="pt" hreflang="pt">Português</a>
+    </nav>
 
-    <div class="highlight">
-      <strong>In sintesi:</strong> Scadì non trasmette alcun dato a server esterni.
-      Tutto ciò che inserisci rimane memorizzato localmente sul tuo dispositivo.
-      L'unica terza parte coinvolta è Google AdMob, che mostra annunci pubblicitari.
-    </div>
+    <div class="lang active" data-lang="it">
+      <div class="badge">Privacy Policy</div>
+      <h1>Scadì</h1>
+      <p class="subtitle">Ultimo aggiornamento: 3 novembre 2026</p>
 
-    <h2>1. Titolare del trattamento</h2>
-    <p>
-      Il titolare del trattamento dei dati personali raccolti tramite la pubblicità è:<br>
-      <strong>Marco Di Gioia</strong><br>
-      Email: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
-    </p>
-    <p>
-      Per i dati inseriti nell'app (prodotti, date di scadenza, quantità), Marco Di Gioia
-      non ha accesso a tali informazioni: restano esclusivamente sul tuo dispositivo.
-    </p>
+      <div class="highlight">
+        <strong>In sintesi:</strong> Scadì non trasmette alcun dato a server esterni. Tutto ciò che inserisci rimane memorizzato localmente sul tuo dispositivo. L'unica terza parte coinvolta è Google AdMob, che mostra annunci pubblicitari.
+      </div>
 
-    <h2>2. Dati memorizzati localmente</h2>
-    <p>
-      L'app memorizza sul tuo dispositivo, e solo su di esso, i dati che inserisci:
-    </p>
-    <ul>
-      <li>Nomi dei prodotti alimentari</li>
-      <li>Date di scadenza</li>
-      <li>Categorie e quantità</li>
-      <li>Note opzionali</li>
-      <li>Lista della spesa</li>
-      <li>Codici a barre dei prodotti già inseriti, associati a nome e categoria</li>
-    </ul>
-    <p>
-      <strong>Scanner dei codici a barre:</strong> la lettura usa lo scanner di Google Play services, che elabora l'immagine sul dispositivo e restituisce all'app solo il codice letto. L'app non richiede il permesso della fotocamera e non salva immagini.
+      <h2>1. Titolare del trattamento</h2>
+      <p>
+        Il titolare del trattamento dei dati personali raccolti tramite la pubblicità è:<br>
+        <strong>Marco Di Gioia</strong><br>
+        Email: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
       </p>
       <p>
-      Questi dati non vengono mai trasmessi a server esterni, non vengono condivisi con terze parti
-      e non sono accessibili allo sviluppatore. La cancellazione dell'app rimuove tutti i dati.
-    </p>
+        Per i dati inseriti nell'app (prodotti, date di scadenza, quantità), Marco Di Gioia non ha accesso a tali informazioni: restano esclusivamente sul tuo dispositivo.
+      </p>
 
-    <h2>3. Dati raccolti da terze parti (Google AdMob)</h2>
-    <p>
-      L'app integra <strong>Google AdMob</strong> per la visualizzazione di annunci pubblicitari.
-      Google potrebbe raccogliere i seguenti dati tramite il proprio SDK:
-    </p>
-    <ul>
-      <li>Identificatori pubblicitari del dispositivo (Android Advertising ID)</li>
-      <li>Dati di utilizzo e interazione con gli annunci</li>
-      <li>Indirizzo IP (per determinare la regione geografica)</li>
-      <li>Informazioni sul dispositivo (modello, versione del sistema operativo)</li>
-    </ul>
-    <p>
-      Il trattamento di questi dati è regolato dalla
-      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy di Google</a>.
-      Puoi rifiutare gli annunci personalizzati nelle impostazioni del tuo dispositivo Android:
-      <em>Impostazioni → Google → Annunci → Disattiva personalizzazione annunci</em>.
-    </p>
+      <h2>2. Dati memorizzati localmente</h2>
+      <p>
+        L'app memorizza sul tuo dispositivo, e solo su di esso, i dati che inserisci:
+      </p>
+      <ul>
+        <li>Nomi dei prodotti alimentari</li>
+        <li>Date di scadenza</li>
+        <li>Categorie e quantità</li>
+        <li>Note opzionali</li>
+        <li>Lista della spesa</li>
+        <li>Codici a barre dei prodotti già inseriti, associati a nome e categoria</li>
+      </ul>
+      <p>
+        <strong>Scanner dei codici a barre:</strong> la lettura usa lo scanner di Google Play services, che elabora l'immagine sul dispositivo e restituisce all'app solo il codice letto. L'app non richiede il permesso della fotocamera e non salva immagini.
+      </p>
+      <p>
+        Questi dati non vengono mai trasmessi a server esterni, non vengono condivisi con terze parti e non sono accessibili allo sviluppatore. La cancellazione dell'app rimuove tutti i dati.
+      </p>
 
-    <h2>4. Base giuridica del trattamento (GDPR)</h2>
-    <p>
-      Per la pubblicità tramite AdMob, la base giuridica è il <strong>consenso</strong>
-      (art. 6, par. 1, lett. a del GDPR), espresso attraverso il banner di consenso
-      mostrato al primo avvio dell'app.
-    </p>
+      <h2>3. Dati raccolti da terze parti (Google AdMob)</h2>
+      <p>
+        L'app integra <strong>Google AdMob</strong> per la visualizzazione di annunci pubblicitari. Google potrebbe raccogliere i seguenti dati tramite il proprio SDK:
+      </p>
+      <ul>
+        <li>Identificatori pubblicitari del dispositivo (Android Advertising ID)</li>
+        <li>Dati di utilizzo e interazione con gli annunci</li>
+        <li>Indirizzo IP (per determinare la regione geografica)</li>
+        <li>Informazioni sul dispositivo (modello, versione del sistema operativo)</li>
+      </ul>
+      <p>
+        Il trattamento di questi dati è regolato dalla <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy di Google</a>. Puoi rifiutare gli annunci personalizzati nelle impostazioni del tuo dispositivo Android:
+        <em>Impostazioni → Google → Annunci → Disattiva personalizzazione annunci</em>.
+      </p>
 
-    <h2>5. Conservazione dei dati</h2>
-    <p>
-      I dati locali dell'app sono conservati sul dispositivo fino alla disinstallazione dell'app
-      o alla cancellazione manuale da parte dell'utente.
-      I dati trattati da Google AdMob sono soggetti alla policy di conservazione di Google.
-    </p>
+      <h2>4. Base giuridica del trattamento (GDPR)</h2>
+      <p>
+        Per la pubblicità tramite AdMob, la base giuridica è il <strong>consenso</strong> (art. 6, par. 1, lett. a del GDPR), espresso attraverso il banner di consenso mostrato al primo avvio dell'app.
+      </p>
 
-    <h2>6. Diritti dell'utente (GDPR)</h2>
-    <p>Se risiedi nell'Unione Europea, hai il diritto di:</p>
-    <ul>
-      <li><strong>Accesso</strong>: richiedere informazioni sui dati trattati</li>
-      <li><strong>Rettifica</strong>: correggere dati inesatti</li>
-      <li><strong>Cancellazione</strong>: richiedere la cancellazione dei dati ("diritto all'oblio")</li>
-      <li><strong>Portabilità</strong>: ricevere i dati in formato leggibile</li>
-      <li><strong>Opposizione</strong>: opporti al trattamento per finalità pubblicitarie</li>
-      <li><strong>Revoca del consenso</strong>: revocare il consenso in qualsiasi momento</li>
-    </ul>
-    <p>
-      Per esercitare questi diritti, contatta: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>.<br>
-      Per i dati trattati da Google, puoi contattare Google direttamente tramite il
-      <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">tuo account Google</a>.
-    </p>
-    <p>
-      Hai inoltre il diritto di proporre reclamo al
-      <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la Protezione dei Dati Personali</a>
-      (Autorità di controllo italiana).
-    </p>
+      <h2>5. Conservazione dei dati</h2>
+      <p>
+        I dati locali dell'app sono conservati sul dispositivo fino alla disinstallazione dell'app o alla cancellazione manuale da parte dell'utente. I dati trattati da Google AdMob sono soggetti alla policy di conservazione di Google.
+      </p>
 
-    <h2>7. Sicurezza</h2>
-    <p>
-      I dati locali sono protetti dai meccanismi di sicurezza standard del sistema operativo Android.
-      Non esistono trasmissioni di rete da parte dell'app stessa.
-    </p>
+      <h2>6. Diritti dell'utente (GDPR)</h2>
+      <p>Se risiedi nell'Unione Europea, hai il diritto di:</p>
+      <ul>
+        <li><strong>Accesso</strong>: richiedere informazioni sui dati trattati</li>
+        <li><strong>Rettifica</strong>: correggere dati inesatti</li>
+        <li><strong>Cancellazione</strong>: richiedere la cancellazione dei dati ("diritto all'oblio")</li>
+        <li><strong>Portabilità</strong>: ricevere i dati in formato leggibile</li>
+        <li><strong>Opposizione</strong>: opporti al trattamento per finalità pubblicitarie</li>
+        <li><strong>Revoca del consenso</strong>: revocare il consenso in qualsiasi momento</li>
+      </ul>
+      <p>
+        Per esercitare questi diritti, contatta: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>.<br>
+        Per i dati trattati da Google, puoi contattare Google direttamente tramite il <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">tuo account Google</a>.
+      </p>
+      <p>
+        Hai inoltre il diritto di proporre reclamo al <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la Protezione dei Dati Personali</a> (Autorità di controllo italiana).
+      </p>
 
-    <h2>8. Bambini e minori</h2>
-    <p>
-      L'app non è specificamente rivolta a bambini. Non raccogliamo consapevolmente dati
-      da minori di 13 anni. Se sei un genitore e ritieni che tuo figlio abbia fornito
-      dati personali, contattaci per richiederne la rimozione.
-    </p>
+      <h2>7. Sicurezza</h2>
+      <p>
+        I dati locali sono protetti dai meccanismi di sicurezza standard del sistema operativo Android. Non esistono trasmissioni di rete da parte dell'app stessa.
+      </p>
 
-    <h2>9. Modifiche alla presente policy</h2>
-    <p>
-      Questa policy può essere aggiornata periodicamente. Le modifiche significative
-      saranno comunicate tramite aggiornamento della data in cima a questa pagina.
-      L'uso continuato dell'app costituisce accettazione della policy aggiornata.
-    </p>
+      <h2>8. Bambini e minori</h2>
+      <p>
+        L'app non è specificamente rivolta a bambini. Non raccogliamo consapevolmente dati da minori di 13 anni. Se sei un genitore e ritieni che tuo figlio abbia fornito dati personali, contattaci per richiederne la rimozione.
+      </p>
 
-    <h2>10. Contatti</h2>
-    <p>
-      Per qualsiasi domanda relativa alla privacy:<br>
-      <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
-    </p>
+      <h2>9. Modifiche alla presente policy</h2>
+      <p>
+        Questa policy può essere aggiornata periodicamente. Le modifiche significative saranno comunicate tramite aggiornamento della data in cima a questa pagina. L'uso continuato dell'app costituisce accettazione della policy aggiornata.
+      </p>
 
-    <div class="footer">
-      © 2025 Marco Di Gioia — Scadì è parte di Progetto Gazza.
+      <h2>10. Contatti</h2>
+      <p>
+        Per qualsiasi domanda relativa alla privacy:<br>
+        <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+
+      <div class="footer">
+        © 2025 Marco Di Gioia — Scadì è parte di Progetto Gazza.
+      </div>
+    </div>
+
+    <div class="lang" data-lang="en">
+      <div class="badge">Privacy Policy</div>
+      <h1>Scadì</h1>
+      <p class="subtitle">Last updated: November 3, 2026</p>
+
+      <div class="highlight">
+        <strong>In short:</strong> Scadì does not send any data to external servers. Everything you enter stays stored locally on your device. The only third party involved is Google AdMob, which displays advertisements.
+      </div>
+
+      <h2>1. Data controller</h2>
+      <p>
+        The controller of the personal data collected through advertising is:<br>
+        <strong>Marco Di Gioia</strong><br>
+        Email: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+      <p>
+        Marco Di Gioia has no access to the data you enter in the app (products, expiry dates, quantities): it stays exclusively on your device.
+      </p>
+
+      <h2>2. Data stored locally</h2>
+      <p>
+        The app stores on your device, and only on it, the data you enter:
+      </p>
+      <ul>
+        <li>Names of food products</li>
+        <li>Expiry dates</li>
+        <li>Categories and quantities</li>
+        <li>Optional notes</li>
+        <li>Shopping list</li>
+        <li>Barcodes of products already entered, linked to name and category</li>
+      </ul>
+      <p>
+        <strong>Barcode scanner:</strong> scanning uses the Google Play services scanner, which processes the image on the device and returns only the scanned code to the app. The app does not request camera permission and does not save images.
+      </p>
+      <p>
+        This data is never transmitted to external servers, is not shared with third parties and is not accessible to the developer. Deleting the app removes all data.
+      </p>
+
+      <h2>3. Data collected by third parties (Google AdMob)</h2>
+      <p>
+        The app integrates <strong>Google AdMob</strong> to display advertisements. Google may collect the following data through its SDK:
+      </p>
+      <ul>
+        <li>Device advertising identifiers (Android Advertising ID)</li>
+        <li>Usage data and interaction with ads</li>
+        <li>IP address (to determine the geographic region)</li>
+        <li>Device information (model, operating system version)</li>
+      </ul>
+      <p>
+        The processing of this data is governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>. You can opt out of personalized ads in your Android device settings:
+        <em>Settings → Google → Ads → Opt out of Ads Personalization</em>.
+      </p>
+
+      <h2>4. Legal basis for processing (GDPR)</h2>
+      <p>
+        For advertising through AdMob, the legal basis is <strong>consent</strong> (Art. 6(1)(a) GDPR), given through the consent banner shown the first time the app is launched.
+      </p>
+
+      <h2>5. Data retention</h2>
+      <p>
+        The app's local data is kept on the device until the app is uninstalled or the user deletes it manually. Data processed by Google AdMob is subject to Google's retention policy.
+      </p>
+
+      <h2>6. User rights (GDPR)</h2>
+      <p>If you reside in the European Union, you have the right to:</p>
+      <ul>
+        <li><strong>Access</strong>: request information about the data processed</li>
+        <li><strong>Rectification</strong>: correct inaccurate data</li>
+        <li><strong>Erasure</strong>: request the deletion of your data ("right to be forgotten")</li>
+        <li><strong>Portability</strong>: receive your data in a readable format</li>
+        <li><strong>Objection</strong>: object to processing for advertising purposes</li>
+        <li><strong>Withdrawal of consent</strong>: withdraw your consent at any time</li>
+      </ul>
+      <p>
+        To exercise these rights, contact: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>.<br>
+        For data processed by Google, you can contact Google directly through your <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">Google Account</a>.
+      </p>
+      <p>
+        You also have the right to lodge a complaint with the <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la Protezione dei Dati Personali</a> (the Italian supervisory authority).
+      </p>
+
+      <h2>7. Security</h2>
+      <p>
+        Local data is protected by the standard security mechanisms of the Android operating system. The app itself makes no network transmissions.
+      </p>
+
+      <h2>8. Children and minors</h2>
+      <p>
+        The app is not specifically directed at children. We do not knowingly collect data from children under 13. If you are a parent and believe your child has provided personal data, please contact us to request its removal.
+      </p>
+
+      <h2>9. Changes to this policy</h2>
+      <p>
+        This policy may be updated from time to time. Significant changes will be communicated by updating the date at the top of this page. Continued use of the app constitutes acceptance of the updated policy.
+      </p>
+
+      <h2>10. Contact</h2>
+      <p>
+        For any question about privacy:<br>
+        <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+
+      <div class="footer">
+        © 2025 Marco Di Gioia — Scadì is part of Progetto Gazza.
+      </div>
+    </div>
+
+    <div class="lang" data-lang="es">
+      <div class="badge">Privacy Policy</div>
+      <h1>Scadì</h1>
+      <p class="subtitle">Última actualización: 3 de noviembre de 2026</p>
+
+      <div class="highlight">
+        <strong>En resumen:</strong> Scadì no transmite ningún dato a servidores externos. Todo lo que introduces se almacena localmente en tu dispositivo. El único tercero implicado es Google AdMob, que muestra anuncios publicitarios.
+      </div>
+
+      <h2>1. Responsable del tratamiento</h2>
+      <p>
+        El responsable del tratamiento de los datos personales recogidos a través de la publicidad es:<br>
+        <strong>Marco Di Gioia</strong><br>
+        Email: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+      <p>
+        Marco Di Gioia no tiene acceso a los datos que introduces en la app (productos, fechas de caducidad, cantidades): permanecen exclusivamente en tu dispositivo.
+      </p>
+
+      <h2>2. Datos almacenados localmente</h2>
+      <p>
+        La app almacena en tu dispositivo, y solo en él, los datos que introduces:
+      </p>
+      <ul>
+        <li>Nombres de los productos alimenticios</li>
+        <li>Fechas de caducidad</li>
+        <li>Categorías y cantidades</li>
+        <li>Notas opcionales</li>
+        <li>Lista de la compra</li>
+        <li>Códigos de barras de los productos ya introducidos, asociados a nombre y categoría</li>
+      </ul>
+      <p>
+        <strong>Escáner de códigos de barras:</strong> la lectura utiliza el escáner de Google Play services, que procesa la imagen en el dispositivo y devuelve a la app solo el código leído. La app no solicita el permiso de la cámara y no guarda imágenes.
+      </p>
+      <p>
+        Estos datos nunca se transmiten a servidores externos, no se comparten con terceros y no son accesibles para el desarrollador. Al eliminar la app se borran todos los datos.
+      </p>
+
+      <h2>3. Datos recogidos por terceros (Google AdMob)</h2>
+      <p>
+        La app integra <strong>Google AdMob</strong> para mostrar anuncios publicitarios. Google podría recoger los siguientes datos a través de su SDK:
+      </p>
+      <ul>
+        <li>Identificadores publicitarios del dispositivo (Android Advertising ID)</li>
+        <li>Datos de uso e interacción con los anuncios</li>
+        <li>Dirección IP (para determinar la región geográfica)</li>
+        <li>Información del dispositivo (modelo, versión del sistema operativo)</li>
+      </ul>
+      <p>
+        El tratamiento de estos datos se rige por la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad de Google</a>. Puedes rechazar los anuncios personalizados en los ajustes de tu dispositivo Android:
+        <em>Ajustes → Google → Anuncios → Desactivar la personalización de anuncios</em>.
+      </p>
+
+      <h2>4. Base jurídica del tratamiento (RGPD)</h2>
+      <p>
+        Para la publicidad mediante AdMob, la base jurídica es el <strong>consentimiento</strong> (art. 6, apartado 1, letra a del RGPD), otorgado a través del banner de consentimiento que se muestra al abrir la app por primera vez.
+      </p>
+
+      <h2>5. Conservación de los datos</h2>
+      <p>
+        Los datos locales de la app se conservan en el dispositivo hasta que se desinstale la app o el usuario los elimine manualmente. Los datos tratados por Google AdMob están sujetos a la política de conservación de Google.
+      </p>
+
+      <h2>6. Derechos del usuario (RGPD)</h2>
+      <p>Si resides en la Unión Europea, tienes derecho a:</p>
+      <ul>
+        <li><strong>Acceso</strong>: solicitar información sobre los datos tratados</li>
+        <li><strong>Rectificación</strong>: corregir datos inexactos</li>
+        <li><strong>Supresión</strong>: solicitar la eliminación de tus datos ("derecho al olvido")</li>
+        <li><strong>Portabilidad</strong>: recibir tus datos en un formato legible</li>
+        <li><strong>Oposición</strong>: oponerte al tratamiento con fines publicitarios</li>
+        <li><strong>Retirada del consentimiento</strong>: retirar tu consentimiento en cualquier momento</li>
+      </ul>
+      <p>
+        Para ejercer estos derechos, contacta con: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>.<br>
+        Para los datos tratados por Google, puedes contactar directamente con Google a través de tu <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">cuenta de Google</a>.
+      </p>
+      <p>
+        También tienes derecho a presentar una reclamación ante el <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la Protezione dei Dati Personali</a> (autoridad de control italiana).
+      </p>
+
+      <h2>7. Seguridad</h2>
+      <p>
+        Los datos locales están protegidos por los mecanismos de seguridad estándar del sistema operativo Android. La propia app no realiza ninguna transmisión de red.
+      </p>
+
+      <h2>8. Niños y menores</h2>
+      <p>
+        La app no está dirigida específicamente a niños. No recogemos conscientemente datos de menores de 13 años. Si eres padre o madre y crees que tu hijo ha facilitado datos personales, contáctanos para solicitar su eliminación.
+      </p>
+
+      <h2>9. Cambios en esta política</h2>
+      <p>
+        Esta política puede actualizarse periódicamente. Los cambios significativos se comunicarán mediante la actualización de la fecha en la parte superior de esta página. El uso continuado de la app constituye la aceptación de la política actualizada.
+      </p>
+
+      <h2>10. Contacto</h2>
+      <p>
+        Para cualquier pregunta relacionada con la privacidad:<br>
+        <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+
+      <div class="footer">
+        © 2025 Marco Di Gioia — Scadì forma parte de Progetto Gazza.
+      </div>
+    </div>
+
+    <div class="lang" data-lang="fr">
+      <div class="badge">Privacy Policy</div>
+      <h1>Scadì</h1>
+      <p class="subtitle">Dernière mise à jour : 3 novembre 2026</p>
+
+      <div class="highlight">
+        <strong>En résumé :</strong> Scadì ne transmet aucune donnée à des serveurs externes. Tout ce que vous saisissez reste stocké localement sur votre appareil. Le seul tiers impliqué est Google AdMob, qui affiche des publicités.
+      </div>
+
+      <h2>1. Responsable du traitement</h2>
+      <p>
+        Le responsable du traitement des données personnelles collectées via la publicité est :<br>
+        <strong>Marco Di Gioia</strong><br>
+        Email: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+      <p>
+        Marco Di Gioia n'a pas accès aux données saisies dans l'application (produits, dates de péremption, quantités) : elles restent exclusivement sur votre appareil.
+      </p>
+
+      <h2>2. Données stockées localement</h2>
+      <p>
+        L'application stocke sur votre appareil, et uniquement sur celui-ci, les données que vous saisissez :
+      </p>
+      <ul>
+        <li>Noms des produits alimentaires</li>
+        <li>Dates de péremption</li>
+        <li>Catégories et quantités</li>
+        <li>Notes facultatives</li>
+        <li>Liste de courses</li>
+        <li>Codes-barres des produits déjà saisis, associés à un nom et à une catégorie</li>
+      </ul>
+      <p>
+        <strong>Scanner de codes-barres :</strong> la lecture utilise le scanner de Google Play services, qui traite l'image sur l'appareil et ne renvoie à l'application que le code lu. L'application ne demande pas l'autorisation d'accès à l'appareil photo et n'enregistre aucune image.
+      </p>
+      <p>
+        Ces données ne sont jamais transmises à des serveurs externes, ne sont pas partagées avec des tiers et ne sont pas accessibles au développeur. La désinstallation de l'application supprime toutes les données.
+      </p>
+
+      <h2>3. Données collectées par des tiers (Google AdMob)</h2>
+      <p>
+        L'application intègre <strong>Google AdMob</strong> pour l'affichage de publicités. Google peut collecter les données suivantes via son SDK :
+      </p>
+      <ul>
+        <li>Identifiants publicitaires de l'appareil (Android Advertising ID)</li>
+        <li>Données d'utilisation et d'interaction avec les annonces</li>
+        <li>Adresse IP (pour déterminer la région géographique)</li>
+        <li>Informations sur l'appareil (modèle, version du système d'exploitation)</li>
+      </ul>
+      <p>
+        Le traitement de ces données est régi par la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Politique de confidentialité de Google</a>. Vous pouvez refuser les annonces personnalisées dans les paramètres de votre appareil Android :
+        <em>Paramètres → Google → Annonces → Désactiver la personnalisation des annonces</em>.
+      </p>
+
+      <h2>4. Base juridique du traitement (RGPD)</h2>
+      <p>
+        Pour la publicité via AdMob, la base juridique est le <strong>consentement</strong> (art. 6, par. 1, point a du RGPD), exprimé au moyen de la bannière de consentement affichée au premier lancement de l'application.
+      </p>
+
+      <h2>5. Conservation des données</h2>
+      <p>
+        Les données locales de l'application sont conservées sur l'appareil jusqu'à la désinstallation de l'application ou jusqu'à leur suppression manuelle par l'utilisateur. Les données traitées par Google AdMob sont soumises à la politique de conservation de Google.
+      </p>
+
+      <h2>6. Droits de l'utilisateur (RGPD)</h2>
+      <p>Si vous résidez dans l'Union européenne, vous avez le droit de :</p>
+      <ul>
+        <li><strong>Accès</strong> : demander des informations sur les données traitées</li>
+        <li><strong>Rectification</strong> : corriger les données inexactes</li>
+        <li><strong>Effacement</strong> : demander la suppression de vos données (« droit à l'oubli »)</li>
+        <li><strong>Portabilité</strong> : recevoir vos données dans un format lisible</li>
+        <li><strong>Opposition</strong> : vous opposer au traitement à des fins publicitaires</li>
+        <li><strong>Retrait du consentement</strong> : retirer votre consentement à tout moment</li>
+      </ul>
+      <p>
+        Pour exercer ces droits, contactez : <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>.<br>
+        Pour les données traitées par Google, vous pouvez contacter directement Google via votre <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">compte Google</a>.
+      </p>
+      <p>
+        Vous avez également le droit d'introduire une réclamation auprès du <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la Protezione dei Dati Personali</a> (autorité de contrôle italienne).
+      </p>
+
+      <h2>7. Sécurité</h2>
+      <p>
+        Les données locales sont protégées par les mécanismes de sécurité standard du système d'exploitation Android. L'application elle-même n'effectue aucune transmission réseau.
+      </p>
+
+      <h2>8. Enfants et mineurs</h2>
+      <p>
+        L'application n'est pas spécifiquement destinée aux enfants. Nous ne collectons pas sciemment de données auprès de mineurs de moins de 13 ans. Si vous êtes parent et pensez que votre enfant a fourni des données personnelles, contactez-nous pour en demander la suppression.
+      </p>
+
+      <h2>9. Modifications de la présente politique</h2>
+      <p>
+        Cette politique peut être mise à jour périodiquement. Les modifications importantes seront communiquées par la mise à jour de la date en haut de cette page. L'utilisation continue de l'application vaut acceptation de la politique mise à jour.
+      </p>
+
+      <h2>10. Contact</h2>
+      <p>
+        Pour toute question relative à la confidentialité :<br>
+        <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+
+      <div class="footer">
+        © 2025 Marco Di Gioia — Scadì fait partie de Progetto Gazza.
+      </div>
+    </div>
+
+    <div class="lang" data-lang="de">
+      <div class="badge">Privacy Policy</div>
+      <h1>Scadì</h1>
+      <p class="subtitle">Zuletzt aktualisiert: 3. November 2026</p>
+
+      <div class="highlight">
+        <strong>Kurz gesagt:</strong> Scadì übermittelt keine Daten an externe Server. Alles, was du eingibst, bleibt lokal auf deinem Gerät gespeichert. Der einzige beteiligte Dritte ist Google AdMob, das Werbeanzeigen anzeigt.
+      </div>
+
+      <h2>1. Verantwortlicher</h2>
+      <p>
+        Verantwortlicher für die Verarbeitung der über die Werbung erhobenen personenbezogenen Daten ist:<br>
+        <strong>Marco Di Gioia</strong><br>
+        Email: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+      <p>
+        Auf die in der App eingegebenen Daten (Produkte, Ablaufdaten, Mengen) hat Marco Di Gioia keinen Zugriff: Sie verbleiben ausschließlich auf deinem Gerät.
+      </p>
+
+      <h2>2. Lokal gespeicherte Daten</h2>
+      <p>
+        Die App speichert die von dir eingegebenen Daten auf deinem Gerät, und nur dort:
+      </p>
+      <ul>
+        <li>Namen der Lebensmittel</li>
+        <li>Ablaufdaten</li>
+        <li>Kategorien und Mengen</li>
+        <li>Optionale Notizen</li>
+        <li>Einkaufsliste</li>
+        <li>Barcodes bereits eingegebener Produkte, verknüpft mit Name und Kategorie</li>
+      </ul>
+      <p>
+        <strong>Barcode-Scanner:</strong> Das Scannen nutzt den Scanner von Google Play services, der das Bild auf dem Gerät verarbeitet und der App nur den gelesenen Code zurückgibt. Die App fordert keine Kameraberechtigung an und speichert keine Bilder.
+      </p>
+      <p>
+        Diese Daten werden niemals an externe Server übermittelt, nicht an Dritte weitergegeben und sind für den Entwickler nicht zugänglich. Durch das Löschen der App werden alle Daten entfernt.
+      </p>
+
+      <h2>3. Von Dritten erhobene Daten (Google AdMob)</h2>
+      <p>
+        Die App integriert <strong>Google AdMob</strong>, um Werbeanzeigen anzuzeigen. Google kann über sein SDK die folgenden Daten erheben:
+      </p>
+      <ul>
+        <li>Werbekennungen des Geräts (Android Advertising ID)</li>
+        <li>Nutzungsdaten und Interaktion mit Anzeigen</li>
+        <li>IP-Adresse (zur Bestimmung der geografischen Region)</li>
+        <li>Geräteinformationen (Modell, Version des Betriebssystems)</li>
+      </ul>
+      <p>
+        Die Verarbeitung dieser Daten unterliegt der <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Google</a>. Personalisierte Werbung kannst du in den Einstellungen deines Android-Geräts ablehnen:
+        <em>Einstellungen → Google → Werbung → Anzeigenpersonalisierung deaktivieren</em>.
+      </p>
+
+      <h2>4. Rechtsgrundlage der Verarbeitung (DSGVO)</h2>
+      <p>
+        Für die Werbung über AdMob ist die Rechtsgrundlage die <strong>Einwilligung</strong> (Art. 6 Abs. 1 Buchst. a DSGVO), die über das beim ersten Start der App angezeigte Einwilligungsbanner erteilt wird.
+      </p>
+
+      <h2>5. Speicherdauer</h2>
+      <p>
+        Die lokalen Daten der App werden auf dem Gerät gespeichert, bis die App deinstalliert oder die Daten vom Nutzer manuell gelöscht werden. Die von Google AdMob verarbeiteten Daten unterliegen der Speicherrichtlinie von Google.
+      </p>
+
+      <h2>6. Rechte der Nutzer (DSGVO)</h2>
+      <p>Wenn du in der Europäischen Union wohnst, hast du das Recht auf:</p>
+      <ul>
+        <li><strong>Auskunft</strong>: Informationen über die verarbeiteten Daten anzufordern</li>
+        <li><strong>Berichtigung</strong>: unrichtige Daten zu korrigieren</li>
+        <li><strong>Löschung</strong>: die Löschung deiner Daten zu verlangen („Recht auf Vergessenwerden“)</li>
+        <li><strong>Datenübertragbarkeit</strong>: deine Daten in einem lesbaren Format zu erhalten</li>
+        <li><strong>Widerspruch</strong>: der Verarbeitung zu Werbezwecken zu widersprechen</li>
+        <li><strong>Widerruf der Einwilligung</strong>: deine Einwilligung jederzeit zu widerrufen</li>
+      </ul>
+      <p>
+        Um diese Rechte auszuüben, wende dich an: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>.<br>
+        Für von Google verarbeitete Daten kannst du dich direkt über dein <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">Google-Konto</a> an Google wenden.
+      </p>
+      <p>
+        Außerdem hast du das Recht, Beschwerde beim <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la Protezione dei Dati Personali</a> (italienische Aufsichtsbehörde) einzulegen.
+      </p>
+
+      <h2>7. Sicherheit</h2>
+      <p>
+        Die lokalen Daten sind durch die standardmäßigen Sicherheitsmechanismen des Betriebssystems Android geschützt. Die App selbst führt keine Netzwerkübertragungen durch.
+      </p>
+
+      <h2>8. Kinder und Minderjährige</h2>
+      <p>
+        Die App richtet sich nicht speziell an Kinder. Wir erheben wissentlich keine Daten von Kindern unter 13 Jahren. Wenn du Elternteil bist und glaubst, dass dein Kind personenbezogene Daten angegeben hat, kontaktiere uns, um deren Entfernung zu beantragen.
+      </p>
+
+      <h2>9. Änderungen dieser Richtlinie</h2>
+      <p>
+        Diese Richtlinie kann regelmäßig aktualisiert werden. Wesentliche Änderungen werden durch die Aktualisierung des Datums am Anfang dieser Seite mitgeteilt. Die fortgesetzte Nutzung der App gilt als Zustimmung zur aktualisierten Richtlinie.
+      </p>
+
+      <h2>10. Kontakt</h2>
+      <p>
+        Bei Fragen zum Datenschutz:<br>
+        <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+
+      <div class="footer">
+        © 2025 Marco Di Gioia — Scadì ist Teil von Progetto Gazza.
+      </div>
+    </div>
+
+    <div class="lang" data-lang="pt">
+      <div class="badge">Privacy Policy</div>
+      <h1>Scadì</h1>
+      <p class="subtitle">Última atualização: 3 de novembro de 2026</p>
+
+      <div class="highlight">
+        <strong>Em resumo:</strong> O Scadì não transmite nenhum dado a servidores externos. Tudo o que você insere fica armazenado localmente no seu dispositivo. O único terceiro envolvido é o Google AdMob, que exibe anúncios publicitários.
+      </div>
+
+      <h2>1. Responsável pelo tratamento</h2>
+      <p>
+        O responsável pelo tratamento dos dados pessoais recolhidos através da publicidade é:<br>
+        <strong>Marco Di Gioia</strong><br>
+        Email: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+      <p>
+        Marco Di Gioia não tem acesso aos dados inseridos no app (produtos, datas de validade, quantidades): eles permanecem exclusivamente no seu dispositivo.
+      </p>
+
+      <h2>2. Dados armazenados localmente</h2>
+      <p>
+        O app armazena no seu dispositivo, e somente nele, os dados que você insere:
+      </p>
+      <ul>
+        <li>Nomes dos produtos alimentares</li>
+        <li>Datas de validade</li>
+        <li>Categorias e quantidades</li>
+        <li>Notas opcionais</li>
+        <li>Lista de compras</li>
+        <li>Códigos de barras dos produtos já inseridos, associados a nome e categoria</li>
+      </ul>
+      <p>
+        <strong>Leitor de códigos de barras:</strong> a leitura usa o scanner do Google Play services, que processa a imagem no dispositivo e devolve ao app apenas o código lido. O app não solicita a permissão da câmera e não guarda imagens.
+      </p>
+      <p>
+        Esses dados nunca são transmitidos a servidores externos, não são compartilhados com terceiros e não são acessíveis ao desenvolvedor. A exclusão do app remove todos os dados.
+      </p>
+
+      <h2>3. Dados recolhidos por terceiros (Google AdMob)</h2>
+      <p>
+        O app integra o <strong>Google AdMob</strong> para a exibição de anúncios publicitários. O Google pode recolher os seguintes dados através do seu SDK:
+      </p>
+      <ul>
+        <li>Identificadores de publicidade do dispositivo (Android Advertising ID)</li>
+        <li>Dados de utilização e interação com os anúncios</li>
+        <li>Endereço IP (para determinar a região geográfica)</li>
+        <li>Informações do dispositivo (modelo, versão do sistema operacional)</li>
+      </ul>
+      <p>
+        O tratamento desses dados é regulado pela <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidade do Google</a>. Você pode recusar os anúncios personalizados nas configurações do seu dispositivo Android:
+        <em>Configurações → Google → Anúncios → Desativar a personalização de anúncios</em>.
+      </p>
+
+      <h2>4. Base jurídica do tratamento (RGPD)</h2>
+      <p>
+        Para a publicidade através do AdMob, a base jurídica é o <strong>consentimento</strong> (art. 6.º, n.º 1, alínea a do RGPD), expresso através do banner de consentimento exibido na primeira abertura do app.
+      </p>
+
+      <h2>5. Conservação dos dados</h2>
+      <p>
+        Os dados locais do app são conservados no dispositivo até a desinstalação do app ou a exclusão manual pelo utilizador. Os dados tratados pelo Google AdMob estão sujeitos à política de conservação do Google.
+      </p>
+
+      <h2>6. Direitos do utilizador (RGPD)</h2>
+      <p>Se você reside na União Europeia, tem o direito de:</p>
+      <ul>
+        <li><strong>Acesso</strong>: solicitar informações sobre os dados tratados</li>
+        <li><strong>Retificação</strong>: corrigir dados inexatos</li>
+        <li><strong>Apagamento</strong>: solicitar a eliminação dos seus dados ("direito ao esquecimento")</li>
+        <li><strong>Portabilidade</strong>: receber os seus dados em formato legível</li>
+        <li><strong>Oposição</strong>: opor-se ao tratamento para fins publicitários</li>
+        <li><strong>Retirada do consentimento</strong>: retirar o consentimento a qualquer momento</li>
+      </ul>
+      <p>
+        Para exercer esses direitos, contacte: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>.<br>
+        Para os dados tratados pelo Google, você pode contactar diretamente o Google através da sua <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">conta Google</a>.
+      </p>
+      <p>
+        Tem também o direito de apresentar reclamação ao <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la Protezione dei Dati Personali</a> (autoridade de controlo italiana).
+      </p>
+
+      <h2>7. Segurança</h2>
+      <p>
+        Os dados locais são protegidos pelos mecanismos de segurança padrão do sistema operacional Android. O próprio app não realiza nenhuma transmissão de rede.
+      </p>
+
+      <h2>8. Crianças e menores</h2>
+      <p>
+        O app não se destina especificamente a crianças. Não recolhemos conscientemente dados de menores de 13 anos. Se você é pai ou mãe e acredita que o seu filho forneceu dados pessoais, entre em contacto connosco para solicitar a remoção.
+      </p>
+
+      <h2>9. Alterações a esta política</h2>
+      <p>
+        Esta política pode ser atualizada periodicamente. As alterações significativas serão comunicadas através da atualização da data no topo desta página. A utilização continuada do app constitui aceitação da política atualizada.
+      </p>
+
+      <h2>10. Contactos</h2>
+      <p>
+        Para qualquer dúvida relacionada com a privacidade:<br>
+        <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+
+      <div class="footer">
+        © 2025 Marco Di Gioia — O Scadì faz parte do Progetto Gazza.
+      </div>
     </div>
   </div>
+  <script>
+    (function () {
+      var LANGS = ['it', 'en', 'es', 'fr', 'de', 'pt'];
+      var TITLE = 'Privacy Policy \u2014 Scad\u00ec';
+      function valid(l) { return LANGS.indexOf(l) !== -1; }
+      function pick() {
+        try {
+          var q = new URLSearchParams(location.search).get('lang');
+          if (q && valid(q.toLowerCase())) return q.toLowerCase();
+        } catch (e) {}
+        try {
+          var s = localStorage.getItem('lang');
+          if (s && valid(s)) return s;
+        } catch (e) {}
+        var nl = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+        for (var i = 0; i < nl.length; i++) {
+          var p = String(nl[i]).toLowerCase().split('-')[0];
+          if (valid(p)) return p;
+        }
+        return 'en';
+      }
+      function setLang(l) {
+        var blocks = document.querySelectorAll('.lang');
+        for (var i = 0; i < blocks.length; i++) {
+          blocks[i].classList.toggle('active', blocks[i].getAttribute('data-lang') === l);
+        }
+        var btns = document.querySelectorAll('.langs [data-set]');
+        for (var j = 0; j < btns.length; j++) {
+          if (btns[j].getAttribute('data-set') === l) btns[j].setAttribute('aria-current', 'true');
+          else btns[j].removeAttribute('aria-current');
+        }
+        document.documentElement.lang = l;
+        document.title = TITLE;
+      }
+      var btns = document.querySelectorAll('.langs [data-set]');
+      for (var k = 0; k < btns.length; k++) {
+        btns[k].addEventListener('click', function (ev) {
+          ev.preventDefault();
+          var l = this.getAttribute('data-set');
+          setLang(l);
+          try { localStorage.setItem('lang', l); } catch (e) {}
+          try {
+            var u = new URL(location.href);
+            u.searchParams.set('lang', l);
+            history.replaceState(null, '', u.toString());
+          } catch (e) {}
+        });
+      }
+      setLang(pick());
+    })();
+  </script>
 </body>
 </html>

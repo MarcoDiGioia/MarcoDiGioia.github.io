@@ -72,6 +72,23 @@
       font-size: 0.85rem;
       color: #888;
     }
+    .langs { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
+    .langs button {
+      font: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #6a1b9a;
+      background: #f3e5f5;
+      border: 1px solid #8e24aa;
+      border-radius: 999px;
+      padding: 0.2rem 0.8rem;
+      cursor: pointer;
+    }
+    .langs button:hover { background: #e9d0ef; }
+    .langs button:focus-visible { outline: 2px solid #8e24aa; outline-offset: 2px; }
+    .langs button[aria-current="true"] { background: #8e24aa; color: #fff; }
+    .lang { display: none; }
+    .lang.active { display: block; }
     @media (max-width: 600px) {
       .container { padding: 1.5rem 1rem; }
       h1 { font-size: 1.4rem; }
@@ -80,145 +97,789 @@
 </head>
 <body>
   <div class="container">
-    <div class="badge">Privacy Policy</div>
-    <h1>Luna</h1>
-    <p class="subtitle">Ultimo aggiornamento: 3 novembre 2026</p>
+    <nav class="langs" aria-label="Language">
+      <button type="button" data-set-lang="it">Italiano</button>
+      <button type="button" data-set-lang="en">English</button>
+      <button type="button" data-set-lang="es">Español</button>
+      <button type="button" data-set-lang="fr">Français</button>
+      <button type="button" data-set-lang="de">Deutsch</button>
+      <button type="button" data-set-lang="pt">Português</button>
+    </nav>
+    <div class="lang active" data-lang="it">
+      <div class="badge">Privacy Policy</div>
+      <h1>Luna</h1>
+      <p class="subtitle">Ultimo aggiornamento: 3 novembre 2026</p>
 
-    <div class="highlight">
-      <strong>In sintesi:</strong> Luna non trasmette alcun dato a server esterni.
-      I dati del ciclo mestruale e i sintomi che inserisci restano memorizzati
-      esclusivamente sul tuo dispositivo e non sono accessibili allo sviluppatore.
-      L'unica terza parte coinvolta è Google AdMob, che mostra annunci pubblicitari.
+      <div class="highlight">
+        <strong>In sintesi:</strong> Luna non trasmette alcun dato a server esterni.
+        I dati del ciclo mestruale e i sintomi che inserisci restano memorizzati
+        esclusivamente sul tuo dispositivo e non sono accessibili allo sviluppatore.
+        L'unica terza parte coinvolta è Google AdMob, che mostra annunci pubblicitari.
+      </div>
+
+      <h2>1. Titolare del trattamento</h2>
+      <p>
+        Il titolare del trattamento dei dati personali raccolti tramite la pubblicità è:<br>
+        <strong>Marco Di Gioia</strong><br>
+        Email: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+      <p>
+        Per i dati del ciclo inseriti nell'app, Marco Di Gioia non ha accesso
+        a tali informazioni: restano esclusivamente sul tuo dispositivo.
+      </p>
+
+      <h2>2. Dati memorizzati localmente — Dati sensibili relativi alla salute</h2>
+
+      <div class="warning">
+        <strong>Categoria speciale di dati (GDPR art. 9):</strong> I dati sul ciclo mestruale
+        costituiscono <strong>dati relativi alla salute e alla vita sessuale</strong>,
+        categorie particolarmente protette dal GDPR. Luna è progettata con un principio
+        di <em>privacy by design</em>: questi dati non lasciano mai il tuo dispositivo
+        e lo sviluppatore non vi ha alcun accesso in nessun momento.
+      </div>
+
+      <p>
+        L'app memorizza sul tuo dispositivo, e solo su di esso, i dati che inserisci:
+      </p>
+      <ul>
+        <li>Date di inizio e fine del ciclo mestruale</li>
+        <li>Sintomi (es. dolori, umore, altri indicatori)</li>
+        <li>Note personali</li>
+        <li>Diario giornaliero: flusso, umore e sintomi</li>
+        <li>PIN di blocco dell'app (facoltativo), salvato solo sul dispositivo</li>
+        <li>Previsioni basate sui cicli precedenti (calcolate localmente)</li>
+      </ul>
+      <p>
+        Questi dati non vengono mai trasmessi a server esterni, non vengono condivisi con terze parti
+        e non sono accessibili allo sviluppatore. La cancellazione dell'app rimuove tutti i dati
+        dal dispositivo in modo permanente.
+      </p>
+
+      <h2>3. Dati raccolti da terze parti (Google AdMob)</h2>
+      <p>
+        L'app integra <strong>Google AdMob</strong> per la visualizzazione di annunci pubblicitari.
+        Google potrebbe raccogliere i seguenti dati tramite il proprio SDK:
+      </p>
+      <ul>
+        <li>Identificatori pubblicitari del dispositivo (Android Advertising ID)</li>
+        <li>Dati di utilizzo e interazione con gli annunci</li>
+        <li>Indirizzo IP (per determinare la regione geografica)</li>
+        <li>Informazioni sul dispositivo (modello, versione del sistema operativo)</li>
+      </ul>
+      <p>
+        <strong>Google AdMob non ha accesso ai dati del ciclo o ai dati sanitari inseriti nell'app.</strong>
+        Il trattamento dei dati pubblicitari è regolato dalla
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy di Google</a>.
+        Puoi rifiutare gli annunci personalizzati nelle impostazioni del tuo dispositivo Android:
+        <em>Impostazioni → Google → Annunci → Disattiva personalizzazione annunci</em>.
+      </p>
+
+      <h2>4. Base giuridica del trattamento (GDPR)</h2>
+      <p>
+        Per la pubblicità tramite AdMob, la base giuridica è il <strong>consenso esplicito</strong>
+        (art. 6, par. 1, lett. a e art. 9, par. 2, lett. a del GDPR), espresso attraverso
+        il banner di consenso mostrato al primo avvio dell'app.
+      </p>
+      <p>
+        I dati sanitari locali sono trattati esclusivamente dall'utente sul proprio dispositivo:
+        lo sviluppatore non ne è titolare del trattamento, non avendovi accesso in alcun modo.
+      </p>
+
+      <h2>5. Conservazione dei dati</h2>
+      <p>
+        I dati locali dell'app sono conservati sul dispositivo fino alla disinstallazione dell'app
+        o alla cancellazione manuale da parte dell'utente. Il backup è solo manuale: se scegli "Esporta", l'app crea un testo che decidi tu dove inviare o salvare (tramite la condivisione di Android); l'app non lo invia da sola. Non esiste alcun backup automatico
+        su server esterni da parte dell'app.
+        I dati trattati da Google AdMob sono soggetti alla policy di conservazione di Google.
+      </p>
+
+      <h2>6. Diritti dell'utente (GDPR)</h2>
+      <p>Se risiedi nell'Unione Europea, hai il diritto di:</p>
+      <ul>
+        <li><strong>Accesso</strong>: richiedere informazioni sui dati trattati</li>
+        <li><strong>Rettifica</strong>: correggere dati inesatti</li>
+        <li><strong>Cancellazione</strong>: richiedere la cancellazione dei dati ("diritto all'oblio")</li>
+        <li><strong>Portabilità</strong>: ricevere i dati in formato leggibile</li>
+        <li><strong>Opposizione</strong>: opporti al trattamento per finalità pubblicitarie</li>
+        <li><strong>Revoca del consenso</strong>: revocare il consenso in qualsiasi momento</li>
+      </ul>
+      <p>
+        Per esercitare questi diritti, contatta: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>.<br>
+        Per i dati trattati da Google, puoi contattare Google tramite il
+        <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">tuo account Google</a>.
+      </p>
+      <p>
+        Hai inoltre il diritto di proporre reclamo al
+        <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la Protezione dei Dati Personali</a>
+        (Autorità di controllo italiana).
+      </p>
+
+      <h2>7. Sicurezza</h2>
+      <p>
+        I dati locali sono protetti dai meccanismi di sicurezza standard del sistema operativo Android
+        (crittografia del dispositivo, sandbox applicativa). L'app adotta il principio di
+        <em>privacy by design</em>: nessuna connessione di rete viene effettuata per trasmettere
+        dati personali o sanitari.
+      </p>
+
+      <h2>8. Bambini e minori</h2>
+      <p>
+        L'app è destinata a un pubblico adulto. Non raccogliamo consapevolmente dati da minori.
+        Se sei un genitore o tutore e ritieni che un minore stia utilizzando l'app,
+        ti invitiamo a contattarci.
+      </p>
+
+      <h2>9. Modifiche alla presente policy</h2>
+      <p>
+        Questa policy può essere aggiornata periodicamente. Le modifiche significative
+        saranno comunicate tramite aggiornamento della data in cima a questa pagina.
+        L'uso continuato dell'app costituisce accettazione della policy aggiornata.
+      </p>
+
+      <h2>10. Contatti</h2>
+      <p>
+        Per qualsiasi domanda relativa alla privacy:<br>
+        <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+
+      <div class="footer">
+        © 2025 Marco Di Gioia — Luna è parte di Progetto Gazza.
+      </div>
     </div>
 
-    <h2>1. Titolare del trattamento</h2>
-    <p>
-      Il titolare del trattamento dei dati personali raccolti tramite la pubblicità è:<br>
-      <strong>Marco Di Gioia</strong><br>
-      Email: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
-    </p>
-    <p>
-      Per i dati del ciclo inseriti nell'app, Marco Di Gioia non ha accesso
-      a tali informazioni: restano esclusivamente sul tuo dispositivo.
-    </p>
+    <div class="lang" data-lang="en">
+      <div class="badge">Privacy Policy</div>
+      <h1>Luna</h1>
+      <p class="subtitle">Last updated: November 3, 2026</p>
 
-    <h2>2. Dati memorizzati localmente — Dati sensibili relativi alla salute</h2>
+      <div class="highlight">
+        <strong>In short:</strong> Luna does not transmit any data to external servers. The menstrual cycle data and symptoms you enter are stored exclusively on your device and are not accessible to the developer. The only third party involved is Google AdMob, which displays advertisements.
+      </div>
 
-    <div class="warning">
-      <strong>Categoria speciale di dati (GDPR art. 9):</strong> I dati sul ciclo mestruale
-      costituiscono <strong>dati relativi alla salute e alla vita sessuale</strong>,
-      categorie particolarmente protette dal GDPR. Luna è progettata con un principio
-      di <em>privacy by design</em>: questi dati non lasciano mai il tuo dispositivo
-      e lo sviluppatore non vi ha alcun accesso in nessun momento.
+      <h2>1. Data controller</h2>
+      <p>
+        The controller of the personal data collected through advertising is:<br>
+        <strong>Marco Di Gioia</strong><br>
+        Email: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+      <p>
+        As for the cycle data entered in the app, Marco Di Gioia has no access to that information: it remains exclusively on your device.
+      </p>
+
+      <h2>2. Data stored locally — Sensitive health data</h2>
+
+      <div class="warning">
+        <strong>Special category of data (GDPR Art. 9):</strong> Menstrual cycle data constitutes <strong>data concerning health and sex life</strong>, categories that are particularly protected under the GDPR. Luna is designed with a principle of <em>privacy by design</em>: this data never leaves your device and the developer has no access to it at any time.
+      </div>
+
+      <p>
+        The app stores on your device, and only on it, the data you enter:
+      </p>
+      <ul>
+        <li>Start and end dates of the menstrual cycle</li>
+        <li>Symptoms (e.g. pain, mood, other indicators)</li>
+        <li>Personal notes</li>
+        <li>Daily diary: flow, mood and symptoms</li>
+        <li>App lock PIN (optional), saved only on the device</li>
+        <li>Predictions based on previous cycles (calculated locally)</li>
+      </ul>
+      <p>
+        This data is never transmitted to external servers, is not shared with third parties and is not accessible to the developer. Deleting the app permanently removes all data from the device.
+      </p>
+
+      <h2>3. Data collected by third parties (Google AdMob)</h2>
+      <p>
+        The app integrates <strong>Google AdMob</strong> to display advertisements. Google may collect the following data through its SDK:
+      </p>
+      <ul>
+        <li>Device advertising identifiers (Android Advertising ID)</li>
+        <li>Usage data and interaction with ads</li>
+        <li>IP address (to determine the geographic region)</li>
+        <li>Device information (model, operating system version)</li>
+      </ul>
+      <p>
+        <strong>Google AdMob has no access to the cycle data or health data entered in the app.</strong>
+        The processing of advertising data is governed by
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>. You can opt out of personalized ads in your Android device settings:
+        <em>Settings → Google → Ads → Opt out of Ads Personalization</em>.
+      </p>
+
+      <h2>4. Legal basis for processing (GDPR)</h2>
+      <p>
+        For advertising through AdMob, the legal basis is <strong>explicit consent</strong> (Art. 6(1)(a) and Art. 9(2)(a) of the GDPR), given through the consent banner shown when the app is first launched.
+      </p>
+      <p>
+        Local health data is processed exclusively by the user on their own device: the developer is not the data controller for it, as the developer has no access to it in any way.
+      </p>
+
+      <h2>5. Data retention</h2>
+      <p>
+        Local app data is kept on the device until the app is uninstalled or the user deletes it manually. Backup is manual only: if you choose "Export", the app creates a text that you decide where to send or save (through Android sharing); the app does not send it by itself. There is no automatic backup to external servers by the app. Data processed by Google AdMob is subject to Google's retention policy.
+      </p>
+
+      <h2>6. User rights (GDPR)</h2>
+      <p>If you reside in the European Union, you have the right to:</p>
+      <ul>
+        <li><strong>Access</strong>: request information about the data processed</li>
+        <li><strong>Rectification</strong>: correct inaccurate data</li>
+        <li><strong>Erasure</strong>: request the deletion of data ("right to be forgotten")</li>
+        <li><strong>Portability</strong>: receive the data in a readable format</li>
+        <li><strong>Objection</strong>: object to processing for advertising purposes</li>
+        <li><strong>Withdrawal of consent</strong>: withdraw consent at any time</li>
+      </ul>
+      <p>
+        To exercise these rights, contact: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>.<br>
+        For data processed by Google, you can contact Google through your
+        <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">Google account</a>.
+      </p>
+      <p>
+        You also have the right to lodge a complaint with the
+        <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la Protezione dei Dati Personali</a>
+        (Italian supervisory authority).
+      </p>
+
+      <h2>7. Security</h2>
+      <p>
+        Local data is protected by the standard security mechanisms of the Android operating system (device encryption, application sandbox). The app adopts the principle of <em>privacy by design</em>: no network connection is made to transmit personal or health data.
+      </p>
+
+      <h2>8. Children and minors</h2>
+      <p>
+        The app is intended for an adult audience. We do not knowingly collect data from minors. If you are a parent or guardian and believe that a minor is using the app, please contact us.
+      </p>
+
+      <h2>9. Changes to this policy</h2>
+      <p>
+        This policy may be updated from time to time. Significant changes will be communicated by updating the date at the top of this page. Continued use of the app constitutes acceptance of the updated policy.
+      </p>
+
+      <h2>10. Contact</h2>
+      <p>
+        For any questions regarding privacy:<br>
+        <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+
+      <div class="footer">
+        © 2025 Marco Di Gioia — Luna is part of Progetto Gazza.
+      </div>
     </div>
 
-    <p>
-      L'app memorizza sul tuo dispositivo, e solo su di esso, i dati che inserisci:
-    </p>
-    <ul>
-      <li>Date di inizio e fine del ciclo mestruale</li>
-      <li>Sintomi (es. dolori, umore, altri indicatori)</li>
-      <li>Note personali</li>
-      <li>Diario giornaliero: flusso, umore e sintomi</li>
-      <li>PIN di blocco dell'app (facoltativo), salvato solo sul dispositivo</li>
-      <li>Previsioni basate sui cicli precedenti (calcolate localmente)</li>
-    </ul>
-    <p>
-      Questi dati non vengono mai trasmessi a server esterni, non vengono condivisi con terze parti
-      e non sono accessibili allo sviluppatore. La cancellazione dell'app rimuove tutti i dati
-      dal dispositivo in modo permanente.
-    </p>
+    <div class="lang" data-lang="es">
+      <div class="badge">Privacy Policy</div>
+      <h1>Luna</h1>
+      <p class="subtitle">Última actualización: 3 de noviembre de 2026</p>
 
-    <h2>3. Dati raccolti da terze parti (Google AdMob)</h2>
-    <p>
-      L'app integra <strong>Google AdMob</strong> per la visualizzazione di annunci pubblicitari.
-      Google potrebbe raccogliere i seguenti dati tramite il proprio SDK:
-    </p>
-    <ul>
-      <li>Identificatori pubblicitari del dispositivo (Android Advertising ID)</li>
-      <li>Dati di utilizzo e interazione con gli annunci</li>
-      <li>Indirizzo IP (per determinare la regione geografica)</li>
-      <li>Informazioni sul dispositivo (modello, versione del sistema operativo)</li>
-    </ul>
-    <p>
-      <strong>Google AdMob non ha accesso ai dati del ciclo o ai dati sanitari inseriti nell'app.</strong>
-      Il trattamento dei dati pubblicitari è regolato dalla
-      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy di Google</a>.
-      Puoi rifiutare gli annunci personalizzati nelle impostazioni del tuo dispositivo Android:
-      <em>Impostazioni → Google → Annunci → Disattiva personalizzazione annunci</em>.
-    </p>
+      <div class="highlight">
+        <strong>En resumen:</strong> Luna no transmite ningún dato a servidores externos. Los datos del ciclo menstrual y los síntomas que introduces se almacenan exclusivamente en tu dispositivo y no son accesibles para el desarrollador. El único tercero involucrado es Google AdMob, que muestra anuncios publicitarios.
+      </div>
 
-    <h2>4. Base giuridica del trattamento (GDPR)</h2>
-    <p>
-      Per la pubblicità tramite AdMob, la base giuridica è il <strong>consenso esplicito</strong>
-      (art. 6, par. 1, lett. a e art. 9, par. 2, lett. a del GDPR), espresso attraverso
-      il banner di consenso mostrato al primo avvio dell'app.
-    </p>
-    <p>
-      I dati sanitari locali sono trattati esclusivamente dall'utente sul proprio dispositivo:
-      lo sviluppatore non ne è titolare del trattamento, non avendovi accesso in alcun modo.
-    </p>
+      <h2>1. Responsable del tratamiento</h2>
+      <p>
+        El responsable del tratamiento de los datos personales recogidos a través de la publicidad es:<br>
+        <strong>Marco Di Gioia</strong><br>
+        Email: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+      <p>
+        En cuanto a los datos del ciclo introducidos en la aplicación, Marco Di Gioia no tiene acceso a dicha información: permanece exclusivamente en tu dispositivo.
+      </p>
 
-    <h2>5. Conservazione dei dati</h2>
-    <p>
-      I dati locali dell'app sono conservati sul dispositivo fino alla disinstallazione dell'app
-      o alla cancellazione manuale da parte dell'utente. Il backup è solo manuale: se scegli "Esporta", l'app crea un testo che decidi tu dove inviare o salvare (tramite la condivisione di Android); l'app non lo invia da sola. Non esiste alcun backup automatico
-      su server esterni da parte dell'app.
-      I dati trattati da Google AdMob sono soggetti alla policy di conservazione di Google.
-    </p>
+      <h2>2. Datos almacenados localmente — Datos sensibles relativos a la salud</h2>
 
-    <h2>6. Diritti dell'utente (GDPR)</h2>
-    <p>Se risiedi nell'Unione Europea, hai il diritto di:</p>
-    <ul>
-      <li><strong>Accesso</strong>: richiedere informazioni sui dati trattati</li>
-      <li><strong>Rettifica</strong>: correggere dati inesatti</li>
-      <li><strong>Cancellazione</strong>: richiedere la cancellazione dei dati ("diritto all'oblio")</li>
-      <li><strong>Portabilità</strong>: ricevere i dati in formato leggibile</li>
-      <li><strong>Opposizione</strong>: opporti al trattamento per finalità pubblicitarie</li>
-      <li><strong>Revoca del consenso</strong>: revocare il consenso in qualsiasi momento</li>
-    </ul>
-    <p>
-      Per esercitare questi diritti, contatta: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>.<br>
-      Per i dati trattati da Google, puoi contattare Google tramite il
-      <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">tuo account Google</a>.
-    </p>
-    <p>
-      Hai inoltre il diritto di proporre reclamo al
-      <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la Protezione dei Dati Personali</a>
-      (Autorità di controllo italiana).
-    </p>
+      <div class="warning">
+        <strong>Categoría especial de datos (RGPD art. 9):</strong> Los datos sobre el ciclo menstrual constituyen <strong>datos relativos a la salud y a la vida sexual</strong>, categorías especialmente protegidas por el RGPD. Luna está diseñada con un principio de <em>privacy by design</em>: estos datos nunca salen de tu dispositivo y el desarrollador no tiene acceso a ellos en ningún momento.
+      </div>
 
-    <h2>7. Sicurezza</h2>
-    <p>
-      I dati locali sono protetti dai meccanismi di sicurezza standard del sistema operativo Android
-      (crittografia del dispositivo, sandbox applicativa). L'app adotta il principio di
-      <em>privacy by design</em>: nessuna connessione di rete viene effettuata per trasmettere
-      dati personali o sanitari.
-    </p>
+      <p>
+        La aplicación almacena en tu dispositivo, y solo en él, los datos que introduces:
+      </p>
+      <ul>
+        <li>Fechas de inicio y fin del ciclo menstrual</li>
+        <li>Síntomas (p. ej., dolores, estado de ánimo, otros indicadores)</li>
+        <li>Notas personales</li>
+        <li>Diario diario: flujo, estado de ánimo y síntomas</li>
+        <li>PIN de bloqueo de la aplicación (opcional), guardado solo en el dispositivo</li>
+        <li>Previsiones basadas en ciclos anteriores (calculadas localmente)</li>
+      </ul>
+      <p>
+        Estos datos nunca se transmiten a servidores externos, no se comparten con terceros y no son accesibles para el desarrollador. Al eliminar la aplicación se borran de forma permanente todos los datos del dispositivo.
+      </p>
 
-    <h2>8. Bambini e minori</h2>
-    <p>
-      L'app è destinata a un pubblico adulto. Non raccogliamo consapevolmente dati da minori.
-      Se sei un genitore o tutore e ritieni che un minore stia utilizzando l'app,
-      ti invitiamo a contattarci.
-    </p>
+      <h2>3. Datos recogidos por terceros (Google AdMob)</h2>
+      <p>
+        La aplicación integra <strong>Google AdMob</strong> para mostrar anuncios publicitarios. Google podría recoger los siguientes datos a través de su SDK:
+      </p>
+      <ul>
+        <li>Identificadores publicitarios del dispositivo (Android Advertising ID)</li>
+        <li>Datos de uso e interacción con los anuncios</li>
+        <li>Dirección IP (para determinar la región geográfica)</li>
+        <li>Información del dispositivo (modelo, versión del sistema operativo)</li>
+      </ul>
+      <p>
+        <strong>Google AdMob no tiene acceso a los datos del ciclo ni a los datos de salud introducidos en la aplicación.</strong>
+        El tratamiento de los datos publicitarios se rige por la
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad de Google</a>. Puedes rechazar los anuncios personalizados en los ajustes de tu dispositivo Android:
+        <em>Ajustes → Google → Anuncios → Desactivar la personalización de anuncios</em>.
+      </p>
 
-    <h2>9. Modifiche alla presente policy</h2>
-    <p>
-      Questa policy può essere aggiornata periodicamente. Le modifiche significative
-      saranno comunicate tramite aggiornamento della data in cima a questa pagina.
-      L'uso continuato dell'app costituisce accettazione della policy aggiornata.
-    </p>
+      <h2>4. Base jurídica del tratamiento (RGPD)</h2>
+      <p>
+        Para la publicidad a través de AdMob, la base jurídica es el <strong>consentimiento explícito</strong> (art. 6, apdo. 1, letra a y art. 9, apdo. 2, letra a del RGPD), otorgado mediante el banner de consentimiento mostrado en el primer inicio de la aplicación.
+      </p>
+      <p>
+        Los datos de salud locales son tratados exclusivamente por el usuario en su propio dispositivo: el desarrollador no es responsable de su tratamiento, ya que no tiene acceso a ellos de ninguna manera.
+      </p>
 
-    <h2>10. Contatti</h2>
-    <p>
-      Per qualsiasi domanda relativa alla privacy:<br>
-      <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
-    </p>
+      <h2>5. Conservación de los datos</h2>
+      <p>
+        Los datos locales de la aplicación se conservan en el dispositivo hasta que se desinstale la aplicación o el usuario los elimine manualmente. La copia de seguridad es solo manual: si eliges "Exportar", la aplicación crea un texto que tú decides dónde enviar o guardar (mediante la función de compartir de Android); la aplicación no lo envía por sí sola. No existe ninguna copia de seguridad automática en servidores externos por parte de la aplicación. Los datos tratados por Google AdMob están sujetos a la política de conservación de Google.
+      </p>
 
-    <div class="footer">
-      © 2025 Marco Di Gioia — Luna è parte di Progetto Gazza.
+      <h2>6. Derechos del usuario (RGPD)</h2>
+      <p>Si resides en la Unión Europea, tienes derecho a:</p>
+      <ul>
+        <li><strong>Acceso</strong>: solicitar información sobre los datos tratados</li>
+        <li><strong>Rectificación</strong>: corregir datos inexactos</li>
+        <li><strong>Supresión</strong>: solicitar la supresión de los datos ("derecho al olvido")</li>
+        <li><strong>Portabilidad</strong>: recibir los datos en un formato legible</li>
+        <li><strong>Oposición</strong>: oponerte al tratamiento con fines publicitarios</li>
+        <li><strong>Retirada del consentimiento</strong>: retirar el consentimiento en cualquier momento</li>
+      </ul>
+      <p>
+        Para ejercer estos derechos, contacta con: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>.<br>
+        Para los datos tratados por Google, puedes contactar con Google a través de
+        <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">tu cuenta de Google</a>.
+      </p>
+      <p>
+        Tienes además derecho a presentar una reclamación ante el
+        <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la Protezione dei Dati Personali</a>
+        (autoridad de control italiana).
+      </p>
+
+      <h2>7. Seguridad</h2>
+      <p>
+        Los datos locales están protegidos por los mecanismos de seguridad estándar del sistema operativo Android (cifrado del dispositivo, aislamiento de aplicaciones). La aplicación adopta el principio de <em>privacy by design</em>: no se realiza ninguna conexión de red para transmitir datos personales o de salud.
+      </p>
+
+      <h2>8. Niños y menores</h2>
+      <p>
+        La aplicación está dirigida a un público adulto. No recogemos conscientemente datos de menores. Si eres padre, madre o tutor y crees que un menor está utilizando la aplicación, te invitamos a contactarnos.
+      </p>
+
+      <h2>9. Modificaciones de esta política</h2>
+      <p>
+        Esta política puede actualizarse periódicamente. Los cambios significativos se comunicarán mediante la actualización de la fecha en la parte superior de esta página. El uso continuado de la aplicación constituye la aceptación de la política actualizada.
+      </p>
+
+      <h2>10. Contacto</h2>
+      <p>
+        Para cualquier pregunta relacionada con la privacidad:<br>
+        <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+
+      <div class="footer">
+        © 2025 Marco Di Gioia — Luna forma parte de Progetto Gazza.
+      </div>
+    </div>
+
+    <div class="lang" data-lang="fr">
+      <div class="badge">Privacy Policy</div>
+      <h1>Luna</h1>
+      <p class="subtitle">Dernière mise à jour : 3 novembre 2026</p>
+
+      <div class="highlight">
+        <strong>En bref :</strong> Luna ne transmet aucune donnée à des serveurs externes. Les données du cycle menstruel et les symptômes que vous saisissez sont stockés exclusivement sur votre appareil et ne sont pas accessibles au développeur. Le seul tiers concerné est Google AdMob, qui affiche des publicités.
+      </div>
+
+      <h2>1. Responsable du traitement</h2>
+      <p>
+        Le responsable du traitement des données personnelles collectées via la publicité est :<br>
+        <strong>Marco Di Gioia</strong><br>
+        Email: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+      <p>
+        Concernant les données du cycle saisies dans l'application, Marco Di Gioia n'a pas accès à ces informations : elles restent exclusivement sur votre appareil.
+      </p>
+
+      <h2>2. Données stockées localement — Données sensibles relatives à la santé</h2>
+
+      <div class="warning">
+        <strong>Catégorie particulière de données (RGPD art. 9) :</strong> Les données sur le cycle menstruel constituent des <strong>données concernant la santé et la vie sexuelle</strong>, catégories particulièrement protégées par le RGPD. Luna est conçue selon un principe de <em>privacy by design</em> : ces données ne quittent jamais votre appareil et le développeur n'y a accès à aucun moment.
+      </div>
+
+      <p>
+        L'application stocke sur votre appareil, et uniquement sur celui-ci, les données que vous saisissez :
+      </p>
+      <ul>
+        <li>Dates de début et de fin du cycle menstruel</li>
+        <li>Symptômes (par ex. douleurs, humeur, autres indicateurs)</li>
+        <li>Notes personnelles</li>
+        <li>Journal quotidien : flux, humeur et symptômes</li>
+        <li>Code PIN de verrouillage de l'application (facultatif), enregistré uniquement sur l'appareil</li>
+        <li>Prévisions basées sur les cycles précédents (calculées localement)</li>
+      </ul>
+      <p>
+        Ces données ne sont jamais transmises à des serveurs externes, ne sont pas partagées avec des tiers et ne sont pas accessibles au développeur. La suppression de l'application efface définitivement toutes les données de l'appareil.
+      </p>
+
+      <h2>3. Données collectées par des tiers (Google AdMob)</h2>
+      <p>
+        L'application intègre <strong>Google AdMob</strong> pour l'affichage de publicités. Google peut collecter les données suivantes via son SDK :
+      </p>
+      <ul>
+        <li>Identifiants publicitaires de l'appareil (Android Advertising ID)</li>
+        <li>Données d'utilisation et d'interaction avec les publicités</li>
+        <li>Adresse IP (pour déterminer la région géographique)</li>
+        <li>Informations sur l'appareil (modèle, version du système d'exploitation)</li>
+      </ul>
+      <p>
+        <strong>Google AdMob n'a pas accès aux données du cycle ni aux données de santé saisies dans l'application.</strong>
+        Le traitement des données publicitaires est régi par la
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Politique de confidentialité de Google</a>. Vous pouvez refuser les publicités personnalisées dans les paramètres de votre appareil Android :
+        <em>Paramètres → Google → Annonces → Désactiver la personnalisation des annonces</em>.
+      </p>
+
+      <h2>4. Base juridique du traitement (RGPD)</h2>
+      <p>
+        Pour la publicité via AdMob, la base juridique est le <strong>consentement explicite</strong> (art. 6, par. 1, point a) et art. 9, par. 2, point a) du RGPD), exprimé via la bannière de consentement affichée lors du premier lancement de l'application.
+      </p>
+      <p>
+        Les données de santé locales sont traitées exclusivement par l'utilisateur sur son propre appareil : le développeur n'en est pas le responsable du traitement, n'y ayant accès d'aucune manière.
+      </p>
+
+      <h2>5. Conservation des données</h2>
+      <p>
+        Les données locales de l'application sont conservées sur l'appareil jusqu'à la désinstallation de l'application ou la suppression manuelle par l'utilisateur. La sauvegarde est uniquement manuelle : si vous choisissez « Exporter », l'application crée un texte que vous décidez où envoyer ou enregistrer (via le partage Android) ; l'application ne l'envoie pas d'elle-même. Il n'existe aucune sauvegarde automatique sur des serveurs externes de la part de l'application. Les données traitées par Google AdMob sont soumises à la politique de conservation de Google.
+      </p>
+
+      <h2>6. Droits de l'utilisateur (RGPD)</h2>
+      <p>Si vous résidez dans l'Union européenne, vous avez le droit de :</p>
+      <ul>
+        <li><strong>Accès</strong>: demander des informations sur les données traitées</li>
+        <li><strong>Rectification</strong>: corriger des données inexactes</li>
+        <li><strong>Effacement</strong>: demander l'effacement des données (« droit à l'oubli »)</li>
+        <li><strong>Portabilité</strong>: recevoir les données dans un format lisible</li>
+        <li><strong>Opposition</strong>: vous opposer au traitement à des fins publicitaires</li>
+        <li><strong>Retrait du consentement</strong>: retirer votre consentement à tout moment</li>
+      </ul>
+      <p>
+        Pour exercer ces droits, contactez : <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>.<br>
+        Pour les données traitées par Google, vous pouvez contacter Google via
+        <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">votre compte Google</a>.
+      </p>
+      <p>
+        Vous avez également le droit d'introduire une réclamation auprès du
+        <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la Protezione dei Dati Personali</a>
+        (autorité de contrôle italienne).
+      </p>
+
+      <h2>7. Sécurité</h2>
+      <p>
+        Les données locales sont protégées par les mécanismes de sécurité standard du système d'exploitation Android (chiffrement de l'appareil, isolation des applications). L'application adopte le principe de <em>privacy by design</em> : aucune connexion réseau n'est effectuée pour transmettre des données personnelles ou de santé.
+      </p>
+
+      <h2>8. Enfants et mineurs</h2>
+      <p>
+        L'application est destinée à un public adulte. Nous ne collectons pas sciemment de données auprès de mineurs. Si vous êtes parent ou tuteur et pensez qu'un mineur utilise l'application, nous vous invitons à nous contacter.
+      </p>
+
+      <h2>9. Modifications de la présente politique</h2>
+      <p>
+        Cette politique peut être mise à jour périodiquement. Les modifications importantes seront communiquées par la mise à jour de la date en haut de cette page. L'utilisation continue de l'application vaut acceptation de la politique mise à jour.
+      </p>
+
+      <h2>10. Contact</h2>
+      <p>
+        Pour toute question relative à la confidentialité :<br>
+        <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+
+      <div class="footer">
+        © 2025 Marco Di Gioia — Luna fait partie de Progetto Gazza.
+      </div>
+    </div>
+
+    <div class="lang" data-lang="de">
+      <div class="badge">Privacy Policy</div>
+      <h1>Luna</h1>
+      <p class="subtitle">Letzte Aktualisierung: 3. November 2026</p>
+
+      <div class="highlight">
+        <strong>Kurz gesagt:</strong> Luna übermittelt keine Daten an externe Server. Die Daten zu Ihrem Menstruationszyklus und die Symptome, die Sie eingeben, werden ausschließlich auf Ihrem Gerät gespeichert und sind für den Entwickler nicht zugänglich. Der einzige beteiligte Dritte ist Google AdMob, das Werbeanzeigen anzeigt.
+      </div>
+
+      <h2>1. Verantwortlicher</h2>
+      <p>
+        Verantwortlicher für die über die Werbung erhobenen personenbezogenen Daten ist:<br>
+        <strong>Marco Di Gioia</strong><br>
+        Email: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+      <p>
+        Auf die in der App eingegebenen Zyklusdaten hat Marco Di Gioia keinen Zugriff: Sie verbleiben ausschließlich auf Ihrem Gerät.
+      </p>
+
+      <h2>2. Lokal gespeicherte Daten — Sensible Gesundheitsdaten</h2>
+
+      <div class="warning">
+        <strong>Besondere Kategorie von Daten (DSGVO Art. 9):</strong> Daten zum Menstruationszyklus sind <strong>Daten über die Gesundheit und das Sexualleben</strong>, Kategorien, die von der DSGVO besonders geschützt werden. Luna folgt dem Grundsatz <em>privacy by design</em>: Diese Daten verlassen niemals Ihr Gerät, und der Entwickler hat zu keinem Zeitpunkt Zugriff darauf.
+      </div>
+
+      <p>
+        Die App speichert die von Ihnen eingegebenen Daten auf Ihrem Gerät, und nur dort:
+      </p>
+      <ul>
+        <li>Beginn und Ende des Menstruationszyklus</li>
+        <li>Symptome (z. B. Schmerzen, Stimmung, andere Indikatoren)</li>
+        <li>Persönliche Notizen</li>
+        <li>Tagebuch: Blutung, Stimmung und Symptome</li>
+        <li>PIN-Sperre der App (optional), nur auf dem Gerät gespeichert</li>
+        <li>Prognosen auf Grundlage früherer Zyklen (lokal berechnet)</li>
+      </ul>
+      <p>
+        Diese Daten werden niemals an externe Server übermittelt, nicht an Dritte weitergegeben und sind für den Entwickler nicht zugänglich. Durch das Löschen der App werden alle Daten dauerhaft vom Gerät entfernt.
+      </p>
+
+      <h2>3. Von Dritten erhobene Daten (Google AdMob)</h2>
+      <p>
+        Die App integriert <strong>Google AdMob</strong> zur Anzeige von Werbung. Google kann über sein SDK die folgenden Daten erheben:
+      </p>
+      <ul>
+        <li>Werbekennungen des Geräts (Android Advertising ID)</li>
+        <li>Nutzungsdaten und Interaktion mit Anzeigen</li>
+        <li>IP-Adresse (zur Bestimmung der geografischen Region)</li>
+        <li>Geräteinformationen (Modell, Betriebssystemversion)</li>
+      </ul>
+      <p>
+        <strong>Google AdMob hat keinen Zugriff auf die Zyklusdaten oder Gesundheitsdaten, die in der App eingegeben werden.</strong>
+        Die Verarbeitung der Werbedaten unterliegt der
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Google</a>. Personalisierte Werbung können Sie in den Einstellungen Ihres Android-Geräts ablehnen:
+        <em>Einstellungen → Google → Werbung → Anzeigenpersonalisierung deaktivieren</em>.
+      </p>
+
+      <h2>4. Rechtsgrundlage der Verarbeitung (DSGVO)</h2>
+      <p>
+        Für die Werbung über AdMob ist die Rechtsgrundlage die <strong>ausdrückliche Einwilligung</strong> (Art. 6 Abs. 1 Buchst. a und Art. 9 Abs. 2 Buchst. a DSGVO), die über das beim ersten Start der App angezeigte Einwilligungsbanner erteilt wird.
+      </p>
+      <p>
+        Lokale Gesundheitsdaten werden ausschließlich vom Nutzer auf dessen eigenem Gerät verarbeitet: Der Entwickler ist dafür nicht Verantwortlicher, da er in keiner Weise Zugriff darauf hat.
+      </p>
+
+      <h2>5. Speicherdauer</h2>
+      <p>
+        Die lokalen Daten der App werden bis zur Deinstallation der App oder bis zur manuellen Löschung durch den Nutzer auf dem Gerät gespeichert. Die Sicherung erfolgt ausschließlich manuell: Wenn Sie „Exportieren“ wählen, erstellt die App einen Text, den Sie selbst an einen Ort Ihrer Wahl senden oder dort speichern (über die Android-Freigabe); die App sendet ihn nicht von sich aus. Es gibt keine automatische Sicherung der App auf externen Servern. Die von Google AdMob verarbeiteten Daten unterliegen den Speicherrichtlinien von Google.
+      </p>
+
+      <h2>6. Rechte der Nutzer (DSGVO)</h2>
+      <p>Wenn Sie in der Europäischen Union wohnen, haben Sie das Recht auf:</p>
+      <ul>
+        <li><strong>Auskunft</strong>: Informationen über die verarbeiteten Daten anfordern</li>
+        <li><strong>Berichtigung</strong>: unrichtige Daten korrigieren</li>
+        <li><strong>Löschung</strong>: die Löschung der Daten verlangen („Recht auf Vergessenwerden“)</li>
+        <li><strong>Datenübertragbarkeit</strong>: die Daten in einem lesbaren Format erhalten</li>
+        <li><strong>Widerspruch</strong>: der Verarbeitung zu Werbezwecken widersprechen</li>
+        <li><strong>Widerruf der Einwilligung</strong>: die Einwilligung jederzeit widerrufen</li>
+      </ul>
+      <p>
+        Um diese Rechte auszuüben, wenden Sie sich an: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>.<br>
+        Für die von Google verarbeiteten Daten können Sie Google über Ihr
+        <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">Google-Konto</a> kontaktieren.
+      </p>
+      <p>
+        Außerdem haben Sie das Recht, Beschwerde einzulegen beim
+        <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la Protezione dei Dati Personali</a>
+        (italienische Aufsichtsbehörde).
+      </p>
+
+      <h2>7. Sicherheit</h2>
+      <p>
+        Lokale Daten werden durch die Standard-Sicherheitsmechanismen des Betriebssystems Android geschützt (Geräteverschlüsselung, Anwendungs-Sandbox). Die App folgt dem Grundsatz <em>privacy by design</em>: Es wird keine Netzwerkverbindung zur Übermittlung personenbezogener Daten oder Gesundheitsdaten hergestellt.
+      </p>
+
+      <h2>8. Kinder und Minderjährige</h2>
+      <p>
+        Die App richtet sich an Erwachsene. Wir erheben nicht wissentlich Daten von Minderjährigen. Wenn Sie Elternteil oder Erziehungsberechtigter sind und glauben, dass ein Minderjähriger die App nutzt, bitten wir Sie, uns zu kontaktieren.
+      </p>
+
+      <h2>9. Änderungen dieser Richtlinie</h2>
+      <p>
+        Diese Richtlinie kann regelmäßig aktualisiert werden. Wesentliche Änderungen werden durch die Aktualisierung des Datums am Anfang dieser Seite mitgeteilt. Die fortgesetzte Nutzung der App gilt als Annahme der aktualisierten Richtlinie.
+      </p>
+
+      <h2>10. Kontakt</h2>
+      <p>
+        Bei Fragen zum Datenschutz:<br>
+        <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+
+      <div class="footer">
+        © 2025 Marco Di Gioia — Luna ist Teil von Progetto Gazza.
+      </div>
+    </div>
+
+    <div class="lang" data-lang="pt">
+      <div class="badge">Privacy Policy</div>
+      <h1>Luna</h1>
+      <p class="subtitle">Última atualização: 3 de novembro de 2026</p>
+
+      <div class="highlight">
+        <strong>Em resumo:</strong> O Luna não transmite nenhum dado a servidores externos. Os dados do ciclo menstrual e os sintomas que você insere ficam armazenados exclusivamente no seu dispositivo e não são acessíveis ao desenvolvedor. O único terceiro envolvido é o Google AdMob, que exibe anúncios publicitários.
+      </div>
+
+      <h2>1. Responsável pelo tratamento</h2>
+      <p>
+        O responsável pelo tratamento dos dados pessoais coletados por meio da publicidade é:<br>
+        <strong>Marco Di Gioia</strong><br>
+        Email: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+      <p>
+        Quanto aos dados do ciclo inseridos no aplicativo, Marco Di Gioia não tem acesso a essas informações: elas permanecem exclusivamente no seu dispositivo.
+      </p>
+
+      <h2>2. Dados armazenados localmente — Dados sensíveis relativos à saúde</h2>
+
+      <div class="warning">
+        <strong>Categoria especial de dados (RGPD art. 9):</strong> Os dados sobre o ciclo menstrual constituem <strong>dados relativos à saúde e à vida sexual</strong>, categorias especialmente protegidas pelo RGPD. O Luna foi concebido com um princípio de <em>privacy by design</em>: esses dados nunca saem do seu dispositivo e o desenvolvedor não tem acesso a eles em nenhum momento.
+      </div>
+
+      <p>
+        O aplicativo armazena no seu dispositivo, e somente nele, os dados que você insere:
+      </p>
+      <ul>
+        <li>Datas de início e fim do ciclo menstrual</li>
+        <li>Sintomas (ex.: dores, humor, outros indicadores)</li>
+        <li>Notas pessoais</li>
+        <li>Diário diário: fluxo, humor e sintomas</li>
+        <li>PIN de bloqueio do aplicativo (opcional), guardado apenas no dispositivo</li>
+        <li>Previsões baseadas em ciclos anteriores (calculadas localmente)</li>
+      </ul>
+      <p>
+        Esses dados nunca são transmitidos a servidores externos, não são compartilhados com terceiros e não são acessíveis ao desenvolvedor. A exclusão do aplicativo remove permanentemente todos os dados do dispositivo.
+      </p>
+
+      <h2>3. Dados coletados por terceiros (Google AdMob)</h2>
+      <p>
+        O aplicativo integra o <strong>Google AdMob</strong> para a exibição de anúncios publicitários. O Google pode coletar os seguintes dados por meio do seu SDK:
+      </p>
+      <ul>
+        <li>Identificadores de publicidade do dispositivo (Android Advertising ID)</li>
+        <li>Dados de uso e de interação com os anúncios</li>
+        <li>Endereço IP (para determinar a região geográfica)</li>
+        <li>Informações do dispositivo (modelo, versão do sistema operacional)</li>
+      </ul>
+      <p>
+        <strong>O Google AdMob não tem acesso aos dados do ciclo nem aos dados de saúde inseridos no aplicativo.</strong>
+        O tratamento dos dados publicitários é regulado pela
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidade do Google</a>. Você pode recusar anúncios personalizados nas configurações do seu dispositivo Android:
+        <em>Configurações → Google → Anúncios → Desativar a personalização de anúncios</em>.
+      </p>
+
+      <h2>4. Base jurídica do tratamento (RGPD)</h2>
+      <p>
+        Para a publicidade por meio do AdMob, a base jurídica é o <strong>consentimento explícito</strong> (art. 6.º, n.º 1, alínea a) e art. 9.º, n.º 2, alínea a) do RGPD), manifestado através do banner de consentimento exibido na primeira abertura do aplicativo.
+      </p>
+      <p>
+        Os dados de saúde locais são tratados exclusivamente pelo utilizador no seu próprio dispositivo: o desenvolvedor não é o responsável pelo tratamento desses dados, uma vez que não tem acesso a eles de nenhuma forma.
+      </p>
+
+      <h2>5. Conservação dos dados</h2>
+      <p>
+        Os dados locais do aplicativo são conservados no dispositivo até a desinstalação do aplicativo ou a exclusão manual pelo utilizador. O backup é somente manual: se você escolher "Exportar", o aplicativo cria um texto que você decide para onde enviar ou onde guardar (por meio do compartilhamento do Android); o aplicativo não o envia por conta própria. Não existe nenhum backup automático em servidores externos por parte do aplicativo. Os dados tratados pelo Google AdMob estão sujeitos à política de conservação do Google.
+      </p>
+
+      <h2>6. Direitos do utilizador (RGPD)</h2>
+      <p>Se você reside na União Europeia, tem o direito de:</p>
+      <ul>
+        <li><strong>Acesso</strong>: solicitar informações sobre os dados tratados</li>
+        <li><strong>Retificação</strong>: corrigir dados inexatos</li>
+        <li><strong>Apagamento</strong>: solicitar o apagamento dos dados ("direito ao esquecimento")</li>
+        <li><strong>Portabilidade</strong>: receber os dados em formato legível</li>
+        <li><strong>Oposição</strong>: opor-se ao tratamento para fins publicitários</li>
+        <li><strong>Retirada do consentimento</strong>: retirar o consentimento a qualquer momento</li>
+      </ul>
+      <p>
+        Para exercer esses direitos, entre em contato: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>.<br>
+        Para os dados tratados pelo Google, você pode entrar em contato com o Google por meio da
+        <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">sua conta Google</a>.
+      </p>
+      <p>
+        Você tem ainda o direito de apresentar reclamação junto ao
+        <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la Protezione dei Dati Personali</a>
+        (autoridade de controlo italiana).
+      </p>
+
+      <h2>7. Segurança</h2>
+      <p>
+        Os dados locais são protegidos pelos mecanismos de segurança padrão do sistema operacional Android (criptografia do dispositivo, sandbox de aplicativos). O aplicativo adota o princípio de <em>privacy by design</em>: nenhuma conexão de rede é realizada para transmitir dados pessoais ou de saúde.
+      </p>
+
+      <h2>8. Crianças e menores</h2>
+      <p>
+        O aplicativo destina-se a um público adulto. Não coletamos conscientemente dados de menores. Se você é pai, mãe ou responsável e acredita que um menor está utilizando o aplicativo, convidamos você a entrar em contato conosco.
+      </p>
+
+      <h2>9. Alterações a esta política</h2>
+      <p>
+        Esta política pode ser atualizada periodicamente. As alterações significativas serão comunicadas por meio da atualização da data no topo desta página. O uso continuado do aplicativo constitui aceitação da política atualizada.
+      </p>
+
+      <h2>10. Contatos</h2>
+      <p>
+        Para qualquer dúvida relacionada à privacidade:<br>
+        <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+
+      <div class="footer">
+        © 2025 Marco Di Gioia — O Luna faz parte do Progetto Gazza.
+      </div>
     </div>
   </div>
+  <script>
+    (function () {
+      var LANGS = ['it', 'en', 'es', 'fr', 'de', 'pt'];
+      var TITLE = 'Privacy Policy \u2014 Luna';
+      function valid(l) { return LANGS.indexOf(l) !== -1; }
+      function initial() {
+        try {
+          var q = new URLSearchParams(window.location.search).get('lang');
+          if (q && valid(q.toLowerCase())) return q.toLowerCase();
+        } catch (e) {}
+        try {
+          var s = localStorage.getItem('lang');
+          if (s && valid(s)) return s;
+        } catch (e) {}
+        var nav = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || ''];
+        for (var i = 0; i < nav.length; i++) {
+          var p = String(nav[i]).toLowerCase().split('-')[0];
+          if (valid(p)) return p;
+        }
+        return 'en';
+      }
+      function setLang(l, persist) {
+        var blocks = document.querySelectorAll('.lang');
+        for (var i = 0; i < blocks.length; i++) {
+          blocks[i].classList.toggle('active', blocks[i].getAttribute('data-lang') === l);
+        }
+        var btns = document.querySelectorAll('.langs [data-set-lang]');
+        for (var j = 0; j < btns.length; j++) {
+          if (btns[j].getAttribute('data-set-lang') === l) btns[j].setAttribute('aria-current', 'true');
+          else btns[j].removeAttribute('aria-current');
+        }
+        document.documentElement.lang = l;
+        document.title = TITLE;
+        if (persist) {
+          try { localStorage.setItem('lang', l); } catch (e) {}
+          try {
+            var u = new URL(window.location.href);
+            u.searchParams.set('lang', l);
+            history.replaceState(null, '', u.toString());
+          } catch (e) {}
+        }
+      }
+      var btns = document.querySelectorAll('.langs [data-set-lang]');
+      for (var k = 0; k < btns.length; k++) {
+        btns[k].addEventListener('click', function () { setLang(this.getAttribute('data-set-lang'), true); });
+      }
+      setLang(initial(), false);
+    })();
+  </script>
 </body>
 </html>

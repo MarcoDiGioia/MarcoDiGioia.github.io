@@ -72,6 +72,23 @@
       font-size: 0.85rem;
       color: #888;
     }
+    .langs { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
+    .langs button {
+      font: inherit;
+      font-size: 0.85rem;
+      line-height: 1.2;
+      color: #0b7a5f;
+      background: #fff;
+      border: 1px solid #0f9d7a;
+      border-radius: 999px;
+      padding: 0.3rem 0.8rem;
+      cursor: pointer;
+    }
+    .langs button:hover { background: #ecfdf5; }
+    .langs button[aria-current="true"] { background: #0b7a5f; border-color: #0b7a5f; color: #fff; }
+    .langs button:focus-visible { outline: 2px solid #0f9d7a; outline-offset: 2px; }
+    .lang { display: none; }
+    .lang.active { display: block; }
     @media (max-width: 600px) {
       .container { padding: 1.5rem 1rem; }
       h1 { font-size: 1.4rem; }
@@ -80,134 +97,731 @@
 </head>
 <body>
   <div class="container">
-    <div class="badge">Privacy Policy</div>
-    <h1>Billy - Gestione abbonamenti</h1>
-    <p class="subtitle">Ultimo aggiornamento: 3 novembre 2026</p>
+    <nav class="langs" aria-label="Language">
+      <button type="button" data-set="it" lang="it">Italiano</button>
+      <button type="button" data-set="en" lang="en">English</button>
+      <button type="button" data-set="es" lang="es">Español</button>
+      <button type="button" data-set="fr" lang="fr">Français</button>
+      <button type="button" data-set="de" lang="de">Deutsch</button>
+      <button type="button" data-set="pt" lang="pt">Português</button>
+    </nav>
 
-    <div class="highlight">
-      <strong>In sintesi:</strong> Billy non ha account e non trasmette a server esterni gli abbonamenti
-      che inserisci. Nomi, importi, date di rinnovo e note restano esclusivamente sul tuo dispositivo
-      e lo sviluppatore non vi ha accesso. L'unica terza parte coinvolta è Google AdMob, che mostra annunci pubblicitari.
+    <div class="lang active" data-lang="it">
+      <div class="badge">Privacy Policy</div>
+      <h1>Billy - Gestione abbonamenti</h1>
+      <p class="subtitle">Ultimo aggiornamento: 3 novembre 2026</p>
+
+      <div class="highlight">
+        <strong>In sintesi:</strong> Billy non ha account e non trasmette a server esterni gli abbonamenti
+        che inserisci. Nomi, importi, date di rinnovo e note restano esclusivamente sul tuo dispositivo
+        e lo sviluppatore non vi ha accesso. L'unica terza parte coinvolta è Google AdMob, che mostra annunci pubblicitari.
+      </div>
+
+      <h2>1. Titolare del trattamento</h2>
+      <p>
+        Il titolare del trattamento dei dati personali raccolti tramite la pubblicità è:<br>
+        <strong>Marco Di Gioia</strong><br>
+        Email: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+      <p>
+        Marco Di Gioia non ha accesso ai dati degli abbonamenti inseriti nell'app: restano esclusivamente sul tuo dispositivo.
+      </p>
+
+      <h2>2. Dati memorizzati localmente</h2>
+      <p>L'app memorizza sul tuo dispositivo, e solo su di esso, i dati che inserisci:</p>
+      <ul>
+        <li>Nome dell'abbonamento, importo, valuta e frequenza di rinnovo</li>
+        <li>Data di inizio, eventuale periodo di prova e stato di pausa</li>
+        <li>Categoria, colore e note personali</li>
+        <li>Preferenze dell'app (valuta predefinita, giorni di preavviso dei promemoria)</li>
+      </ul>
+      <p>
+        Billy <strong>non</strong> chiede dati di pagamento, numeri di carta o credenziali dei servizi,
+        e non si collega ai tuoi conti bancari. Totali, statistiche e date di rinnovo sono calcolati sul dispositivo.
+        I dati non vengono mai trasmessi a server esterni né condivisi con terze parti.
+        La cancellazione dell'app, o il comando "Elimina tutti i dati", li rimuove in modo permanente.
+      </p>
+
+      <h2>3. Notifiche</h2>
+      <p>
+        I promemoria dei rinnovi e della fine dei periodi di prova sono programmati localmente sul dispositivo
+        tramite il sistema di notifiche di Android. Non passano da alcun server. Puoi disattivarli in qualsiasi
+        momento dalle impostazioni di Android.
+      </p>
+
+      <h2>4. Dati raccolti da terze parti (Google AdMob)</h2>
+      <p>
+        L'app integra <strong>Google AdMob</strong> per la visualizzazione di annunci pubblicitari.
+        Google potrebbe raccogliere i seguenti dati tramite il proprio SDK:
+      </p>
+      <ul>
+        <li>Identificatori pubblicitari del dispositivo (Android Advertising ID)</li>
+        <li>Dati di utilizzo e interazione con gli annunci</li>
+        <li>Indirizzo IP (per determinare la regione geografica)</li>
+        <li>Informazioni sul dispositivo (modello, versione del sistema operativo)</li>
+      </ul>
+      <p>
+        <strong>Google AdMob non ha accesso agli abbonamenti inseriti nell'app.</strong>
+        Il trattamento dei dati pubblicitari è regolato dalla
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy di Google</a>.
+        Nello Spazio economico europeo, nel Regno Unito e in Svizzera, al primo avvio l'app chiede il consenso
+        per gli annunci; puoi modificare la scelta in qualsiasi momento da <em>Impostazioni → Privacy annunci</em> nell'app.
+        Puoi anche disattivare gli annunci personalizzati in Android:
+        <em>Impostazioni → Google → Annunci</em>.
+      </p>
+
+      <h2>5. Base giuridica del trattamento (GDPR)</h2>
+      <p>
+        Per la pubblicità tramite AdMob, la base giuridica è il <strong>consenso</strong>
+        (art. 6, par. 1, lett. a del GDPR), espresso attraverso il messaggio di consenso mostrato al primo avvio.
+      </p>
+      <p>
+        I dati degli abbonamenti sono trattati esclusivamente dall'utente sul proprio dispositivo:
+        lo sviluppatore non ne è titolare del trattamento, non avendovi accesso in alcun modo.
+      </p>
+
+      <h2>6. Conservazione e backup</h2>
+      <p>
+        I dati locali sono conservati sul dispositivo fino alla disinstallazione dell'app o alla cancellazione manuale.
+        Il backup è solo manuale: se scegli "Esporta", l'app crea un testo che decidi tu dove inviare o salvare
+        (tramite la condivisione di Android); l'app non lo invia da sola. Non esiste alcun backup automatico su server esterni.
+        I dati trattati da Google AdMob sono soggetti alla policy di conservazione di Google.
+      </p>
+
+      <h2>7. Diritti dell'utente (GDPR)</h2>
+      <p>Se risiedi nell'Unione Europea, hai il diritto di:</p>
+      <ul>
+        <li><strong>Accesso</strong>: richiedere informazioni sui dati trattati</li>
+        <li><strong>Rettifica</strong>: correggere dati inesatti</li>
+        <li><strong>Cancellazione</strong>: richiedere la cancellazione dei dati</li>
+        <li><strong>Portabilità</strong>: ricevere i dati in formato leggibile</li>
+        <li><strong>Opposizione</strong>: opporti al trattamento per finalità pubblicitarie</li>
+        <li><strong>Revoca del consenso</strong>: revocare il consenso in qualsiasi momento</li>
+      </ul>
+      <p>
+        Per esercitare questi diritti, contatta: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>.<br>
+        Per i dati trattati da Google, puoi usare il
+        <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">tuo account Google</a>.
+      </p>
+      <p>
+        Hai inoltre il diritto di proporre reclamo al
+        <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la Protezione dei Dati Personali</a>.
+      </p>
+
+      <h2>8. Sicurezza</h2>
+      <p>
+        I dati locali sono protetti dai meccanismi di sicurezza standard di Android
+        (crittografia del dispositivo, sandbox applicativa). L'app non effettua connessioni di rete
+        per trasmettere i tuoi dati.
+      </p>
+
+      <h2>9. Minori</h2>
+      <p>
+        L'app non è destinata a minori di 13 anni e non raccogliamo consapevolmente dati da minori.
+      </p>
+
+      <h2>10. Modifiche alla presente policy</h2>
+      <p>
+        Questa policy può essere aggiornata periodicamente. Le modifiche saranno indicate
+        aggiornando la data in cima a questa pagina.
+      </p>
+
+      <h2>11. Contatti</h2>
+      <p>
+        Per qualsiasi domanda relativa alla privacy:<br>
+        <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+
+      <div class="footer">
+        © 2026 Marco Di Gioia — Billy è parte di Progetto Gazza.
+      </div>
     </div>
 
-    <h2>1. Titolare del trattamento</h2>
-    <p>
-      Il titolare del trattamento dei dati personali raccolti tramite la pubblicità è:<br>
-      <strong>Marco Di Gioia</strong><br>
-      Email: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
-    </p>
-    <p>
-      Marco Di Gioia non ha accesso ai dati degli abbonamenti inseriti nell'app: restano esclusivamente sul tuo dispositivo.
-    </p>
+    <div class="lang" data-lang="en">
+      <div class="badge">Privacy Policy</div>
+      <h1>Billy - Subscription Manager</h1>
+      <p class="subtitle">Last updated: November 3, 2026</p>
 
-    <h2>2. Dati memorizzati localmente</h2>
-    <p>L'app memorizza sul tuo dispositivo, e solo su di esso, i dati che inserisci:</p>
-    <ul>
-      <li>Nome dell'abbonamento, importo, valuta e frequenza di rinnovo</li>
-      <li>Data di inizio, eventuale periodo di prova e stato di pausa</li>
-      <li>Categoria, colore e note personali</li>
-      <li>Preferenze dell'app (valuta predefinita, giorni di preavviso dei promemoria)</li>
-    </ul>
-    <p>
-      Billy <strong>non</strong> chiede dati di pagamento, numeri di carta o credenziali dei servizi,
-      e non si collega ai tuoi conti bancari. Totali, statistiche e date di rinnovo sono calcolati sul dispositivo.
-      I dati non vengono mai trasmessi a server esterni né condivisi con terze parti.
-      La cancellazione dell'app, o il comando "Elimina tutti i dati", li rimuove in modo permanente.
-    </p>
+      <div class="highlight">
+        <strong>In short:</strong> Billy has no accounts and does not send the subscriptions you enter to any external server. Names, amounts, renewal dates and notes stay exclusively on your device, and the developer has no access to them. The only third party involved is Google AdMob, which displays advertisements.
+      </div>
 
-    <h2>3. Notifiche</h2>
-    <p>
-      I promemoria dei rinnovi e della fine dei periodi di prova sono programmati localmente sul dispositivo
-      tramite il sistema di notifiche di Android. Non passano da alcun server. Puoi disattivarli in qualsiasi
-      momento dalle impostazioni di Android.
-    </p>
+      <h2>1. Data controller</h2>
+      <p>
+        The controller of the personal data collected through advertising is:<br>
+        <strong>Marco Di Gioia</strong><br>
+        Email: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+      <p>
+        Marco Di Gioia has no access to the subscription data entered in the app: it stays exclusively on your device.
+      </p>
 
-    <h2>4. Dati raccolti da terze parti (Google AdMob)</h2>
-    <p>
-      L'app integra <strong>Google AdMob</strong> per la visualizzazione di annunci pubblicitari.
-      Google potrebbe raccogliere i seguenti dati tramite il proprio SDK:
-    </p>
-    <ul>
-      <li>Identificatori pubblicitari del dispositivo (Android Advertising ID)</li>
-      <li>Dati di utilizzo e interazione con gli annunci</li>
-      <li>Indirizzo IP (per determinare la regione geografica)</li>
-      <li>Informazioni sul dispositivo (modello, versione del sistema operativo)</li>
-    </ul>
-    <p>
-      <strong>Google AdMob non ha accesso agli abbonamenti inseriti nell'app.</strong>
-      Il trattamento dei dati pubblicitari è regolato dalla
-      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy di Google</a>.
-      Nello Spazio economico europeo, nel Regno Unito e in Svizzera, al primo avvio l'app chiede il consenso
-      per gli annunci; puoi modificare la scelta in qualsiasi momento da <em>Impostazioni → Privacy annunci</em> nell'app.
-      Puoi anche disattivare gli annunci personalizzati in Android:
-      <em>Impostazioni → Google → Annunci</em>.
-    </p>
+      <h2>2. Data stored locally</h2>
+      <p>The app stores the data you enter on your device, and only on your device:</p>
+      <ul>
+        <li>Subscription name, amount, currency and renewal frequency</li>
+        <li>Start date, any trial period and pause status</li>
+        <li>Category, colour and personal notes</li>
+        <li>App preferences (default currency, reminder notice days)</li>
+      </ul>
+      <p>
+        Billy does <strong>not</strong> ask for payment details, card numbers or service credentials, and does not connect to your bank accounts. Totals, statistics and renewal dates are calculated on the device. Data is never sent to external servers or shared with third parties. Uninstalling the app, or using the "Delete all data" command, removes it permanently.
+      </p>
 
-    <h2>5. Base giuridica del trattamento (GDPR)</h2>
-    <p>
-      Per la pubblicità tramite AdMob, la base giuridica è il <strong>consenso</strong>
-      (art. 6, par. 1, lett. a del GDPR), espresso attraverso il messaggio di consenso mostrato al primo avvio.
-    </p>
-    <p>
-      I dati degli abbonamenti sono trattati esclusivamente dall'utente sul proprio dispositivo:
-      lo sviluppatore non ne è titolare del trattamento, non avendovi accesso in alcun modo.
-    </p>
+      <h2>3. Notifications</h2>
+      <p>
+        Reminders for renewals and for the end of trial periods are scheduled locally on the device through the Android notification system. They do not go through any server. You can turn them off at any time from Android settings.
+      </p>
 
-    <h2>6. Conservazione e backup</h2>
-    <p>
-      I dati locali sono conservati sul dispositivo fino alla disinstallazione dell'app o alla cancellazione manuale.
-      Il backup è solo manuale: se scegli "Esporta", l'app crea un testo che decidi tu dove inviare o salvare
-      (tramite la condivisione di Android); l'app non lo invia da sola. Non esiste alcun backup automatico su server esterni.
-      I dati trattati da Google AdMob sono soggetti alla policy di conservazione di Google.
-    </p>
+      <h2>4. Data collected by third parties (Google AdMob)</h2>
+      <p>
+        The app integrates <strong>Google AdMob</strong> to display advertisements. Google may collect the following data through its SDK:
+      </p>
+      <ul>
+        <li>Device advertising identifiers (Android Advertising ID)</li>
+        <li>Usage data and interaction with ads</li>
+        <li>IP address (to determine the geographic region)</li>
+        <li>Device information (model, operating system version)</li>
+      </ul>
+      <p>
+        <strong>Google AdMob has no access to the subscriptions entered in the app.</strong>
+        The processing of advertising data is governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>. In the European Economic Area, the United Kingdom and Switzerland, the app asks for consent for ads at first launch; you can change your choice at any time from <em>Settings → Ads privacy</em> in the app. You can also turn off personalised ads in Android: <em>Settings → Google → Ads</em>.
+      </p>
 
-    <h2>7. Diritti dell'utente (GDPR)</h2>
-    <p>Se risiedi nell'Unione Europea, hai il diritto di:</p>
-    <ul>
-      <li><strong>Accesso</strong>: richiedere informazioni sui dati trattati</li>
-      <li><strong>Rettifica</strong>: correggere dati inesatti</li>
-      <li><strong>Cancellazione</strong>: richiedere la cancellazione dei dati</li>
-      <li><strong>Portabilità</strong>: ricevere i dati in formato leggibile</li>
-      <li><strong>Opposizione</strong>: opporti al trattamento per finalità pubblicitarie</li>
-      <li><strong>Revoca del consenso</strong>: revocare il consenso in qualsiasi momento</li>
-    </ul>
-    <p>
-      Per esercitare questi diritti, contatta: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>.<br>
-      Per i dati trattati da Google, puoi usare il
-      <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">tuo account Google</a>.
-    </p>
-    <p>
-      Hai inoltre il diritto di proporre reclamo al
-      <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la Protezione dei Dati Personali</a>.
-    </p>
+      <h2>5. Legal basis for processing (GDPR)</h2>
+      <p>
+        For advertising through AdMob, the legal basis is <strong>consent</strong> (Art. 6(1)(a) GDPR), given through the consent message shown at first launch.
+      </p>
+      <p>
+        Subscription data is processed exclusively by the user on their own device: the developer is not the controller of this processing, as the developer has no access to it in any way.
+      </p>
 
-    <h2>8. Sicurezza</h2>
-    <p>
-      I dati locali sono protetti dai meccanismi di sicurezza standard di Android
-      (crittografia del dispositivo, sandbox applicativa). L'app non effettua connessioni di rete
-      per trasmettere i tuoi dati.
-    </p>
+      <h2>6. Retention and backup</h2>
+      <p>
+        Local data is kept on the device until the app is uninstalled or the data is deleted manually. Backup is manual only: if you choose "Export", the app creates a text that you decide where to send or save (through Android sharing); the app does not send it by itself. There is no automatic backup to external servers. Data processed by Google AdMob is subject to Google's retention policy.
+      </p>
 
-    <h2>9. Minori</h2>
-    <p>
-      L'app non è destinata a minori di 13 anni e non raccogliamo consapevolmente dati da minori.
-    </p>
+      <h2>7. User rights (GDPR)</h2>
+      <p>If you reside in the European Union, you have the right to:</p>
+      <ul>
+        <li><strong>Access</strong>: request information about the data processed</li>
+        <li><strong>Rectification</strong>: correct inaccurate data</li>
+        <li><strong>Erasure</strong>: request the deletion of data</li>
+        <li><strong>Portability</strong>: receive the data in a readable format</li>
+        <li><strong>Objection</strong>: object to processing for advertising purposes</li>
+        <li><strong>Withdrawal of consent</strong>: withdraw consent at any time</li>
+      </ul>
+      <p>
+        To exercise these rights, contact: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>.<br>
+        For data processed by Google, you can use <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">your Google Account</a>.
+      </p>
+      <p>
+        You also have the right to lodge a complaint with the <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la Protezione dei Dati Personali (the Italian data protection authority)</a>.
+      </p>
 
-    <h2>10. Modifiche alla presente policy</h2>
-    <p>
-      Questa policy può essere aggiornata periodicamente. Le modifiche saranno indicate
-      aggiornando la data in cima a questa pagina.
-    </p>
+      <h2>8. Security</h2>
+      <p>
+        Local data is protected by Android's standard security mechanisms (device encryption, application sandbox). The app makes no network connections to transmit your data.
+      </p>
 
-    <h2>11. Contatti</h2>
-    <p>
-      Per qualsiasi domanda relativa alla privacy:<br>
-      <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
-    </p>
+      <h2>9. Children</h2>
+      <p>
+        The app is not intended for children under 13 and we do not knowingly collect data from children.
+      </p>
 
-    <div class="footer">
-      © 2026 Marco Di Gioia — Billy è parte di Progetto Gazza.
+      <h2>10. Changes to this policy</h2>
+      <p>
+        This policy may be updated from time to time. Changes will be indicated by updating the date at the top of this page.
+      </p>
+
+      <h2>11. Contact</h2>
+      <p>
+        For any privacy-related questions:<br>
+        <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+
+      <div class="footer">
+        © 2026 Marco Di Gioia — Billy is part of Progetto Gazza.
+      </div>
+    </div>
+
+    <div class="lang" data-lang="es">
+      <div class="badge">Privacy Policy</div>
+      <h1>Billy - Gestor de suscripciones</h1>
+      <p class="subtitle">Última actualización: 3 de noviembre de 2026</p>
+
+      <div class="highlight">
+        <strong>En resumen:</strong> Billy no tiene cuentas y no envía a servidores externos las suscripciones que introduces. Nombres, importes, fechas de renovación y notas permanecen exclusivamente en tu dispositivo y el desarrollador no tiene acceso a ellos. El único tercero implicado es Google AdMob, que muestra anuncios publicitarios.
+      </div>
+
+      <h2>1. Responsable del tratamiento</h2>
+      <p>
+        El responsable del tratamiento de los datos personales recogidos a través de la publicidad es:<br>
+        <strong>Marco Di Gioia</strong><br>
+        Email: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+      <p>
+        Marco Di Gioia no tiene acceso a los datos de las suscripciones introducidos en la app: permanecen exclusivamente en tu dispositivo.
+      </p>
+
+      <h2>2. Datos almacenados localmente</h2>
+      <p>La app almacena en tu dispositivo, y solo en él, los datos que introduces:</p>
+      <ul>
+        <li>Nombre de la suscripción, importe, moneda y frecuencia de renovación</li>
+        <li>Fecha de inicio, eventual periodo de prueba y estado de pausa</li>
+        <li>Categoría, color y notas personales</li>
+        <li>Preferencias de la app (moneda predeterminada, días de antelación de los recordatorios)</li>
+      </ul>
+      <p>
+        Billy <strong>no</strong> solicita datos de pago, números de tarjeta ni credenciales de los servicios, y no se conecta a tus cuentas bancarias. Los totales, las estadísticas y las fechas de renovación se calculan en el dispositivo. Los datos nunca se transmiten a servidores externos ni se comparten con terceros. Al desinstalar la app, o con el comando "Eliminar todos los datos", se eliminan de forma permanente.
+      </p>
+
+      <h2>3. Notificaciones</h2>
+      <p>
+        Los recordatorios de las renovaciones y del final de los periodos de prueba se programan localmente en el dispositivo mediante el sistema de notificaciones de Android. No pasan por ningún servidor. Puedes desactivarlos en cualquier momento desde los ajustes de Android.
+      </p>
+
+      <h2>4. Datos recogidos por terceros (Google AdMob)</h2>
+      <p>
+        La app integra <strong>Google AdMob</strong> para mostrar anuncios publicitarios. Google podría recoger los siguientes datos a través de su SDK:
+      </p>
+      <ul>
+        <li>Identificadores publicitarios del dispositivo (Android Advertising ID)</li>
+        <li>Datos de uso e interacción con los anuncios</li>
+        <li>Dirección IP (para determinar la región geográfica)</li>
+        <li>Información del dispositivo (modelo, versión del sistema operativo)</li>
+      </ul>
+      <p>
+        <strong>Google AdMob no tiene acceso a las suscripciones introducidas en la app.</strong>
+        El tratamiento de los datos publicitarios se rige por la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidad de Google</a>. En el Espacio Económico Europeo, el Reino Unido y Suiza, la app solicita el consentimiento para los anuncios en el primer inicio; puedes modificar tu elección en cualquier momento desde <em>Ajustes → Privacidad de anuncios</em> en la app. También puedes desactivar los anuncios personalizados en Android: <em>Ajustes → Google → Anuncios</em>.
+      </p>
+
+      <h2>5. Base jurídica del tratamiento (RGPD)</h2>
+      <p>
+        Para la publicidad mediante AdMob, la base jurídica es el <strong>consentimiento</strong> (art. 6, apdo. 1, letra a del RGPD), expresado a través del mensaje de consentimiento mostrado en el primer inicio.
+      </p>
+      <p>
+        Los datos de las suscripciones son tratados exclusivamente por el usuario en su propio dispositivo: el desarrollador no es responsable de su tratamiento, al no tener acceso a ellos en modo alguno.
+      </p>
+
+      <h2>6. Conservación y copia de seguridad</h2>
+      <p>
+        Los datos locales se conservan en el dispositivo hasta la desinstalación de la app o su eliminación manual. La copia de seguridad es solo manual: si eliges "Exportar", la app crea un texto que decides tú dónde enviar o guardar (mediante la función de compartir de Android); la app no lo envía por sí sola. No existe ninguna copia de seguridad automática en servidores externos. Los datos tratados por Google AdMob están sujetos a la política de conservación de Google.
+      </p>
+
+      <h2>7. Derechos del usuario (RGPD)</h2>
+      <p>Si resides en la Unión Europea, tienes derecho a:</p>
+      <ul>
+        <li><strong>Acceso</strong>: solicitar información sobre los datos tratados</li>
+        <li><strong>Rectificación</strong>: corregir datos inexactos</li>
+        <li><strong>Supresión</strong>: solicitar la eliminación de los datos</li>
+        <li><strong>Portabilidad</strong>: recibir los datos en un formato legible</li>
+        <li><strong>Oposición</strong>: oponerte al tratamiento con fines publicitarios</li>
+        <li><strong>Retirada del consentimiento</strong>: retirar el consentimiento en cualquier momento</li>
+      </ul>
+      <p>
+        Para ejercer estos derechos, contacta con: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>.<br>
+        Para los datos tratados por Google, puedes usar <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">tu cuenta de Google</a>.
+      </p>
+      <p>
+        Tienes además derecho a presentar una reclamación ante el <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la Protezione dei Dati Personali (la autoridad italiana de protección de datos)</a>.
+      </p>
+
+      <h2>8. Seguridad</h2>
+      <p>
+        Los datos locales están protegidos por los mecanismos de seguridad estándar de Android (cifrado del dispositivo, aislamiento de aplicaciones). La app no realiza conexiones de red para transmitir tus datos.
+      </p>
+
+      <h2>9. Menores</h2>
+      <p>
+        La app no está destinada a menores de 13 años y no recogemos conscientemente datos de menores.
+      </p>
+
+      <h2>10. Cambios en esta política</h2>
+      <p>
+        Esta política puede actualizarse periódicamente. Los cambios se indicarán actualizando la fecha en la parte superior de esta página.
+      </p>
+
+      <h2>11. Contacto</h2>
+      <p>
+        Para cualquier pregunta relacionada con la privacidad:<br>
+        <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+
+      <div class="footer">
+        © 2026 Marco Di Gioia — Billy forma parte de Progetto Gazza.
+      </div>
+    </div>
+
+    <div class="lang" data-lang="fr">
+      <div class="badge">Privacy Policy</div>
+      <h1>Billy - Gestion des abonnements</h1>
+      <p class="subtitle">Dernière mise à jour : 3 novembre 2026</p>
+
+      <div class="highlight">
+        <strong>En résumé :</strong> Billy n'a pas de comptes et ne transmet à aucun serveur externe les abonnements que vous saisissez. Les noms, montants, dates de renouvellement et notes restent exclusivement sur votre appareil et le développeur n'y a pas accès. Le seul tiers impliqué est Google AdMob, qui affiche des annonces publicitaires.
+      </div>
+
+      <h2>1. Responsable du traitement</h2>
+      <p>
+        Le responsable du traitement des données personnelles collectées via la publicité est :<br>
+        <strong>Marco Di Gioia</strong><br>
+        Email: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+      <p>
+        Marco Di Gioia n'a pas accès aux données des abonnements saisies dans l'application : elles restent exclusivement sur votre appareil.
+      </p>
+
+      <h2>2. Données stockées localement</h2>
+      <p>L'application stocke sur votre appareil, et uniquement sur celui-ci, les données que vous saisissez :</p>
+      <ul>
+        <li>Nom de l'abonnement, montant, devise et fréquence de renouvellement</li>
+        <li>Date de début, éventuelle période d'essai et état de pause</li>
+        <li>Catégorie, couleur et notes personnelles</li>
+        <li>Préférences de l'application (devise par défaut, jours de préavis des rappels)</li>
+      </ul>
+      <p>
+        Billy ne demande <strong>pas</strong> de données de paiement, de numéros de carte ni d'identifiants des services, et ne se connecte pas à vos comptes bancaires. Les totaux, les statistiques et les dates de renouvellement sont calculés sur l'appareil. Les données ne sont jamais transmises à des serveurs externes ni partagées avec des tiers. La désinstallation de l'application, ou la commande « Supprimer toutes les données », les supprime définitivement.
+      </p>
+
+      <h2>3. Notifications</h2>
+      <p>
+        Les rappels des renouvellements et de la fin des périodes d'essai sont programmés localement sur l'appareil via le système de notifications d'Android. Ils ne passent par aucun serveur. Vous pouvez les désactiver à tout moment depuis les paramètres d'Android.
+      </p>
+
+      <h2>4. Données collectées par des tiers (Google AdMob)</h2>
+      <p>
+        L'application intègre <strong>Google AdMob</strong> pour l'affichage d'annonces publicitaires. Google pourrait collecter les données suivantes via son SDK :
+      </p>
+      <ul>
+        <li>Identifiants publicitaires de l'appareil (Android Advertising ID)</li>
+        <li>Données d'utilisation et d'interaction avec les annonces</li>
+        <li>Adresse IP (pour déterminer la région géographique)</li>
+        <li>Informations sur l'appareil (modèle, version du système d'exploitation)</li>
+      </ul>
+      <p>
+        <strong>Google AdMob n'a pas accès aux abonnements saisis dans l'application.</strong>
+        Le traitement des données publicitaires est régi par la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Politique de confidentialité de Google</a>. Dans l'Espace économique européen, au Royaume-Uni et en Suisse, l'application demande le consentement pour les annonces au premier lancement ; vous pouvez modifier votre choix à tout moment depuis <em>Paramètres → Confidentialité des annonces</em> dans l'application. Vous pouvez également désactiver les annonces personnalisées dans Android : <em>Paramètres → Google → Annonces</em>.
+      </p>
+
+      <h2>5. Base juridique du traitement (RGPD)</h2>
+      <p>
+        Pour la publicité via AdMob, la base juridique est le <strong>consentement</strong> (art. 6, par. 1, point a du RGPD), exprimé par le message de consentement affiché au premier lancement.
+      </p>
+      <p>
+        Les données des abonnements sont traitées exclusivement par l'utilisateur sur son propre appareil : le développeur n'est pas responsable de ce traitement, n'y ayant accès d'aucune manière.
+      </p>
+
+      <h2>6. Conservation et sauvegarde</h2>
+      <p>
+        Les données locales sont conservées sur l'appareil jusqu'à la désinstallation de l'application ou à la suppression manuelle. La sauvegarde est uniquement manuelle : si vous choisissez « Exporter », l'application crée un texte que vous décidez où envoyer ou enregistrer (via le partage d'Android) ; l'application ne l'envoie pas d'elle-même. Il n'existe aucune sauvegarde automatique sur des serveurs externes. Les données traitées par Google AdMob sont soumises à la politique de conservation de Google.
+      </p>
+
+      <h2>7. Droits de l'utilisateur (RGPD)</h2>
+      <p>Si vous résidez dans l'Union européenne, vous avez le droit de :</p>
+      <ul>
+        <li><strong>Accès</strong>: demander des informations sur les données traitées</li>
+        <li><strong>Rectification</strong>: corriger des données inexactes</li>
+        <li><strong>Effacement</strong>: demander la suppression des données</li>
+        <li><strong>Portabilité</strong>: recevoir les données dans un format lisible</li>
+        <li><strong>Opposition</strong>: vous opposer au traitement à des fins publicitaires</li>
+        <li><strong>Retrait du consentement</strong>: retirer votre consentement à tout moment</li>
+      </ul>
+      <p>
+        Pour exercer ces droits, contactez : <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>.<br>
+        Pour les données traitées par Google, vous pouvez utiliser <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">votre compte Google</a>.
+      </p>
+      <p>
+        Vous avez en outre le droit d'introduire une réclamation auprès du <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la Protezione dei Dati Personali (l'autorité italienne de protection des données)</a>.
+      </p>
+
+      <h2>8. Sécurité</h2>
+      <p>
+        Les données locales sont protégées par les mécanismes de sécurité standard d'Android (chiffrement de l'appareil, isolation des applications). L'application n'effectue aucune connexion réseau pour transmettre vos données.
+      </p>
+
+      <h2>9. Mineurs</h2>
+      <p>
+        L'application n'est pas destinée aux enfants de moins de 13 ans et nous ne collectons pas sciemment de données auprès de mineurs.
+      </p>
+
+      <h2>10. Modifications de la présente politique</h2>
+      <p>
+        Cette politique peut être mise à jour périodiquement. Les modifications seront indiquées par la mise à jour de la date en haut de cette page.
+      </p>
+
+      <h2>11. Contact</h2>
+      <p>
+        Pour toute question relative à la confidentialité :<br>
+        <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+
+      <div class="footer">
+        © 2026 Marco Di Gioia — Billy fait partie de Progetto Gazza.
+      </div>
+    </div>
+
+    <div class="lang" data-lang="de">
+      <div class="badge">Privacy Policy</div>
+      <h1>Billy - Abo-Verwaltung</h1>
+      <p class="subtitle">Letzte Aktualisierung: 3. November 2026</p>
+
+      <div class="highlight">
+        <strong>Kurz gesagt:</strong> Billy hat keine Konten und überträgt die von dir eingegebenen Abonnements nicht an externe Server. Namen, Beträge, Verlängerungsdaten und Notizen bleiben ausschließlich auf deinem Gerät, und der Entwickler hat keinen Zugriff darauf. Der einzige beteiligte Dritte ist Google AdMob, das Werbeanzeigen anzeigt.
+      </div>
+
+      <h2>1. Verantwortlicher</h2>
+      <p>
+        Verantwortlicher für die über die Werbung erhobenen personenbezogenen Daten ist:<br>
+        <strong>Marco Di Gioia</strong><br>
+        Email: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+      <p>
+        Marco Di Gioia hat keinen Zugriff auf die in der App eingegebenen Abonnementdaten: Sie bleiben ausschließlich auf deinem Gerät.
+      </p>
+
+      <h2>2. Lokal gespeicherte Daten</h2>
+      <p>Die App speichert die von dir eingegebenen Daten auf deinem Gerät, und nur dort:</p>
+      <ul>
+        <li>Name des Abonnements, Betrag, Währung und Verlängerungsintervall</li>
+        <li>Startdatum, ggf. Testzeitraum und Pausenstatus</li>
+        <li>Kategorie, Farbe und persönliche Notizen</li>
+        <li>App-Einstellungen (Standardwährung, Vorlaufzeit der Erinnerungen in Tagen)</li>
+      </ul>
+      <p>
+        Billy fragt <strong>nicht</strong> nach Zahlungsdaten, Kartennummern oder Zugangsdaten der Dienste und verbindet sich nicht mit deinen Bankkonten. Summen, Statistiken und Verlängerungsdaten werden auf dem Gerät berechnet. Die Daten werden niemals an externe Server übertragen oder an Dritte weitergegeben. Das Deinstallieren der App oder der Befehl „Alle Daten löschen" entfernt sie dauerhaft.
+      </p>
+
+      <h2>3. Benachrichtigungen</h2>
+      <p>
+        Die Erinnerungen an Verlängerungen und an das Ende von Testzeiträumen werden lokal auf dem Gerät über das Benachrichtigungssystem von Android geplant. Sie laufen über keinen Server. Du kannst sie jederzeit in den Android-Einstellungen deaktivieren.
+      </p>
+
+      <h2>4. Von Dritten erhobene Daten (Google AdMob)</h2>
+      <p>
+        Die App integriert <strong>Google AdMob</strong> zur Anzeige von Werbeanzeigen. Google kann über sein SDK folgende Daten erheben:
+      </p>
+      <ul>
+        <li>Werbekennungen des Geräts (Android Advertising ID)</li>
+        <li>Nutzungsdaten und Interaktion mit Anzeigen</li>
+        <li>IP-Adresse (zur Bestimmung der geografischen Region)</li>
+        <li>Geräteinformationen (Modell, Version des Betriebssystems)</li>
+      </ul>
+      <p>
+        <strong>Google AdMob hat keinen Zugriff auf die in der App eingegebenen Abonnements.</strong>
+        Die Verarbeitung der Werbedaten unterliegt der <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Google</a>. Im Europäischen Wirtschaftsraum, im Vereinigten Königreich und in der Schweiz fragt die App beim ersten Start nach der Einwilligung für Anzeigen; du kannst deine Entscheidung jederzeit unter <em>Einstellungen → Datenschutz für Anzeigen</em> in der App ändern. Du kannst personalisierte Anzeigen auch in Android deaktivieren: <em>Einstellungen → Google → Anzeigen</em>.
+      </p>
+
+      <h2>5. Rechtsgrundlage der Verarbeitung (DSGVO)</h2>
+      <p>
+        Für die Werbung über AdMob ist die Rechtsgrundlage die <strong>Einwilligung</strong> (Art. 6 Abs. 1 Buchst. a DSGVO), die über die beim ersten Start angezeigte Einwilligungsabfrage erteilt wird.
+      </p>
+      <p>
+        Die Abonnementdaten werden ausschließlich vom Nutzer auf dem eigenen Gerät verarbeitet: Der Entwickler ist für diese Verarbeitung nicht verantwortlich, da er in keiner Weise darauf zugreifen kann.
+      </p>
+
+      <h2>6. Speicherung und Backup</h2>
+      <p>
+        Die lokalen Daten werden auf dem Gerät bis zur Deinstallation der App oder zur manuellen Löschung gespeichert. Das Backup erfolgt nur manuell: Wenn du „Exportieren" wählst, erstellt die App einen Text, den du selbst an einen Ort deiner Wahl senden oder dort speichern kannst (über die Android-Freigabe); die App sendet ihn nicht von selbst. Es gibt kein automatisches Backup auf externen Servern. Die von Google AdMob verarbeiteten Daten unterliegen der Aufbewahrungsrichtlinie von Google.
+      </p>
+
+      <h2>7. Rechte der Nutzer (DSGVO)</h2>
+      <p>Wenn du in der Europäischen Union wohnst, hast du das Recht auf:</p>
+      <ul>
+        <li><strong>Auskunft</strong>: Informationen über die verarbeiteten Daten anfordern</li>
+        <li><strong>Berichtigung</strong>: unrichtige Daten korrigieren</li>
+        <li><strong>Löschung</strong>: die Löschung der Daten verlangen</li>
+        <li><strong>Datenübertragbarkeit</strong>: die Daten in einem lesbaren Format erhalten</li>
+        <li><strong>Widerspruch</strong>: der Verarbeitung zu Werbezwecken widersprechen</li>
+        <li><strong>Widerruf der Einwilligung</strong>: die Einwilligung jederzeit widerrufen</li>
+      </ul>
+      <p>
+        Um diese Rechte auszuüben, kontaktiere: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>.<br>
+        Für die von Google verarbeiteten Daten kannst du <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">dein Google-Konto</a> nutzen.
+      </p>
+      <p>
+        Du hast außerdem das Recht, bei der <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la Protezione dei Dati Personali (der italienischen Datenschutzbehörde)</a> Beschwerde einzulegen.
+      </p>
+
+      <h2>8. Sicherheit</h2>
+      <p>
+        Die lokalen Daten sind durch die Standard-Sicherheitsmechanismen von Android geschützt (Geräteverschlüsselung, App-Sandbox). Die App stellt keine Netzwerkverbindungen her, um deine Daten zu übertragen.
+      </p>
+
+      <h2>9. Minderjährige</h2>
+      <p>
+        Die App richtet sich nicht an Kinder unter 13 Jahren, und wir erheben wissentlich keine Daten von Minderjährigen.
+      </p>
+
+      <h2>10. Änderungen dieser Richtlinie</h2>
+      <p>
+        Diese Richtlinie kann regelmäßig aktualisiert werden. Änderungen werden durch die Aktualisierung des Datums am Anfang dieser Seite kenntlich gemacht.
+      </p>
+
+      <h2>11. Kontakt</h2>
+      <p>
+        Bei Fragen zum Datenschutz:<br>
+        <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+
+      <div class="footer">
+        © 2026 Marco Di Gioia — Billy ist Teil von Progetto Gazza.
+      </div>
+    </div>
+
+    <div class="lang" data-lang="pt">
+      <div class="badge">Privacy Policy</div>
+      <h1>Billy - Gestão de subscrições</h1>
+      <p class="subtitle">Última atualização: 3 de novembro de 2026</p>
+
+      <div class="highlight">
+        <strong>Em resumo:</strong> O Billy não tem contas e não transmite a servidores externos as subscrições que introduz. Nomes, montantes, datas de renovação e notas ficam exclusivamente no seu dispositivo e o programador não tem acesso aos mesmos. O único terceiro envolvido é a Google AdMob, que apresenta anúncios publicitários.
+      </div>
+
+      <h2>1. Responsável pelo tratamento</h2>
+      <p>
+        O responsável pelo tratamento dos dados pessoais recolhidos através da publicidade é:<br>
+        <strong>Marco Di Gioia</strong><br>
+        Email: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+      <p>
+        Marco Di Gioia não tem acesso aos dados das subscrições introduzidos na app: ficam exclusivamente no seu dispositivo.
+      </p>
+
+      <h2>2. Dados armazenados localmente</h2>
+      <p>A app armazena no seu dispositivo, e apenas nele, os dados que introduz:</p>
+      <ul>
+        <li>Nome da subscrição, montante, moeda e frequência de renovação</li>
+        <li>Data de início, eventual período de teste e estado de pausa</li>
+        <li>Categoria, cor e notas pessoais</li>
+        <li>Preferências da app (moeda predefinida, dias de antecedência dos lembretes)</li>
+      </ul>
+      <p>
+        O Billy <strong>não</strong> pede dados de pagamento, números de cartão nem credenciais dos serviços, e não se liga às suas contas bancárias. Totais, estatísticas e datas de renovação são calculados no dispositivo. Os dados nunca são transmitidos a servidores externos nem partilhados com terceiros. A desinstalação da app, ou o comando "Eliminar todos os dados", remove-os de forma permanente.
+      </p>
+
+      <h2>3. Notificações</h2>
+      <p>
+        Os lembretes das renovações e do fim dos períodos de teste são programados localmente no dispositivo através do sistema de notificações do Android. Não passam por nenhum servidor. Pode desativá-los a qualquer momento nas definições do Android.
+      </p>
+
+      <h2>4. Dados recolhidos por terceiros (Google AdMob)</h2>
+      <p>
+        A app integra a <strong>Google AdMob</strong> para a apresentação de anúncios publicitários. A Google poderá recolher os seguintes dados através do seu SDK:
+      </p>
+      <ul>
+        <li>Identificadores publicitários do dispositivo (Android Advertising ID)</li>
+        <li>Dados de utilização e de interação com os anúncios</li>
+        <li>Endereço IP (para determinar a região geográfica)</li>
+        <li>Informações do dispositivo (modelo, versão do sistema operativo)</li>
+      </ul>
+      <p>
+        <strong>A Google AdMob não tem acesso às subscrições introduzidas na app.</strong>
+        O tratamento dos dados publicitários é regulado pela <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidade da Google</a>. No Espaço Económico Europeu, no Reino Unido e na Suíça, a app pede o consentimento para os anúncios no primeiro arranque; pode alterar a sua escolha a qualquer momento em <em>Definições → Privacidade dos anúncios</em> na app. Pode também desativar os anúncios personalizados no Android: <em>Definições → Google → Anúncios</em>.
+      </p>
+
+      <h2>5. Base jurídica do tratamento (RGPD)</h2>
+      <p>
+        Para a publicidade através da AdMob, a base jurídica é o <strong>consentimento</strong> (art. 6.º, n.º 1, alínea a) do RGPD), manifestado através da mensagem de consentimento apresentada no primeiro arranque.
+      </p>
+      <p>
+        Os dados das subscrições são tratados exclusivamente pelo utilizador no seu próprio dispositivo: o programador não é responsável pelo tratamento, não tendo acesso aos mesmos de forma alguma.
+      </p>
+
+      <h2>6. Conservação e cópia de segurança</h2>
+      <p>
+        Os dados locais são conservados no dispositivo até à desinstalação da app ou à eliminação manual. A cópia de segurança é apenas manual: se escolher "Exportar", a app cria um texto que decide você onde enviar ou guardar (através da partilha do Android); a app não o envia por si só. Não existe qualquer cópia de segurança automática em servidores externos. Os dados tratados pela Google AdMob estão sujeitos à política de conservação da Google.
+      </p>
+
+      <h2>7. Direitos do utilizador (RGPD)</h2>
+      <p>Se residir na União Europeia, tem o direito de:</p>
+      <ul>
+        <li><strong>Acesso</strong>: solicitar informações sobre os dados tratados</li>
+        <li><strong>Retificação</strong>: corrigir dados inexatos</li>
+        <li><strong>Apagamento</strong>: solicitar o apagamento dos dados</li>
+        <li><strong>Portabilidade</strong>: receber os dados num formato legível</li>
+        <li><strong>Oposição</strong>: opor-se ao tratamento para fins publicitários</li>
+        <li><strong>Retirada do consentimento</strong>: retirar o consentimento a qualquer momento</li>
+      </ul>
+      <p>
+        Para exercer estes direitos, contacte: <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>.<br>
+        Para os dados tratados pela Google, pode utilizar <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">a sua conta Google</a>.
+      </p>
+      <p>
+        Tem ainda o direito de apresentar reclamação junto do <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la Protezione dei Dati Personali (a autoridade italiana de proteção de dados)</a>.
+      </p>
+
+      <h2>8. Segurança</h2>
+      <p>
+        Os dados locais são protegidos pelos mecanismos de segurança padrão do Android (encriptação do dispositivo, sandbox das aplicações). A app não efetua ligações de rede para transmitir os seus dados.
+      </p>
+
+      <h2>9. Menores</h2>
+      <p>
+        A app não se destina a menores de 13 anos e não recolhemos conscientemente dados de menores.
+      </p>
+
+      <h2>10. Alterações a esta política</h2>
+      <p>
+        Esta política pode ser atualizada periodicamente. As alterações serão indicadas através da atualização da data no topo desta página.
+      </p>
+
+      <h2>11. Contactos</h2>
+      <p>
+        Para qualquer questão relacionada com a privacidade:<br>
+        <a href="mailto:marcodigioia24@gmail.com">marcodigioia24@gmail.com</a>
+      </p>
+
+      <div class="footer">
+        © 2026 Marco Di Gioia — O Billy faz parte do Progetto Gazza.
+      </div>
     </div>
   </div>
+  <script>
+    (function () {
+      var LANGS = ['it', 'en', 'es', 'fr', 'de', 'pt'];
+      var TITLE = 'Privacy Policy \u2014 Billy';
+      function valid(l) { return LANGS.indexOf(l) !== -1; }
+      function initial() {
+        var l;
+        try { l = new URLSearchParams(location.search).get('lang'); } catch (e) {}
+        if (l) { l = l.toLowerCase(); if (valid(l)) return l; }
+        try { l = localStorage.getItem('lang'); if (valid(l)) return l; } catch (e) {}
+        var nav = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || ''];
+        for (var i = 0; i < nav.length; i++) {
+          var p = String(nav[i]).toLowerCase().split('-')[0];
+          if (valid(p)) return p;
+        }
+        return 'en';
+      }
+      function apply(l) {
+        var blocks = document.querySelectorAll('.lang');
+        for (var i = 0; i < blocks.length; i++) {
+          blocks[i].classList.toggle('active', blocks[i].getAttribute('data-lang') === l);
+        }
+        var btns = document.querySelectorAll('.langs button');
+        for (var j = 0; j < btns.length; j++) {
+          if (btns[j].getAttribute('data-set') === l) btns[j].setAttribute('aria-current', 'true');
+          else btns[j].removeAttribute('aria-current');
+        }
+        document.documentElement.lang = l;
+        document.title = TITLE;
+      }
+      function choose(l) {
+        apply(l);
+        try { localStorage.setItem('lang', l); } catch (e) {}
+        try {
+          var u = new URL(location.href);
+          u.searchParams.set('lang', l);
+          history.replaceState(null, '', u.toString());
+        } catch (e) {}
+      }
+      var btns = document.querySelectorAll('.langs button');
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener('click', function () { choose(this.getAttribute('data-set')); });
+      }
+      apply(initial());
+    })();
+  </script>
 </body>
 </html>

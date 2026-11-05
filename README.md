@@ -8,5 +8,3 @@ Pagine statiche dei progetti (privacy policy delle app, ecc.). Pubblicate con Gi
 
 Ogni progetto nuovo ha la sua cartella.
 - `billy/privacy/` — Billy
-
-Regole specifiche del sito per Claude: vedi `CLAUDE.md`.

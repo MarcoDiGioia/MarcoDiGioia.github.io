@@ -5,6 +5,6 @@ Pagine statiche dei progetti (privacy policy delle app, ecc.). Pubblicate con Gi
 - `luna/privacy/` — Luna
 - `prendimi/privacy/` — Prendimi
 - `scadi/privacy/` — Scadì
+- `billy/privacy/` — Billy
 
 Ogni progetto nuovo ha la sua cartella.
-- `billy/privacy/` — Billy

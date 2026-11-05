@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Sito statico di Marco Di Gioia (sviluppatore indipendente), pubblicato con GitHub Pages da `main` sul dominio indicato in `CNAME`. Il progetto Claude collegato serve a gestire il sito, le privacy policy delle app e i tool/schemi che Marco costruisce. Usa claude-projects-starter (https://github.com/MarcoDiGioia/claude-projects-starter): leggilo dall'indirizzo pubblico raw, non clonarlo.
+Sito statico di Marco Di Gioia (sviluppatore indipendente), pubblicato con GitHub Pages da `main` sul dominio indicato in `CNAME`. Qui sono solo le regole specifiche del sito: le regole generali, le skill e le procedure stanno nelle istruzioni del progetto Claude e nel repository pubblico claude-projects-starter (lette da lì quando servono, non copiate qui).
 
 ## Struttura
 
@@ -9,7 +9,7 @@ Sito statico di Marco Di Gioia (sviluppatore indipendente), pubblicato con GitHu
 - `app-ads.txt`: dichiarazione AdMob. Non modificare senza richiesta esplicita.
 - `CNAME`, `.nojekyll`: configurazione di Pages. Non toccare senza richiesta esplicita.
 
-## Regole (modulo `regole-base`)
+## Regole del sito
 
 1. Cloud prima di tutto: il lavoro vive nei repository remoti; ogni risultato torna sul repository.
 2. Nessun segreto in chat o nei file.
@@ -32,22 +32,3 @@ Sito statico di Marco Di Gioia (sviluppatore indipendente), pubblicato con GitHu
 - Nuova app: copiare la struttura di una policy esistente in `<app>/privacy/index.html` (modulo `privacy-policy`), mantenere le 6 lingue e il selettore, aggiungere il link in `index.html` e la voce nel `README.md`. Scegliere un colore d'accento nuovo per il pallino in `index.html`.
 - Le policy devono restare coerenti col comportamento reale dell'app (dati raccolti, AdMob): se l'app cambia, segnalare a Marco di rivedere la policy. Non è consulenza legale.
 - Pagine autonome: CSS inline, nessuna dipendenza o build.
-
-## Tool e schemi di Marco
-
-Altri repository (tool, schemi) usano gli stessi moduli: chiedere "usa claude-projects-starter" e seguire `moduli/README.md` dello starter (piano → ok di Marco → PR). `.moduli.json` registra i moduli applicati a questo repo.
-
-## Risparmio di token
-
-**Regola salda: il risparmio di token non deve mai ridurre la qualità del lavoro.** Se sono in conflitto vince la qualità. Si elimina solo lo spreco, mai ragionamento, letture necessarie, verifiche, completezza, sicurezza.
-
-Dettagli nella skill `risparmio-token` (`.claude/skills/risparmio-token/SKILL.md`).
-
-1. Prosa senza ripetizioni: risultato prima, niente riassunti del diff né eco della domanda.
-2. Cercare prima (Grep/Glob), poi leggere; leggere il file intero se serve per capire. Non rileggere file già letti e non cambiati.
-3. Chiamate indipendenti in parallelo.
-4. Togliere dall'output dei comandi solo il rumore; un errore va mostrato intero.
-5. Ricerche ampie delegabili al subagente `esploratore`; verificare le conclusioni importanti. Nessun subagente per compiti piccoli.
-6. Modello e sforzo mai sotto ciò che il compito richiede.
-7. `/compact` solo a fine sotto-compito; `/clear` al cambio di argomento.
-8. Non cambiare `CLAUDE.md` o server MCP a sessione avviata.

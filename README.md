@@ -9,4 +9,4 @@ Pagine statiche dei progetti (privacy policy delle app, ecc.). Pubblicate con Gi
 Ogni progetto nuovo ha la sua cartella.
 - `billy/privacy/` — Billy
 
-Istruzioni per Claude e convenzioni del sito: vedi `CLAUDE.md`. I moduli applicati da claude-projects-starter sono elencati in `.moduli.json`.
+Regole specifiche del sito per Claude: vedi `CLAUDE.md`.

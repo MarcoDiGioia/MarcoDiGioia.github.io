@@ -1,8 +1,10 @@
 {
   "fonte": "claude-projects-starter",
   "moduli": [
-    { "id": "regole-base", "versione": 2, "note": "adattato a sito statico (verifica = link e HTML, commit [sito])" },
-    { "id": "risparmio-token", "versione": 1 },
-    { "id": "privacy-policy", "versione": 1, "note": "le policy esistenti sono già qui; convenzioni documentate in CLAUDE.md" }
+    {
+      "id": "privacy-policy",
+      "versione": 1,
+      "note": "policy gi\u00e0 presenti; convenzioni in CLAUDE.md"
+    }
   ]
 }

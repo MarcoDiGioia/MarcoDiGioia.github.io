@@ -68,3 +68,6 @@ body.bs{background:#02040c;margin:0}
 .bwaddr{display:flex}
 /* pagina senza sito (Pothole Patrol): vista "cantiere" dentro il browser */
 .bwview.pg-pothole-patrol{background:#080b15 radial-gradient(900px 300px at 50% 0,rgba(255,196,0,.08),transparent 70%);min-height:360px;border-top:6px solid transparent;border-image:repeating-linear-gradient(-45deg,#ffc400 0 12px,#111 12px 24px) 6}
+/* pillola indirizzo: sfondo esplicito e testo ad alto contrasto */
+.bwbar .bwurl,.bw[data-br] .bwbar .bwurl{background:#4a4b51;color:#d7d9dd}.bwbar .bwurl b{color:#fff}.bwbar .bwurl:hover{background:#56575e}
+.bwbar .bwtab .tt{color:#fff}.bwbar .bwnav button{color:#e8eaed}

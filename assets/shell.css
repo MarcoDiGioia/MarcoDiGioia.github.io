@@ -61,3 +61,10 @@ body.bs{background:#02040c;margin:0}
 /* finestra larga, margini ridotti */
 .bw{max-width:1500px;margin:20px auto 0;padding:0 20px}.bwin{border-radius:12px;border:1px solid rgba(147,168,207,.3);box-shadow:0 0 60px rgba(255,180,84,.12),0 30px 70px rgba(0,0,0,.5)}
 @media(max-width:600px){.bw{padding:0 8px;margin-top:12px}.bwin{border-radius:10px}}
+/* barra indirizzi: niente striscia nera, pillola più chiara della toolbar */
+.bwurl,.bw[data-br=firefox] .bwurl,.bw[data-br=edge] .bwurl,.bw[data-br=safari]:not([data-os=ios]) .bwurl{background:rgba(255,255,255,.1);color:#bdc1c6}
+.bwurl:hover,.bw[data-br=firefox] .bwurl:hover{background:rgba(255,255,255,.16)}
+.bwurl{border-radius:99px;min-height:30px}.bw[data-br=firefox] .bwurl{border-radius:6px}.bw[data-br=edge] .bwurl{border-radius:8px}
+.bwaddr{display:flex}
+/* pagina senza sito (Pothole Patrol): vista "cantiere" dentro il browser */
+.bwview.pg-pothole-patrol{background:#080b15 radial-gradient(900px 300px at 50% 0,rgba(255,196,0,.08),transparent 70%);min-height:360px;border-top:6px solid transparent;border-image:repeating-linear-gradient(-45deg,#ffc400 0 12px,#111 12px 24px) 6}

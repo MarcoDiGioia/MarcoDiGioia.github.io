@@ -1,0 +1,25 @@
+/* guscio comune a tutte le pagine progetto: barra in alto e footer. Il resto lo decide ogni progetto. */
+.sh-bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:#030510;border-bottom:1px solid rgba(255,180,84,.25);font:13px ui-monospace,Menlo,Consolas,monospace;color:#ffb454}
+.sh-bar .in{max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px max(16px,env(safe-area-inset-right,0px)) 10px max(16px,env(safe-area-inset-left,0px));flex-wrap:wrap}
+.sh-bar a{color:#ffb454;text-decoration:none}.sh-bar a:hover{text-decoration:underline}.sh-bar .d{color:#5b6d92}.sh-bar .lang{border:1px solid rgba(255,180,84,.5);padding:1px 8px;border-radius:99px;font-size:11px;margin-left:12px}
+.sh-foot{background:#030510;color:#5b6d92;font:12px ui-monospace,Menlo,monospace;padding:28px max(16px,env(safe-area-inset-right,0px)) calc(28px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.sh-foot .in{max-width:var(--shw,1100px);margin:0 auto;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.sh-foot a{color:#ffb454;text-decoration:none}
+/* barra: selettore progetti */
+.sh-bar .sw{display:flex;gap:6px;align-items:center}.sh-bar .sw a{display:inline-flex;align-items:center;gap:6px;padding:2px 9px;border:1px solid transparent;border-radius:99px;color:#93a8cf;font-size:12px}
+.sh-bar .sw a i{width:8px;height:8px;border-radius:50%;box-shadow:0 0 8px currentColor}.sh-bar .sw a:hover{border-color:rgba(255,180,84,.45);color:#ffb454;text-decoration:none}.sh-bar .sw a.on{border-color:rgba(255,180,84,.6);color:#ffb454}.sh-bar .sw a.soon{opacity:.6}
+.sh-bar .ok{color:#3dff9b;margin-right:14px;font-size:11px}.sh-bar .rt a{margin-left:14px}.sh-bar .rt .lang{margin-left:14px}.sh-bar .path{white-space:nowrap}
+@media(max-width:1120px){.sh-bar .sw{display:none}}@media(max-width:640px){.sh-bar .rt .ok{display:none}.sh-bar .rt a:not(.lang){display:none}}
+/* footer: finestre come nel sito */
+.sh-foot{padding-top:56px}.sh-foot .grid{max-width:var(--shw,1100px);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+.sh-foot .win{background:#060a1a;border:1px solid rgba(147,168,207,.26);border-radius:8px;overflow:hidden;box-shadow:0 0 30px rgba(255,180,84,.1)}
+.sh-foot .win .tb{display:flex;gap:6px;align-items:center;padding:8px 12px;background:rgba(147,168,207,.1);font-size:11px;color:#5b6d92}.sh-foot .win .tb i{width:10px;height:10px;border-radius:50%;background:#ff5f57}.sh-foot .win .tb i:nth-child(2){background:#febc2e}.sh-foot .win .tb i:nth-child(3){background:#28c840}.sh-foot .win .tb span{margin-left:8px}
+.sh-foot .win .bd{margin:0;padding:16px 18px;font:13px/1.8 ui-monospace,Menlo,Consolas,monospace;color:#93a8cf;white-space:pre-wrap;overflow-x:auto}
+.sh-foot .p{color:#ffb454}.sh-foot .k{color:#9b8cff}.sh-foot .s{color:#5ee7ff}.sh-foot .cm{color:#5b6d92}.sh-foot a{color:#ffb454;text-decoration:none}.sh-foot a:hover{text-decoration:underline}
+.sh-foot .line{max-width:var(--shw,1100px);margin:28px auto 0;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid rgba(147,168,207,.15);padding-top:16px}
+@media(max-width:760px){.sh-foot .grid{grid-template-columns:1fr}}
+
+/* footer a riga unica */
+.sh-foot.mini{padding:0;border-top:1px solid rgba(255,180,84,.25);background:#030510}
+.sh-foot.mini .in{max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:12px 24px;flex-wrap:wrap;padding:14px max(16px,env(safe-area-inset-right,0px)) calc(14px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));font:13px ui-monospace,Menlo,Consolas,monospace;color:#93a8cf}
+.sh-foot.mini .sp{display:inline-block;width:22px}.sh-foot.mini .cm{color:#5b6d92}
+.sh-foot{margin-top:64px}@media(max-width:600px){.sh-foot{margin-top:44px}}

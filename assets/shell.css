@@ -23,3 +23,35 @@
 .sh-foot.mini .in{max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:12px 24px;flex-wrap:wrap;padding:14px max(16px,env(safe-area-inset-right,0px)) calc(14px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));font:13px ui-monospace,Menlo,Consolas,monospace;color:#93a8cf}
 .sh-foot.mini .sp{display:inline-block;width:22px}.sh-foot.mini .cm{color:#5b6d92}
 .sh-foot{margin-top:64px}@media(max-width:600px){.sh-foot{margin-top:44px}}
+
+/* finestra browser (tema scuro) attorno al contenuto dei progetti */
+body.bs{background:#02040c;margin:0}
+.bw{max-width:1240px;margin:28px auto 0;padding:0 max(16px,env(safe-area-inset-left,0px))}
+.bwin{border-radius:12px;overflow:hidden;border:1px solid rgba(147,168,207,.3);box-shadow:0 0 60px rgba(255,180,84,.12),0 30px 70px rgba(0,0,0,.5);background:#202124}
+.bwbar{background:#17181b;color:#bdc1c6;font:13px system-ui,sans-serif}
+.bwbar button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+.bwtop{display:flex;align-items:flex-end;gap:14px;padding:10px 14px 0}
+.bwdots{display:flex;gap:7px;padding-bottom:12px}.bwdots i,.bwdots button{width:11px;height:11px;border-radius:50%;background:#febc2e;display:block}.bwdots .r{background:#ff5f57}.bwdots i:last-child{background:#28c840}.bwdots .r:hover{filter:brightness(1.2)}
+.bwtab{display:flex;align-items:center;gap:8px;background:#35363a;color:#e8eaed;border-radius:9px 9px 0 0;padding:8px 8px 8px 16px;min-width:170px;font-weight:500}.bwtab img{border-radius:3px}.bwtab .fav{width:12px;height:12px;border-radius:50%;display:inline-block}.bwtab .tt{flex:1}
+.bwtab .x{width:20px;height:20px;border-radius:50%;font-size:16px;line-height:1;color:#9aa0a6}.bwtab .x:hover{background:rgba(255,255,255,.12);color:#fff}
+.bwtool{display:flex;align-items:center;gap:10px;background:#35363a;padding:7px 14px;border-bottom:1px solid #202124;position:relative}
+.bwnav{display:flex;gap:4px}.bwnav button{width:28px;height:28px;border-radius:50%;font-size:18px;line-height:1;color:#bdc1c6}.bwnav button:hover{background:rgba(255,255,255,.12)}
+.bwaddr{flex:1;position:relative;min-width:0}
+.bwurl{width:100%;display:flex;align-items:center;gap:8px;background:#202124;border-radius:99px;padding:6px 14px;color:#9aa0a6;text-align:left}.bwurl b{font-weight:400;color:#e8eaed;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}.bwurl em{font-style:normal;font-size:11px}.bwurl:hover{background:#2b2c30}
+.bwmenu{position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:30;background:#2b2c30;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:6px;box-shadow:0 16px 40px rgba(0,0,0,.55)}
+.bwmenu[hidden]{display:none}
+.bwmenu a{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:8px;color:#e8eaed;text-decoration:none;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.bwmenu a i{width:9px;height:9px;border-radius:50%;flex:none}.bwmenu a:hover,.bwmenu a[aria-selected=true]{background:rgba(255,255,255,.1)}.bwmenu .all{border-top:1px solid rgba(255,255,255,.1);margin-top:4px;border-radius:0 0 8px 8px;padding-left:31px;color:#9aa0a6}
+.bwview{position:relative;overflow:hidden;isolation:isolate;background:#fff}
+@media(max-width:600px){.bw{padding:0 8px;margin-top:16px}.bwin{border-radius:10px}.bwtab{min-width:0}.bwnav button:nth-child(2){display:none}.bwmenu a{font-size:12px}}
+
+/* varianti: sistema operativo e browser rilevati dal browser dell'utente */
+.bwctl{display:none;margin-left:auto;align-self:stretch}.bwctl button{width:44px;font-size:12px;color:#bdc1c6}.bwctl button:hover{background:rgba(255,255,255,.12)}.bwctl .cx:hover{background:#c42b1c;color:#fff}
+.bw[data-os=win] .bwdots,.bw[data-os=linux] .bwdots{display:none}.bw[data-os=win] .bwctl,.bw[data-os=linux] .bwctl{display:flex}.bw[data-os=win] .bwtop,.bw[data-os=linux] .bwtop{padding:8px 0 0 10px}
+.bw[data-os=ios] .bwtop,.bw[data-os=android] .bwtop{display:none}.bw[data-os=ios] .bwnav button:nth-child(2),.bw[data-os=android] .bwnav button:nth-child(2){display:none}
+.bw[data-os=ios] .bwurl{justify-content:center}.bw[data-os=ios] .bwurl em{display:none}.bw[data-os=ios] .bwurl b{flex:none}.bw[data-os=ios] .bwnav{order:3}.bw[data-os=ios] .bwurl{border-radius:12px}
+/* Firefox */
+.bw[data-br=firefox] .bwbar{background:#1c1b22}.bw[data-br=firefox] .bwtab{background:#42414d;border-radius:8px;margin-bottom:6px;padding:6px 8px 6px 14px}.bw[data-br=firefox] .bwtool{background:#2b2a33;border-bottom:1px solid #1c1b22}.bw[data-br=firefox] .bwurl{border-radius:6px;background:#1c1b22}.bw[data-br=firefox] .bwnav button{border-radius:6px}
+/* Edge */
+.bw[data-br=edge] .bwbar{background:#202020}.bw[data-br=edge] .bwtab{background:#2b2b2b;border-radius:8px 8px 0 0}.bw[data-br=edge] .bwtool{background:#2b2b2b}.bw[data-br=edge] .bwurl{background:#1f1f1f;border-radius:8px}
+/* Safari (desktop): una sola riga, niente tab */
+.bw[data-br=safari]:not([data-os=ios]) .bwbar{display:flex;align-items:center;background:#2a2a2c}.bw[data-br=safari]:not([data-os=ios]) .bwtab{display:none}.bw[data-br=safari]:not([data-os=ios]) .bwtop{padding:0 0 0 14px;align-items:center}.bw[data-br=safari]:not([data-os=ios]) .bwdots{padding:0}.bw[data-br=safari]:not([data-os=ios]) .bwtool{flex:1;background:none;border:0}.bw[data-br=safari]:not([data-os=ios]) .bwurl{background:#3a3a3c;border-radius:8px;justify-content:center}.bw[data-br=safari]:not([data-os=ios]) .bwurl b{flex:none}.bw[data-br=safari]:not([data-os=ios]) .bwurl em{display:none}.bw[data-br=safari]:not([data-os=ios]) .bwin{border-top:1px solid #3a3a3c}

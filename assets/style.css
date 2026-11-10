@@ -62,3 +62,8 @@ footer.hfoot{padding:80px 0 calc(40px + env(safe-area-inset-bottom,0px));color:v
 .snote{display:block;margin-top:8px;font:12px system-ui,sans-serif;color:var(--smut);text-align:center}
 .sup h2:before{content:'$ sh ./'}
 .grp span{text-transform:none;letter-spacing:0;opacity:.65;margin-left:10px}
+
+.gw{margin:28px 0 0}.gw .g{padding:18px;gap:14px;background:radial-gradient(rgba(147,168,207,.07) 1px,transparent 1px) 0 0/22px 22px}
+.gw .bar .cnt{font-size:11px}.gw .bar span:first-of-type{color:var(--ac)}
+@media(max-width:600px){.gw .g{padding:12px;gap:12px}.gw .bar .cnt{display:none}}
+.gw .g{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}.gw .it{align-self:start}

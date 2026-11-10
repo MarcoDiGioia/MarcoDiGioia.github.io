@@ -61,3 +61,4 @@ footer.hfoot{padding:80px 0 calc(40px + env(safe-area-inset-bottom,0px));color:v
 .sbtn{display:inline-flex;align-items:center;gap:8px;background:var(--sbg);color:var(--sfg);font:700 15px system-ui,sans-serif;padding:13px 22px;border-radius:var(--srad,10px);text-decoration:none;white-space:nowrap}.sbtn.off{opacity:.85;cursor:default}
 .snote{display:block;margin-top:8px;font:12px system-ui,sans-serif;color:var(--smut);text-align:center}
 .sup h2:before{content:'$ sh ./'}
+.grp span{text-transform:none;letter-spacing:0;opacity:.65;margin-left:10px}

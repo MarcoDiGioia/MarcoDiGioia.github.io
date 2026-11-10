@@ -55,3 +55,6 @@ body.bs{background:#02040c;margin:0}
 .bw[data-br=edge] .bwbar{background:#202020}.bw[data-br=edge] .bwtab{background:#2b2b2b;border-radius:8px 8px 0 0}.bw[data-br=edge] .bwtool{background:#2b2b2b}.bw[data-br=edge] .bwurl{background:#1f1f1f;border-radius:8px}
 /* Safari (desktop): una sola riga, niente tab */
 .bw[data-br=safari]:not([data-os=ios]) .bwbar{display:flex;align-items:center;background:#2a2a2c}.bw[data-br=safari]:not([data-os=ios]) .bwtab{display:none}.bw[data-br=safari]:not([data-os=ios]) .bwtop{padding:0 0 0 14px;align-items:center}.bw[data-br=safari]:not([data-os=ios]) .bwdots{padding:0}.bw[data-br=safari]:not([data-os=ios]) .bwtool{flex:1;background:none;border:0}.bw[data-br=safari]:not([data-os=ios]) .bwurl{background:#3a3a3c;border-radius:8px;justify-content:center}.bw[data-br=safari]:not([data-os=ios]) .bwurl b{flex:none}.bw[data-br=safari]:not([data-os=ios]) .bwurl em{display:none}.bw[data-br=safari]:not([data-os=ios]) .bwin{border-top:1px solid #3a3a3c}
+/* finestra a tutta larghezza */
+.bw{max-width:none;margin:0;padding:0}.bwin{border-radius:0;border-left:0;border-right:0;border-top:0;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+@media(max-width:600px){.bw{padding:0;margin-top:0}.bwin{border-radius:0}}

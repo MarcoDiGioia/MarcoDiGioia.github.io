@@ -72,3 +72,4 @@ footer.hfoot{padding:80px 0 calc(40px + env(safe-area-inset-bottom,0px));color:v
 @media(max-width:900px){.gw .g{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.gw .g{grid-template-columns:1fr}.gw .it{min-height:0}}
 .gw .it{height:236px;min-height:0}.gw .it p{overflow:hidden}
 @media(max-width:600px){.gw .it{height:268px}}
+.hz{margin-top:14px;height:10px;border-radius:2px;background:repeating-linear-gradient(-45deg,#ffc400 0 10px,#111 10px 20px);opacity:.9}
